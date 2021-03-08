@@ -1,0 +1,89 @@
+.navbar {
+    float: left;
+    width: 220px;
+    height:100vh;
+    background-color: #ffffff;
+    border-right: 1px solid #e5e5e5;
+}
+    .navbar .logo-site{
+        display: flex;
+        width: 100%;
+        height: 60px;
+    }
+        .navbar .logo-box{
+            display: flex;
+            position: absolute;
+            width: 100% ;
+            top: 24px;
+            left: 24px;
+        }
+    
+
+        /* Logo page */
+        .navbar .logo-box .toggle-icon {
+            width: 24px;
+            height: 24px;
+            background-image: url('/content/img/toggle.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            margin-right: 10px;
+        }
+
+        .navbar .logo-box .map-logo {
+            width: 100%;
+            height: 24px;
+            background-image: url('/content/img/onmyoji-logo.jpg');
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+
+    .navbar .navbar-content{
+        width: 100%;
+    }
+        .navbar .navbar-content .nav-item{
+            display: flex ;
+            padding-left: 24px;
+            height: 44px;
+            cursor: pointer;
+            line-height: 44px;
+        }
+        .navbar .navbar-content .nav-item:hover{
+            background-color: #e5e5e5;
+            color: #000000; 
+        }
+
+.nav-item .nav-item-icon{
+    width: 20px;
+    height: 20px;
+    
+    /* Can giua box , img */
+    align-self: center;
+    /* margin: auto 0; */
+    margin-right: 10px;
+}
+
+.nav-item .nav-item-play{
+    background-image: url('/content/img/icon-play.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.nav-item .nav-item-setting{
+    background-image: url('/content/img/icon-setting.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.nav-item .nav-item-highscore{
+    background-image: url('/content/img/icon-highscore.webp');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.nav-item .nav-item-credit{
+    background-image: url('/content/img/icon-credit.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.nav-item .nav-item-exit{
+    background-image: url('/content/img/icon-exit.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
