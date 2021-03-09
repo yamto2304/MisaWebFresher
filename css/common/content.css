@@ -4,5 +4,40 @@
     left: 221px;
     width: calc( 100% - 221px);
     height: calc(100vh - 61px);
-    background-color: #e9ebee;
+    background-color: #ffffff;
+    
+}
+
+    /* page title */
+    .content .header-content{
+        padding: 16px;
+        display: flex;
+        align-items: center;
+    }
+
+        .content .header-content .title {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        
+        .content .header-content .content-feature{
+            position: absolute;
+            right: 16px;
+
+        }
+        
+/* filter-bar */
+.content .filter-bar{
+
+}
+
+/* Grid */
+.content .grid{
+
+}
+
+/* Pagging */
+.content .paggigng{
+
 }

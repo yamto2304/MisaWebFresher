@@ -29,10 +29,10 @@
             margin-right: 10px;
         }
 
-        .navbar .logo-box .map-logo {
+        .navbar .logo-box .my-logo {
             width: 100%;
-            height: 24px;
-            background-image: url('/content/img/onmyoji-logo.jpg');
+            height: 35px;
+            background-image: url('/content/img/onmyoji-logo.jpg ');
             background-size: contain;
             background-repeat: no-repeat;
         }
