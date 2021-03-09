@@ -25,3 +25,27 @@
     .m-btn .btn-text {
         margin-left: 8px;
     }
+
+.m-second-button{
+    background-color: #ffffff;
+    border: 1px solid #bbbbbb;
+    border-radius: 4px;
+    height: 40px;
+    color: #000000;
+    padding-left: 24px;
+    padding-right: 24px;
+    text-align: center;
+    outline: none;
+    cursor: pointer;
+}
+
+    .m-second-button:hover{
+        background-color: #e9ebee;
+    }
+.m-btn-refresh{
+    background-image: url('/content/img/icon-refresh.webp');
+    background-repeat: no-repeat;
+    outline: none;
+    background-size: contain;
+    background-position: center;
+}

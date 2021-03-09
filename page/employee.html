@@ -6,7 +6,9 @@
         <link href="/css/common/main.css" rel="stylesheet"/>
         <link href="/css/common/icon.css" rel="stylesheet">
         <link href="/css/common/button.css" rel="stylesheet">
+        <link href="/css/common/input.css" rel="stylesheet">
         <link href="/css/common/toolbar.css" rel="stylesheet">
+        <link href="/css/common/grid.css" rel="stylesheet">
         <link href="/css/common/header.css" rel="stylesheet"/>
         <link href="/css/common/navbar.css" rel="stylesheet"/>
         <link href="/css/common/content.css" rel="stylesheet" />
@@ -70,16 +72,74 @@
             </div>
             <div class="filter-bar">
                 <div class="filter-left">
-                    <input type="text" placeholder="Tìm kiếm theo ID">
+                    <input class="icon-search input-search" style="width: 200px" type="text" placeholder="Tìm kiếm theo ID">
                     <select>
                         <option>Rememory</option>
                         <option>VeTV</option>
+                        <option>Rememory</option>
                     </select>
                 </div>
-                <div class="filter-right"></div>
+                <div class="filter-right">
+                    <button class="m-second-button m-btn-refresh">
+
+                    </button>
+                </div>
             </div>
-            <div class="grid"></div>
-            <div class="pagging"></div>
+            <div class="grid grid-employee">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Level</th>
+                            <th>Days</th>
+                            <th>Ssr</th>
+                            <th>Sp</th>
+                            <th>6 grade</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Mel</td>
+                            <td>60</td>
+                            <td>502</td>
+                            <td>30</td>
+                            <td>30</td>
+                            <td>35</td>
+                        </tr>
+                        <tr>
+                            <td>Mel</td>
+                            <td>60</td>
+                            <td>502</td>
+                            <td>30</td>
+                            <td>30</td>
+                            <td>35</td>
+                        </tr><tr>
+                            <td>Mel</td>
+                            <td>60</td>
+                            <td>502</td>
+                            <td>30</td>
+                            <td>30</td>
+                            <td>35</td>
+                        </tr><tr>
+                            <td>Mel</td>
+                            <td>60</td>
+                            <td>502</td>
+                            <td>30</td>
+                            <td>30</td>
+                            <td>35dsfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff ffffffffffffffffffffffffffffffffffffffffffffffffffffffff</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="paging-bar">
+                <div class="paging-record-infor">
+                    Hiển thị <b>1-10/1000</b> nhân viên
+                </div>
+                <div class="paging-option"></div>
+                <div class="pagin-record-option">
+                    <b>10</b> nhân viên/trang
+                </div>
+            </div>
         </div>
 
 
