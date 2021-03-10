@@ -13,5 +13,10 @@ table th, td {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    max-width: 100px;
+    max-width: 150px;
+    max-height: 100%;
+}
+
+.grid-employee{
+    overflow: scroll;
 }
