@@ -2,10 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\content",
-    "\\content\\font",
     "\\css",
-    "\\css\\common"
+    "\\page"
   ],
-  "SelectedNode": "\\content\\font\\GoogleSans-ThinItalic.otf",
+  "SelectedNode": "\\page\\employee.html",
   "PreviewInSolutionExplorer": false
 }
