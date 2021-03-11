@@ -34,7 +34,7 @@ function loadData() {
           <td><div><span>`+item['WorkStatusName']+`</span></div></td>
         </tr>`);
         $('table tbody').append(tr);
-        debugger;
+       
     })
     
   }).fail(function (res) {

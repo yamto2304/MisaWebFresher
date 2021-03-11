@@ -49,3 +49,17 @@
     background-size: contain;
     background-position: center;
 }
+
+.m-circle-btn{
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 40px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    /* position: relative; */
+}
+    .m-circle-btn:hover{
+        background-color: #BBBBBB;
+        cursor: pointer;
+    }
