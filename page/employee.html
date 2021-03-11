@@ -19,51 +19,56 @@
 <body>
     <div class="navbar">
         <div class="logo-site">
-            <div class="logo-box">
+            <!-- <div class="logo-box"> -->
                 <div class="toggle-icon"></div>
-                <div class="my-logo"></div>
-            </div>
+                <div class="cukcuk-logo"></div>
+            <!-- </div> -->
         </div>
         <div class="navbar-content">
             <a class="nav-item">
-                <div class="nav-item-icon nav-item-play"></div>
-                <div class="nav-item-text">Play</div>
+                <div class="nav-item-icon nav-item-document-online"></div>
+                <div class="nav-item-text">Hồ sơ điện tử</div>
+            </a>
+            <a class="nav-item">
+                <div class="nav-item-icon nav-item-document-offline"></div>
+                <div class="nav-item-text">Hồ sơ giấy</div>
+            </a>
+            <a class="nav-item">
+                <div class="nav-item-icon nav-item-report"></div>
+                <div class="nav-item-text">Theo dõi chi</div>
+            </a>
+            <a class="nav-item">
+                <div class="nav-item-icon nav-item-dashboard"></div>
+                <div class="nav-item-text">Theo dõi đóng</div>
+            </a>
+            <a class="nav-item">
+                <div class="nav-item-icon nav-item-employee"></div>
+                <div class="nav-item-text">Quản lý lao động</div>
             </a>
             <a class="nav-item">
                 <div class="nav-item-icon nav-item-setting"></div>
-                <div class="nav-item-text">Setting</div>
-            </a>
-            <a class="nav-item">
-                <div class="nav-item-icon nav-item-highscore"></div>
-                <div class="nav-item-text">Highscore</div>
-            </a>
-            <a class="nav-item">
-                <div class="nav-item-icon nav-item-credit"></div>
-                <div class="nav-item-text">Credit</div>
-            </a>
-            <a class="nav-item">
-                <div class="nav-item-icon nav-item-exit"></div>
-                <div class="nav-item-text">Exit</div>
+                <div class="nav-item-text">Thiết lập</div>
             </a>
         </div>
     </div>
     <div class="header">
         <div class="department-info">
-            <select>
-                <option>Onmyoji</option>
-                <option>Onmyoji Arena</option>
-                <option>Onmyoji The cards game</option>
+            <select class="select-restaurant">
+                <option>Nhà hàng biển Đông</option>
+                <option>Nhà hàng biển Bắc</option>
+                <option>Nhà hàng biển Tây</option>
+                <option>Nhà hàng biển Nam</option>
             </select>
         </div>
         <div class="account-info">
             <div class="account-avatar"></div>
-            <div class="account-name">Melkior</div>
+            <div class="account-name"><b>Hoàng Đình Tuấn</b></div>
             <div class="account-option icon-option-default-16"></div>
         </div>
     </div>
     <div class="content">
         <div class="header-content">
-            <div class="title">Danh sách</div>
+            <div class="title">Danh sách khách hàng</div>
             <div class="content-feature">
                 <button class="m-btn m-btn-default">
                     <div class="m-btn-icon icon-add"></div>
@@ -74,11 +79,11 @@
         <div class="filter-bar">
             <div class="filter-left">
                 <input class="icon-search input-search" style="width: 200px" type="text" placeholder="Tìm kiếm theo ID">
-                <select>
+                <!-- <select>
                     <option>Rememory</option>
                     <option>VeTV</option>
                     <option>Rememory</option>
-                </select>
+                </select> -->
             </div>
             <div class="filter-right">
                 <button class="m-second-button m-btn-refresh">
@@ -145,7 +150,22 @@
             <div class="paging-record-infor">
                 Hiển thị <b>1-10/1000</b> nhân viên
             </div>
-            <div class="paging-option"></div>
+            <div class="paging-option">
+                <div class="paging-back">
+                    <button class="paging-back-all m-circle-btn"></button>
+                    <button class="paging-back-one m-circle-btn"></button>
+                </div>
+                <div class="paging-number">
+                    <label><input class="m-circle-btn" type="radio" id="page1" name="page" value="1"><span>1</span></label>
+                    <label><input class="m-circle-btn" type="radio" id="page1" name="page" value="2"><span>2</span></label>
+                    <label><input class="m-circle-btn" type="radio" id="page1" name="page" value="3"><span>3</span></label>
+                    <label><input class="m-circle-btn" type="radio" id="page1" name="page" value="4"><span>4</span></label>
+                </div>
+                <div class="paging-next">
+                    <button class="paging-next-one m-circle-btn"></button>
+                    <button class="paging-next-all m-circle-btn"></button>
+                </div>
+            </div>
             <div class="pagin-record-option">
                 <b>10</b> nhân viên/trang
             </div>
