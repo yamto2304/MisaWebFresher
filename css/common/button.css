@@ -6,7 +6,6 @@
     height: 40px;
     font-size: 13px;
     color: #ffffff;
-    font-family: 'Times New Roman', Times, serif;
     padding-left: 16px;
     padding-right: 16px;
     border: none;
@@ -57,7 +56,6 @@
     border-radius: 40px;
     background-repeat: no-repeat;
     background-size: contain;
-    /* position: relative; */
 }
     .m-circle-btn:hover{
         background-color: #BBBBBB;

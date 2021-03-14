@@ -1,0 +1,34 @@
+.btn-basic {
+    background-color: #019160;
+    border-radius: 4px;
+    height: 40px;
+    font-size: 13px;
+    color: #ffffff;
+    padding-left: 24px;
+    padding-right: 24px;
+    text-align: center;
+    border: none;
+}
+    .btn-basic :hover{
+        background-color: #2FBE8E;
+    }
+    .btn-basic :active{
+        background-color: #01B075;
+    }
+
+.btn-seconds {
+    border: 1px solid #bbbbbb;
+    border-radius: 4px;
+    height: 40px;
+    font-size: 13px;
+    color: #000000;
+    padding-left: 24px;
+    padding-right: 24px;
+    text-align: center;
+}
+    .btn-seconds:hover{
+        background-color: #E9EBEE;
+    }
+    .btn-seconds:active{
+        background-color: #01B075;
+    }

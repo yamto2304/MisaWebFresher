@@ -1,0 +1,20 @@
+.form-add-customer{
+    align-self: center;
+    width: 500px;
+    height: 500px;
+    background-color: burlywood;
+    align-items: baseline;
+}
+
+    .form-add-customer .form-header{
+        
+    }
+    .form-add-customer .basic-infor{
+
+    }
+    .form-add-customer .contact-infor{
+
+    }
+    .form-add-customer .form-footer{
+
+    }
