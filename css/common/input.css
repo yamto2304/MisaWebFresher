@@ -3,10 +3,8 @@ input{
     border-radius: 4px;
     outline: none;
     border: 1px solid #bbbbbb;
-
-
 }
-    inout::placeholder{
+    input::placeholder{
         font-size: 11px;
     }
 

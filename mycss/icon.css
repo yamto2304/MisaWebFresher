@@ -1,0 +1,7 @@
+.icon-save {
+    width: 16px ;
+    height: 16px;
+    background-image: url('/content/icon/add.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+}

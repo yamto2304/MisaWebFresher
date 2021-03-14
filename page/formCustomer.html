@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8" />
+    <title>Form</title>
+    <link href="/css/page/customer.css" rel="stylesheet" />
+    <link href="/mycss/font.css" rel="stylesheet" />
+    <link href="/mycss/icon.css" rel="stylesheet">
+    <link href="/mycss/button.css" rel="stylesheet">
+    <link href="/css/common/input.css" rel="stylesheet"/>
+    
+    </head>
+    <body>
+        <div class="form-add-customer">
+            <div class="form-header">
+                <div class="heading">
+                    <b>Thông tin khách hàng</b>
+                </div>
+            </div>
+            <div class="basic-info">
+                <div class="insert-image">
+                    <div class="avatar"></div>
+                    <div class="hint">Vui lòng chọn ảnh có định dạng <b>.jpg, .jpeg, .png, .gif.</b></div>
+                </div>
+                <div class="col-left-1">
+                    <div class="input-customer-field">
+                        <label >Mã khách hàng</label>
+                        <input type="text" name ="customer-code" class="input-box-small" required>
+                    </div>  
+                    <div class="input-customer-field">
+                        <label >Mã thẻ thành viên</label>
+                        <input name="member-code" class="input-box-small">
+                    </div>
+                    <div class="input-customer-field">
+                        <label >Ngày sinh</label>
+                        <input type="date" name="date-of-birth" class="input-box-small input-date">
+                    </div>  
+                </div>
+                <div class="col-right">
+                    <div class="input-customer-field">
+                        <label>Họ và tên</label>
+                        <input type="text" class="input-box-small" name="customer-name" required>
+                    </div> 
+                    <div class="input-customer-field">
+                        <label>Nhóm khách hàng</label>
+                        <select class="group-customer">
+                            <option>Nhóm1</option>
+                            <option>Nhóm2</option>
+                        </select>
+                    </div> 
+                    <div class="input-customer-field">
+                        <label>Giới tính</label>
+                        <div class="radio-box-small">
+                            <label><input  type="radio"  name="sex" value="1"><span>Nam</span></label>
+                            <label><input  type="radio"  name="sex" value="2"><span>Nữ</span></label>
+                            <label><input  type="radio"  name="sex" value="3"><span>Khác</span></label>
+                        </div>
+                    </div> 
+                </div>
+
+            </div>
+            <div class="contact-info">
+                <div class="col-left-2">
+                    <div class="input-customer-field">
+                        <label>Email</label>
+                        <input type="email" placeholder="example@domain.com" class="input-box-medium" name="customer-name">
+                    </div>
+                    <div class="input-customer-field">
+                        <label>Họ và tên</label>
+                        <input type="text" class="input-box-medium" name="customer-name">
+                    </div>
+                    <div class="input-customer-field">
+                        <label>Địa chỉ</label>
+                        <input type="text" class="input-box-large">
+                    </div>
+                </div>
+                <div class="col-right">
+                    <div class="input-customer-field">
+                        <label>Số điện thoại</label>
+                        <input type="text" class="input-box-small" name="customer-name" required>
+                    </div> 
+                    <div class="input-customer-field">
+                        <label>Mã số thuế</label>
+                        <input type="text" placeholder="Mã số thuế của công ty" class="input-box-small">
+                    </div>   
+                </div>
+
+            </div>
+            <div class="form-footer">
+                <div class="btn-cancel">
+                    <button class="btn-seconds" style="background-color:#BBBBBB;">Hủy</button>
+                </div>
+                <div class="btn-save" >
+                    <button class="btn-with-icon">
+                        <div class="icon-btn icon-save"></div>
+                        <div class="text-btn">Lưu</div>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

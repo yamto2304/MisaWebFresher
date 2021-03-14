@@ -14,13 +14,13 @@
             xhttp.send();
 
             function loadTable(data){
-                debugger
+                //debugger
                 // dddd
                 
                 var table = document.getElementById('tbl-customer');
 
                 for(let i = 0; i < data.length; i++){
-                    debugger
+                    //debugger
                     let row = `<tr>
                         <td>${data[i].CustomerCode}</td>
                         <td>${data[i].FullName}</td>

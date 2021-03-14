@@ -63,7 +63,7 @@
     }
 
     .paging-back-one{
-        background-image: url(/content/icon/btn-prev-page.svg);
+        background-image: url('/content/icon/btn-prev-page.svg');
     }
     .paging-next-one{
         background-image: url('/content/icon/btn-next-page.svg');
