@@ -9,6 +9,8 @@
 .department-info{
     align-items: center;
     line-height: 48px;
+    cursor: pointer;
+
 }
 
     .department-info .select-restaurant{
