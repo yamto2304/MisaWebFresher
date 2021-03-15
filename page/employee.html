@@ -17,7 +17,7 @@
     <link href="/mycss/font.css" rel="stylesheet" />
     <link href="/mycss/icon.css" rel="stylesheet">
     <link href="/mycss/button.css" rel="stylesheet">
-    <link href="/css/page/customer.css" rel="stylesheet">
+    <link href="/css/page/formCustomer.css" rel="stylesheet">
 
 </head>
 <body>
@@ -75,7 +75,7 @@
             <div class="content-feature">
                 <button class="m-btn m-btn-default" id="buttonAdd">
                     <div class="m-btn-icon icon-add"></div>
-                    <div class="btn-text">Thêm ADS</div>
+                    <div class="btn-text">Thêm khách hàng</div>
                 </button>
             </div>
         </div>
@@ -118,9 +118,9 @@
                         <th>Trạng thái công việc</th> -->
                     </tr>
                 </thead>
-                <!-- <tbody>
+                <tbody>
                     
-                </tbody> -->
+                </tbody>
             </table>
         </div>
         <div class="paging-bar">
@@ -164,32 +164,32 @@
             <div class="col-left-1">
                 <div class="input-customer-field">
                     <label >Mã khách hàng</label>
-                    <input type="text" name ="customer-code" class="input-box-small" required>
+                    <input type="text" name ="customer-code" id="customerCode" class="input-box-small" required>
                 </div>  
                 <div class="input-customer-field">
                     <label >Mã thẻ thành viên</label>
-                    <input name="member-code" class="input-box-small">
+                    <input name="member-code" id="memberCode" class="input-box-small">
                 </div>
                 <div class="input-customer-field">
                     <label >Ngày sinh</label>
-                    <input type="date" name="date-of-birth" class="input-box-small input-date">
+                    <input type="date" name="date-of-birth" id="dateOfBirth" class="input-box-small input-date">
                 </div>  
             </div>
             <div class="col-right">
                 <div class="input-customer-field">
                     <label>Họ và tên</label>
-                    <input type="text" class="input-box-small" name="customer-name" required>
+                    <input type="text" class="input-box-small" name="customer-name" id="fullName" required>
                 </div> 
                 <div class="input-customer-field">
                     <label>Nhóm khách hàng</label>
-                    <select class="group-customer">
+                    <select class="group-customer" id="customerGroupName">
                         <option>Nhóm1</option>
                         <option>Nhóm2</option>
                     </select>
                 </div> 
                 <div class="input-customer-field">
                     <label>Giới tính</label>
-                    <div class="radio-box-small">
+                    <div class="radio-box-small" id="gender">
                         <label><input  type="radio"  name="gender" value="1"><span>Nam</span></label>
                         <label><input  type="radio"  name="gender" value="2"><span>Nữ</span></label>
                         <label><input  type="radio"  name="gender" value="3"><span>Khác</span></label>
@@ -202,10 +202,10 @@
             <div class="col-left-2">
                 <div class="input-customer-field">
                     <label>Email</label>
-                    <input type="email" placeholder="example@domain.com" class="input-box-medium" name="customer-name">
+                    <input type="email" id="email" placeholder="example@domain.com" class="input-box-medium" name="customer-name">
                 </div>
                 <div class="input-customer-field">
-                    <label>Họ và tên</label>
+                    <label>Not this tag</label>
                     <input type="text" class="input-box-medium" name="customer-name">
                 </div>
                 <div class="input-customer-field">
@@ -213,11 +213,13 @@
                     <input type="text" class="input-box-large">
                 </div>
             </div>
+            <!-- SDT -->
             <div class="col-right">
                 <div class="input-customer-field">
                     <label>Số điện thoại</label>
-                    <input type="text" class="input-box-small" name="customer-name" required>
+                    <input type="text" class="input-box-small" name="customer-name" id="phoneNumber" required>
                 </div> 
+                <!-- Ms thue -->
                 <div class="input-customer-field">
                     <label>Mã số thuế</label>
                     <input type="text" placeholder="Mã số thuế của công ty" class="input-box-small">
@@ -229,7 +231,7 @@
             <div class="btn-cancel" id="btnCancel">
                 <button class="btn-seconds" style="background-color:#BBBBBB;">Hủy</button>
             </div>
-            <div class="btn-save" >
+            <div class="btn-save" id="btnSave" >
                 <button class="btn-with-icon">
                     <div class="icon-btn icon-save"></div>
                     <div class="text-btn">Lưu</div>
