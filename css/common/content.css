@@ -71,3 +71,38 @@
     .paging-next-all{
         background-image: url('/content/icon/btn-lastpage.svg');
     }
+
+#page1 {
+
+    background-color: #E5E5E5;
+    /* border: 1px solid black; */
+    margin: auto;
+    -webkit-appearance: none; /*to disable the default appearance of radio button*/
+    -moz-appearance: none;
+    }
+    
+    
+    
+    #page1:checked { /*no need, if you don't disable default appearance*/
+    background-color: #01B075;
+    }
+    
+    #page1:checked ~ span:first-of-type {
+    color: white;
+    }
+    
+.paging-number label span:first-of-type {
+    position: relative;
+    left: -24px;
+    font-size: 13px;
+    color: black;
+}
+
+.paging-number label span {
+    position: relative;
+    top: -16px;
+}
+
+.first-line{
+    background-color: black;
+}

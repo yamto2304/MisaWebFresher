@@ -3,7 +3,9 @@
     width: 100%;
     height: 200px;
 }
-
+table{
+    border-collapse: collapse;
+}
 table th, td {
     border-bottom: 1px solid #bbbbbb;
     padding-left: 16px;
@@ -15,8 +17,16 @@ table th, td {
     white-space: nowrap;
     max-width: 150px;
     max-height: 100%;
-}
+    /* border-collapse: collapse; */
 
+}
+    table tr:hover{
+        cursor: pointer;
+        background-color: #e5e5e5;
+    }
+    table tr:active{
+        background-color: #01B075;
+    }
 .grid-employee{
     overflow: scroll;
 }

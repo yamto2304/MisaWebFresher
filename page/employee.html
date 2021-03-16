@@ -100,25 +100,16 @@
                         <th>Mã khách hàng</th>
                         <th>Tên khách hàng</th>
                         <th>Giới tính</th>
+                        <th>Địa chỉ</th>
                         <th>Ngày sinh</th>
                         <th>Email</th>
                         <th>SĐT</th>
-                        <th>Địa chỉ</th>
-                        <!-- <th>Đã nghỉ việc</th>
-                        <th>Mã nhân viên</th>
-                        <th>Họ và tên</th>
-                        <th>Giới tính</th>
-                        <th>Ngày sinh</th>
-                        <th>Số điện thoại</th>
-                        <th>Email</th>
-                        <th>Chức vụ</th>
-                        <th>Phòng ban</th>
-                        <th>Mức lương hiện tại</th>
-                        <th>Địa chỉ</th>
-                        <th>Trạng thái công việc</th> -->
+                        <th>Nhóm khách hàng</th>
+                        <th>Tên công ty</th>
+                        <th>Tình trạng theo dõi</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody id="body-data">
                     
                 </tbody>
             </table>
@@ -183,8 +174,8 @@
                 <div class="input-customer-field">
                     <label>Nhóm khách hàng</label>
                     <select class="group-customer" id="customerGroupName">
-                        <option>Nhóm1</option>
-                        <option>Nhóm2</option>
+                        <option value="1">Nhóm1</option>
+                        <option value="2">Nhóm2</option>
                     </select>
                 </div> 
                 <div class="input-customer-field">
@@ -239,7 +230,6 @@
             </div>
         </div>
     </dialog>  
-    
         <script src="/lib/jquery-3.6.0.min.js"></script>
         
         <!-- <script src="/js/page/customer.js"></script> -->
