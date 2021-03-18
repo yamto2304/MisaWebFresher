@@ -1,7 +1,7 @@
 $(document).ready(function(){
     loadData();
-    // var tableJs = document.getElementById('tbl-customer');
-    // var tableJq = $('#tbl-customer');
+    // var tableJs = document.getElementById('tbl-customer'); - JavaScript
+    // var tableJq = $('#tbl-customer');                      - Jquery
     
     var btnOpenFormAdd = $('#buttonAdd');
     btnOpenFormAdd.click(function(){
@@ -21,7 +21,7 @@ $(document).ready(function(){
     //Delete customer
 
     
-    //Custom dbclick in row -- delete
+    // //Custom dbclick in row -- delete
     // $("#tbl-customer").on('dblclick', 'tr', function () {
     //     var id = $(this).attr('id');
     //     deleteData(id);
@@ -41,7 +41,7 @@ $(document).ready(function(){
             CustomerGroupName : this.cells[7].textContent,
             CompanyName : this.cells[8].textContent,
         }
-        editData(customerEditable);
+        showFormEdit(customerEditable);
     })
 
 })

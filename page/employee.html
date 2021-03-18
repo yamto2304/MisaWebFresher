@@ -2,17 +2,9 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <title></title>
+    <title>MisaCukCuk</title>
     <link href="/css/common/main.css" rel="stylesheet" />
-    <link href="/css//common/common.css" rel="stylesheet" />
-    <link href="/css/common/icon.css" rel="stylesheet">
-    <link href="/css/common/button.css" rel="stylesheet">
-    <link href="/css/common/input.css" rel="stylesheet">
-    <link href="/css/common/toolbar.css" rel="stylesheet">
-    <link href="/css/common/grid.css" rel="stylesheet">
-    <link href="/css/common/header.css" rel="stylesheet" />
     <link href="/css/common/navbar.css" rel="stylesheet" />
-    <link href="/css/common/content.css" rel="stylesheet" />
     <link href="/css/page/employee.css" rel="stylesheet" />
     <link href="/mycss/font.css" rel="stylesheet" />
     <link href="/mycss/icon.css" rel="stylesheet">
@@ -66,16 +58,16 @@
         <div class="account-info">
             <div class="account-avatar"></div>
             <div class="account-name"><b>Hoàng Đình Tuấn</b></div>
-            <div class="account-option icon-option-default-16"></div>
+            <div class="account-option icon-option-account"></div>
         </div>
     </div>
     <div class="content">
         <div class="header-content">
             <div class="title" >Danh sách khách hàng</div>
             <div class="content-feature">
-                <button class="m-btn m-btn-default" id="buttonAdd">
-                    <div class="m-btn-icon icon-add"></div>
-                    <div class="btn-text">Thêm khách hàng</div>
+                <button class="btn-with-icon" id="buttonAddCustomer">
+                    <div class="icon-add"></div>
+                    <div class="text-btn">Thêm khách hàng</div>
                 </button>
             </div>
         </div>
@@ -89,11 +81,12 @@
                 </select> -->
             </div>
             <div class="filter-right">
-                <button class="m-second-button m-btn-refresh">
+                <button class="btn-only-icon" id="refresh">
+                    <div class="icon-refresh"></div>
                 </button>
             </div>
         </div>
-        <div class="grid grid-employee">
+        <div class="data-table">
             <table id="tbl-customer">
                 <thead>
                     <tr>
@@ -120,18 +113,18 @@
             </div>
             <div class="paging-option">
                 <div class="paging-back">
-                    <button class="paging-back-all m-circle-btn"></button>
-                    <button class="paging-back-one m-circle-btn"></button>
+                    <button class="paging-back-all btn-circle"></button>
+                    <button class="paging-back-one btn-circle"></button>
                 </div>
                 <div class="paging-number">
-                    <label><input class="m-circle-btn" type="radio" id="page1" name="page" value="1"><span>1</span></label>
-                    <label><input class="m-circle-btn" type="radio" id="page1" name="page" value="2"><span>2</span></label>
-                    <label><input class="m-circle-btn" type="radio" id="page1" name="page" value="3"><span>3</span></label>
-                    <label><input class="m-circle-btn" type="radio" id="page1" name="page" value="4"><span>4</span></label>
+                    <label><input class="btn-circle" type="radio" id="bcp" name="page" value="1" checked><span>1</span></label>
+                    <label><input class="btn-circle" type="radio" id="bcp" name="page" value="2"><span>2</span></label>
+                    <label><input class="btn-circle" type="radio" id="bcp" name="page" value="3"><span>3</span></label>
+                    <label><input class="btn-circle" type="radio" id="bcp" name="page" value="4"><span>4</span></label>
                 </div>
                 <div class="paging-next">
-                    <button class="paging-next-one m-circle-btn"></button>
-                    <button class="paging-next-all m-circle-btn"></button>
+                    <button class="paging-next-one btn-circle"></button>
+                    <button class="paging-next-all btn-circle"></button>
                 </div>
             </div>
             <div class="pagin-record-option">
