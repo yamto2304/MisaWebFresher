@@ -1,75 +1,92 @@
 $(document).ready(function(){
-    loadData();
-    // var tableJs = document.getElementById('tbl-customer'); - JavaScript
-    // var tableJq = $('#tbl-customer');                      - Jquery
-    
-    var btnOpenFormAdd = $('#buttonAdd');
-    btnOpenFormAdd.click(function(){
-        document.getElementById('add-form').showModal();
-    })
-    //Add customer
-    var btnSave = $('#btnSave');
-    btnSave.click(function(){
-        saveData();
-    })
-    //Close form
-    var btnCloseForm = $('#btnCancel');
-    btnCloseForm.click(function(){
-        $('#add-form').hide();
-    })
-    
-    //Delete customer
+    var status = "add";
+    loadData();    
 
-    
-    // //Custom dbclick in row -- delete
-    // $("#tbl-customer").on('dblclick', 'tr', function () {
-    //     var id = $(this).attr('id');
-    //     deleteData(id);
-    // })
+    //Set event click
+    //Tắt option khi click ra bên ngoài
+    $('body').click(function (e) {
+        $('#option-detail').hide();
+        // e.stopPropagation();
+    })
 
-    //Custom dblclick in row -- edit
-    $("#tbl-customer").on('dblclick', 'tr', function () {
-        var customerEditable = {
-            CustomerId : $(this).attr('id'),
-            CustomerCode : this.cells[0].textContent,
-            FullName : this.cells[1].textContent,
-            Gender : this.cells[2].textContent,
-            Address : this.cells[3].textContent,
-            DateOfBirth : this.cells[4].textContent,
-            PhoneNumber : this.cells[5].textContent,
-            Email : this.cells[6].textContent,
-            CustomerGroupName : this.cells[7].textContent,
-            CompanyName : this.cells[8].textContent,
+    //Refresh
+    $('#refresh').click(function(){
+        // loadData();
+        window.location.reload();
+    })
+    //Mở form thêm customer
+    $('#buttonAddCustomer').click(function(){
+        openForm();
+    })
+
+    //Đóng form
+        $('#btnCancel').click(function(){
+        closeForm();
+        // xoá dữ liệu trên form
+        $("#add-form input").val("");
+        $("#add-form select").val("-1");
+        // đặt lại trạng thái về mặc định
+        status = "add";
+    })
+
+    //Button save customer
+    $('#btnSave').click(function(){
+        // alert(status);
+        if(status == "add"){
+            saveData();
         }
-        showFormEdit(customerEditable);
+        else if (status == "edit"){
+            updateData()
+        } else {
+            alert("Có lỗi xảy ra, vui lòng thử lại");
+        }
     })
 
+    // event chọn row
+    $("#tbl-customer").on("click", "tbody tr", function (e) {
+        this.classList.add("row-selected");
+        $(this).siblings().removeClass("row-selected");
+        // debugger
+    });
+
+    //Hiện Option sửa/xóa
+    $("#tbl-customer").on('dblclick', 'tbody tr', function (e) {
+        $('#option-detail').hide();
+        $('#option-detail').css({ 'top': e.pageY + 5, 'left': e.pageX });
+        $('#option-detail').show();
+        e.stopPropagation();
+    })
+        
+    //Xóa customer
+    $('#btnDelete').click(function() {
+        deleteData();
+    })
+
+    //Sửa customer
+    $('#btnEdit').click(function() {
+        status = "edit";
+        showFormEdit();
+    })
 })
-// get form data
-function getCustomerInForm(){
-    var customer = {
-        CustomerCode : $('#customerCode').val(),
-        FullName :$('#fullName').val(), 
-        Gender : $('input[name=gender]:checked').val(),
-        Address: $('#address').val(), 
-        DateOfBirth : $('#dateOfBirth').val() || null,
-        PhoneNumber : $('#phoneNumber').val(),
-        Email : $('#email').val(),  
-        CustomerGroupName : $('#customerGroupName').val()
-    }
-    return customer;
+
+/**
+ * Mở form
+ */
+function openForm() {
+    document.getElementById('add-form').showModal();
 }
 
-function setCustomerInform(params) {
-    
+/**
+ * Đóng form
+ */
+function closeForm() {
+    document.getElementById('add-form').close();
 }
 
-function showRowOptions() {
-    $('#add-form').showModal();
-}
-
+/**
+ * Lấy dữ liệu từ API và append vào bảng
+ */
 function loadData(){
-    
     $.ajax({
         url: "http://api.manhnv.net/api/customers",
         method: "GET"
@@ -83,103 +100,196 @@ function loadData(){
                 <td>${response[i].FullName}</td>
                 <td>${response[i].Genger == null ? "" : formatGender(response[i].Gender)}</td>
                 <td>${response[i].Address}</td>
-                <td>${response[i].DateOfBirth /* == null ? "" : formartDate(response[i].DateOfBirth)*/}</td>
+                <td>${response[i].DateOfBirth == null ? "" : formatDate(response[i].DateOfBirth)}</td>
                 <td>${response[i].Email == null ? "" : response[i].Email}</td>
                 <td>${response[i].PhoneNumber}</td>
                 <td>${response[i].CustomerGroupName}</td>
                 <td>${response[i].CompanyName}</td>
-                <td>${response[i].IsStopFollow == true ? "Đang theo dõi" : "Không"}</td>
-                
+                <td>${response[i].IsStopFollow == true ? "Đang theo dõi" : "Không"}</td>    
             </tr>`);
             trHtml.data("id", response[i].CustomerId);
-            // debugger
             $('#tbl-customer > tbody:last-child').append(trHtml);
             //Set style for datarow
             document.getElementById(customerId).style.color = "red";
         }
     }).fail(function(res){
-        // request fail
+        alert("Server gặp vấn đề rồi, thử lại sau nhé !")
     });
 }
 
-//format giới tính
+/**
+ * Lấy dữ liệu từ form
+ * @returns object customer
+ */
+function getCustomerInForm(){
+    var customer = {
+        CustomerCode : $('#customerCode').val(),
+        FullName :$('#fullName').val(), 
+        Gender : $('input[name=gender]:checked').val(),
+        Address: $('#address').val(), 
+        DateOfBirth : $('#dateOfBirth').val() || null,
+        PhoneNumber : $('#phoneNumber').val(),
+        Email : $('#email').val(),
+        CustomerGroupName : $('#customerGroupName').val(),
+        CompanyName : $('#companyName').val()
+    }
+    return customer;
+}
+
+/**
+ * Thêm mới khách hàng
+ */
+function saveData(){
+    //Lấy dữ liệu từ formư
+    
+    var customer = getCustomerInForm();
+    
+    if(validate(customer)){ //validate
+        $.ajax({
+            url: "http://api.manhnv.net/api/customers",
+            method: "POST",
+            dataType: "json",
+            data: JSON.stringify(customer),
+            contentType: "application/json"
+        }).done(function(response){
+            //Thông báo người dùng
+            alert("Thêm mới khách hàng thành công");
+            // Đóng form
+            closeForm();
+            //reload data
+            loadData();
+        }).fail(function(res){
+            if (res.responseText == "Trùng mã") {
+                alert("Mã khách hàng đã tồn tại");
+            }
+            else {
+                alert("Có lỗi xảy ra khi thêm khách hàng, vui lòng thử lại");
+            }
+        })
+    }
+}
+
+function updateData() {
+    var rowSelected = $("tr.row-selected");
+    var customerID = rowSelected.data('id');
+    //Lấy dữ liệu từ form
+    var customer = getCustomerInForm();
+    
+    if(validate(customer)){
+        $.ajax({
+            url: "http://api.manhnv.net/api/customers/" + customerID,
+            method: "PUT",
+            dataType: "json",
+            data: JSON.stringify(customer),
+            contentType: "application/json"
+        }).done(function(response){
+            //Thông báo người dùng
+            alert("Cập nhật thông tin thành công");
+            // Đóng form
+            closeForm();
+            //reload data
+            loadData();
+        }).fail(function(res){
+            alert("Có lỗi xảy ra khi cập nhật dữ liệu, vui lòng thử lại");
+        })
+    }
+}
+    
+/**
+ * Show form và đẩy dữ liệu cần sửa vào form
+ * @param {object} customerEditable 
+ */
+function showFormEdit() {
+    var rowSelected = $("tr.row-selected");
+    var customerID = rowSelected.data('id');
+    document.getElementById('add-form').showModal();
+    // gọi api lấy thông tin
+    $.ajax({
+        url: "http://api.manhnv.net/api/customers/" + customerID,
+        method: "GET"
+    }).done(function (response) {
+        $('#customerCode').val(response.CustomerCode);
+        $('#fullName').val(response.FullName);
+        // $('#gender').val(response.MemberCode);
+        $('#address').val(response.Address);
+        $('#dateOfBirth').val(formatDefaultDate(response.DateOfBirth));
+        $('#phoneNumber').val(response.PhoneNumber);
+        $('#email').val(response.Email);
+        $('#customerGroupName').val(response.CustomerGroupName);
+        $('#companyName').val(response.CompanyName);
+        // debugger
+    }).fail(function(res){
+        alert("Tải dữ liệu thất bại, vui lòng thử lại sau");
+    })
+}
+
+
+/**********************************************************************
+     * validate dữ liệu
+     * @param {any} customer
+     */
+function validate(customer){
+    if(customer.CustomerCode == null || customer.CustomerCode == ''){
+        alert("Mã khách hàng không được để trống!");
+        $("#customerCode").focus();
+        return false;
+    }
+    // kiểm tra trường họ tên
+    if (customer.FullName == "") {
+        alert("Họ tên không được để trống!");
+        $("#fullName").focus();
+        return false;
+    }
+    
+    // kiểm tra trường email
+    if (customer.Email == "") {
+        alert("Email không được để trống!");
+        $("#email").focus();
+        return false;
+    } else {
+        if (validateEmail(customer.Email) == false) {
+            alert("Email không hợp lệ");
+            $("#email").focus();
+            return false;
+        }
+    }
+
+    // kiểm tra trường sđt
+    if (customer.PhoneNumber == "") {
+        alert("Số điện thoại không được để trống!");
+        $("#phoneNumber").focus();
+        return false;
+    }
+    
+    return true;
+}
+
+/***********************************
+ * Format giới tính
+ * @param {number} gen 
+ * @returns Nam || Nữ
+ */
 function formatGender(gen){
     switch (gen){
         case 0:
             return "Nữ"
         case 1:
-            return "Nam"
+            return "Nam"  
+            }
+        }
 
-    }
-}
-
-function saveData(){
-    var customer = getCustomerInForm();
-    if(1){ //validate
-        $.ajax({
-            url: "http://api.manhnv.net/api/customers",
-            method: "POST",
-            data: JSON.stringify(customer),
-            contentType: "application/json"
-        }).done(function(response){
-            //thong bao nguoi dung
-            alert("Thêm mới khách hàng thành công");
-            // dong dialog
-            $('#add-form').hide();
-            //reload data
-            loadData();
-        }).fail(function(res){
-            //request fail
-        })
-    }
-}
-function showFormEdit(customerEditable) {
-    document.getElementById('add-form').showModal();
-    $('#customerCode').val(customerEditable.CustomerCode);
-    $('#fullName').val(customerEditable.FullName);
-    // $('#memberCode').val(customerEditable.MemberCode);
-    $('#dateOfBirth').val(customerEditable.DateOfBirth);
-    $('#email').val(customerEditable.Email);
-    $('#phoneNumber').val(customerEditable.PhoneNumber);
-    $('#address').val(customerEditable.Address);
-
-    //get data in form
-    var btnConfirmEdit = $('#btnConfirmEdit');
-    btnConfirmEdit.click(function(){
-        editData(customerEditable);
-    })
-}
-
-function editData(customerEditable) {
-    if(1){ //validate
-        $.ajax({
-            url: "http://api.manhnv.net/api/customers/" + customerEditable.CustomerId,
-            method: "PUT",
-            data: JSON.stringify(customerEditable),
-            contentType: "application/json"
-        }).done(function(response){
-            //thong bao nguoi dung
-            alert("Cập nhật dữ liệu thành công");
-            // dong dialog
-            $('#add-form').hide();
-            //reload data
-            loadData();
-        }).fail(function(res){
-            //request fail
-        })
-    }
-    // alert(id);
-    debugger
-}
-
-function deleteData(id) {
+/***********************************
+ * Xóa người dùng
+ */     
+function deleteData() {
     // debugger
+    var rowSelected = $("tr.row-selected");
+    var customerID = rowSelected.data('id');
     $.ajax({
-        url: "http://api.manhnv.net/api/customers/" + id,
+        url: "http://api.manhnv.net/api/customers/" + customerID,
         method: "DELETE"
     }).done(function (response) {
         //Thông báo người dùng
-        debugger
         alert("Xóa người dùng thành công");
         //reload data
         loadData();
@@ -189,12 +299,47 @@ function deleteData(id) {
     })
 }
 
-function validate(customer){
-    if(customer.CustomerCode == null || customer.CustomerCode == ''){
-        alert('Mã khách hàng không được bỏ trống');
-        $('#customerCode')
-        return false;
-    }
-    //....
-    return true;
+/***********************************
+ * Kiểm tra định dạng email hợp lệ
+ * @param {any} email
+ */
+function validateEmail(email) {
+    const re = /\S+@\S+\.\S+/;
+    return re.test(String(email).toLowerCase()); 
 }
+
+/************************************************
+ * định dạng ngày tháng về dạng dd/mm/yyyy
+ * @param {any} date
+ */
+function formatDate(date) {
+    var date = new Date(date);
+
+    var day = date.getDate();
+    if (day < 10) day = '0' + day;
+    var month = date.getMonth() + 1;
+    if (month < 10) month = '0' + month;
+    var year = date.getFullYear();
+    return day + '/' + month + '/' + year;
+} 
+
+/*****************************************************************
+ * chuyển thời gian về dạng mặc định YYYY-MM-dd
+
+ * @param {any} date
+ */
+ function formatDefaultDate(date) {
+    if (date != null) {
+        var d = new Date(date.split("/").reverse().join("-"));
+        var dd = '' + d.getDate();
+        var mm = '' + (d.getMonth() + 1);
+        var yyyy = d.getFullYear();
+
+        if (mm.length < 2) mm = '0' + mm;
+        if (dd.length < 2) dd = '0' + dd;
+
+        var newdate = yyyy + "-" + mm + "-" + dd;
+        return newdate;
+    }
+    return null;
+}  

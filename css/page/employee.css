@@ -187,3 +187,16 @@ table th, td {
     table tr:active{
         background-color: #01B075;
     }
+
+    
+#option-detail {
+    position: absolute;
+    display:flex;
+    background-color:aliceblue;
+    height: 40px;
+    align-items: center;
+    justify-content: space-between;
+    top: 5px;
+    border: 1px solid black;
+    padding: 5px;
+}

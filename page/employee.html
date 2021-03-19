@@ -81,7 +81,7 @@
                 </select> -->
             </div>
             <div class="filter-right">
-                <button class="btn-only-icon" id="refresh">
+                <button class="btn-only-icon btn-refresh" id="refresh">
                     <div class="icon-refresh"></div>
                 </button>
             </div>
@@ -162,11 +162,11 @@
             <div class="col-right">
                 <div class="input-customer-field">
                     <label>Họ và tên</label>
-                    <input type="text" class="input-box-small" name="customer-name" id="fullName" required>
+                    <input type="text" class="input-box-small" id="fullName" required>
                 </div> 
                 <div class="input-customer-field">
                     <label>Nhóm khách hàng</label>
-                    <select class="group-customer" id="customerGroupName">
+                    <select class="group-customer" id=".customerGroupName">
                         <option value="1">Nhóm1</option>
                         <option value="2">Nhóm2</option>
                     </select>
@@ -186,11 +186,11 @@
             <div class="col-left-2">
                 <div class="input-customer-field">
                     <label>Email</label>
-                    <input type="email" id="email" placeholder="example@domain.com" class="input-box-medium" name="customer-name">
+                    <input type="email" id="email" placeholder="example@domain.com" class="input-box-medium" >
                 </div>
                 <div class="input-customer-field">
-                    <label>Not this tag</label>
-                    <input type="text" class="input-box-medium" name="customer-name">
+                    <label>Nhóm khách hàng</label>
+                    <input type="text" id="customerGroupName" class="input-box-medium" >
                 </div>
                 <div class="input-customer-field">
                     <label>Địa chỉ</label>
@@ -201,12 +201,12 @@
             <div class="col-right">
                 <div class="input-customer-field">
                     <label>Số điện thoại</label>
-                    <input type="text" class="input-box-small" name="customer-name" id="phoneNumber" required>
+                    <input type="text" class="input-box-small" id="phoneNumber" required>
                 </div> 
                 <!-- Ms thue -->
                 <div class="input-customer-field">
-                    <label>Mã số thuế</label>
-                    <input type="text" placeholder="Mã số thuế của công ty" class="input-box-small">
+                    <label>Tên công ty</label>
+                    <input type="text" placeholder="Tên công ty" id="companyName" class="input-box-small">
                 </div>   
             </div>
 
@@ -223,10 +223,16 @@
             </div>
         </div>
     </dialog>  
-        <script src="/lib/jquery-3.6.0.min.js"></script>
-        
-        <!-- <script src="/js/page/customer.js"></script> -->
-        <script src="/js/page/list.js"></script>
+
+    <!-- Option sửa/ xóa một nhaan viên-->
+    <div id="option-detail" style="display:none">
+        <button id="btnEdit">Sửa</button>
+        <button id="btnDelete">Xóa</button>
+    </div>
+
+    <script src="/lib/jquery-3.6.0.min.js"></script>
+    <!-- <script src="/js/page/customer.js"></script> -->
+    <script src="/js/page/list.js"></script>
 
 </body>
 </html>
