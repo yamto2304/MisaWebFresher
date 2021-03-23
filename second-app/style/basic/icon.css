@@ -2,10 +2,14 @@
     background-image: url('../../src/assets/icon/dashboard.png');
 }
 .icon-report{
-    background-image: url('../../src/assets/icon/report.png');}
+    background-image: url('../../src/assets/icon/report.png');
+}
 .icon-personnel{
     background-image: url('../../src/assets/icon/dic-employee.png');
 }
 .icon-setting{
     background-image: url('../../src/assets/icon/setting.png');
+}
+.icon-add {
+    background-image: url('../../src/assets/icon/add.png');
 }

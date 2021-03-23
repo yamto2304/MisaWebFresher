@@ -1,10 +1,12 @@
-@import "./basic/icon.css";
 @import "./basic/button.css";
-@import "./layout/content.css";
-@import "./layout/header.css";
+@import "./basic/icon.css";
+@import "./basic/table.css";
+@import "./basic/input.css";
+
 @import "./layout/navbar.css";
-
-
+@import "./layout/header.css";
+@import "./layout/content.css";
+@import "./view/employee.css";
 
 body {
     margin: 0;
