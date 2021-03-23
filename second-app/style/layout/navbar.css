@@ -52,19 +52,26 @@
             height:44px;
             cursor:pointer;
             line-height:44px;
+            text-decoration: none;
+
         }
 
             .navbar .navbar-content .nav-item:hover {
                 background-color: #e5e5e5;
                 color: #000000;
+                text-decoration: none;
+
             }
 
             .navbar .navbar-content .nav-item:focus{
-                background-color:#e5e5e5;
+                background-color:#01B075;
+                text-decoration: none;
             }
 
             .navbar .navbar-content .nav-item:active{
-                background-color:#e5e5e5;
+                background-color:#01B075;
+                text-decoration: none;
+
             }
 
             .nav-item .nav-item-icon {

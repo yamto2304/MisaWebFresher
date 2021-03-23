@@ -8,7 +8,7 @@
 
 <script>
 export default {
-  name: "Content",
+  name: "Employees",
   components: {
     // Details,
   },

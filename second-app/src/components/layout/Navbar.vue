@@ -19,10 +19,10 @@
                 <div class="nav-item-icon icon-personnel"></div>
                 <div class="nav-item-text">Danh mục khách hàng</div>
             </a>
-            <a class="nav-item">
+            <router-link class="nav-item" to="/employee">
                 <div class="nav-item-icon icon-personnel"></div>
                 <div class="nav-item-text">Danh mục nhân viên</div>
-            </a>
+            </router-link>
             <a class="nav-item">
                 <div class="nav-item-icon icon-setting"></div>
                 <div class="nav-item-text">Thiết lập hệ thống</div>
