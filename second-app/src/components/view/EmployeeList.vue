@@ -5,11 +5,11 @@
       <div class="content-feature">
         <button
           id="btnAdd"
-          class="m-btn m-btn-default"
+          class="btn-with-icon"
           v-on:click="btnAddOnClick"
         >
-          <div class="m-btn-icon icon-add"></div>
-          <div class="btn-text">Thêm nhân viên</div>
+          <div class="icon-add"></div>
+          <div class="text-btn">Thêm nhân viên</div>
         </button>
       </div>
     </div>
@@ -61,9 +61,56 @@
         </select>
       </div>
       <div class="filter-right">
-        <button id="btnRefresh" class="m-second-button m-btn-refresh"></button>
+        <button id="btnRefresh" class="icon-refresh btn-only-icon btn-seconds"></button>
       </div>
     </div>
+<!-- =================================================== -->
+    <div class="data-table">
+      <table id="tbl-customer">
+          <thead>
+              <tr>
+                  <th>Mã khách hàng</th>
+                  <th>Tên khách hàng</th>
+                  <th>Giới tính</th>
+                  <th>Địa chỉ</th>
+                  <th>Ngày sinh</th>
+                  <th>Email</th>
+                  <th>SĐT</th>
+                  <th>Nhóm khách hàng</th>
+                  <th>Tên công ty</th>
+                  <th>Tình trạng theo dõi</th>
+              </tr>
+          </thead>
+          <tbody id="body-data">
+              
+          </tbody>
+      </table>
+    </div>
+<!-- ============================================= -->
+    <div class="paging-bar">
+            <div class="paging-record-infor">
+                Hiển thị <b>1-10/1000</b> nhân viên
+            </div>
+            <div class="paging-option">
+                <div class="paging-back">
+                    <button class="paging-back-all btn-circle"></button>
+                    <button class="paging-back-one btn-circle"></button>
+                </div>
+                <div class="paging-number">
+                    <label><input class="btn-circle" type="radio" id="bcp" name="page" value="1" checked><span>1</span></label>
+                    <label><input class="btn-circle" type="radio" id="bcp" name="page" value="2"><span>2</span></label>
+                    <label><input class="btn-circle" type="radio" id="bcp" name="page" value="3"><span>3</span></label>
+                    <label><input class="btn-circle" type="radio" id="bcp" name="page" value="4"><span>4</span></label>
+                </div>
+                <div class="paging-next">
+                    <button class="paging-next-one btn-circle"></button>
+                    <button class="paging-next-all btn-circle"></button>
+                </div>
+            </div>
+            <div class="pagin-record-option">
+                <b>10</b> nhân viên/trang
+            </div>
+        </div>
   </div>
 </template>
 

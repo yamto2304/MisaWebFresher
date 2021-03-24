@@ -2,10 +2,12 @@
 @import "./basic/icon.css";
 @import "./basic/table.css";
 @import "./basic/input.css";
+@import "./basic/toolbar.css";
 
 @import "./layout/navbar.css";
 @import "./layout/header.css";
 @import "./layout/content.css";
+
 @import "./view/employee.css";
 
 body {

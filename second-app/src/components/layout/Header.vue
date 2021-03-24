@@ -11,7 +11,7 @@
         </div>
         <div class="account-info">
             <div class="account-avatar"></div>
-            <div class="account-name">Nguyễn Văn Mạnh</div>
+            <div class="account-name">Hoàng Đình Tuấn</div>
             <div class="account-option icon-option-default-16"></div>
         </div>
     </div>
