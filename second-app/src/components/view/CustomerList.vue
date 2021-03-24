@@ -1,12 +1,10 @@
 <template>
-  <div class="content">
-    <router-view />
-  </div>
+   <div>This is customer page</div>
 </template>
 
 <script>
 export default {
-  name: 'Content',
+  name: 'Customer',
   data() {
     return {
       author : "Mel"
@@ -17,6 +15,3 @@ export default {
   }
 }
 </script>
-<style scoped>
-
-</style>

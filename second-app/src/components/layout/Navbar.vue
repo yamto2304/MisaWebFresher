@@ -15,10 +15,10 @@
                 <div class="nav-item-icon icon-report"></div>
                 <div class="nav-item-text">Báo cáo</div>
             </a>
-            <a class="nav-item">
+            <router-link class="nav-item" to="/customer">
                 <div class="nav-item-icon icon-personnel"></div>
                 <div class="nav-item-text">Danh mục khách hàng</div>
-            </a>
+            </router-link>
             <router-link class="nav-item" to="/employee">
                 <div class="nav-item-icon icon-personnel"></div>
                 <div class="nav-item-text">Danh mục nhân viên</div>

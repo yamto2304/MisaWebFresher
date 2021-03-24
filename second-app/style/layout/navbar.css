@@ -81,3 +81,8 @@
                 margin-right: 10px;
                 background-size: contain;
             }
+
+            .nav-item .nav-item-text {
+                color: #000000;
+
+            }
