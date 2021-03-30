@@ -1,6 +1,7 @@
 <template>
   <div class="content">
-    <router-view />
+    <h1>This is the main page</h1>
+    <router-view></router-view>
   </div>
 </template>
 

@@ -133,6 +133,7 @@ export default {
     }
   },
   data() {
+    return {}
   },
   async created() {
 
