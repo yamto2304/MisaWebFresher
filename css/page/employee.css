@@ -177,7 +177,7 @@ table th, td {
     thead th {
         position: sticky;
         top: 0;
-        background-color: #019160;  
+        /* background-color: #019160;   */
     }
 
     table tr:hover{

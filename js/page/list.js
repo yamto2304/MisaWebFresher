@@ -92,7 +92,7 @@ function loadData(){
         method: "GET"
     }).done(function(response){
         $('#tbl-customer tbody').empty();
-        for(var i = 0; 0 <response.length; i++){
+        for(var i = 0; i <response.length; i++){ // ???? 0 < response.length ????? => đã sửa
             var customerId = response[i].CustomerId;
             // debugger
             var trHtml = $(`<tr class="datarow" id="${customerId}" >
@@ -110,7 +110,7 @@ function loadData(){
             trHtml.data("id", response[i].CustomerId);
             $('#tbl-customer > tbody:last-child').append(trHtml);
             //Set style for datarow
-            document.getElementById(customerId).style.color = "red";
+            // document.getElementById(customerId).style.color = "red";
         }
     }).fail(function(res){
         alert("Server gặp vấn đề rồi, thử lại sau nhé !")
@@ -228,17 +228,19 @@ function showFormEdit() {
      * validate dữ liệu
      * @param {any} customer
      */
-function validate(customer){
+function validate(customer){ 
     if(customer.CustomerCode == null || customer.CustomerCode == ''){
-        alert("Mã khách hàng không được để trống!");
+        // alert("Mã khách hàng không được để trống!");
+        // document.getElementById(customerId).style.color = "red";
+        $("#customerCode").css("border-color", "red");
         $("#customerCode").focus();
-        return false;
+        //return false;
     }
     // kiểm tra trường họ tên
     if (customer.FullName == "") {
         alert("Họ tên không được để trống!");
         $("#fullName").focus();
-        return false;
+        //return false;
     }
     
     // kiểm tra trường email

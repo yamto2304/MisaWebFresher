@@ -148,7 +148,7 @@
             <div class="col-left-1">
                 <div class="input-customer-field">
                     <label >Mã khách hàng</label>
-                    <input type="text" name ="customer-code" id="customerCode" class="input-box-small" required>
+                    <input type="text" name ="customer-code" id="customerCode" onblur="validate(getCustomerInForm())" class="input-box-small" required>
                 </div>  
                 <div class="input-customer-field">
                     <label >Mã thẻ thành viên</label>
@@ -215,8 +215,8 @@
             <div class="btn-cancel" id="btnCancel">
                 <button class="btn-seconds" style="background-color:#BBBBBB;">Hủy</button>
             </div>
-            <div class="btn-save" id="btnSave" >
-                <button class="btn-with-icon">
+            <div class="btn-save"  id="btnSave" >
+                <button class="btn-with-icon" style="width:100px">
                     <div class="icon-btn icon-save"></div>
                     <div class="text-btn">Lưu</div>
                 </button>
