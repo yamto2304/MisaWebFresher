@@ -6,34 +6,37 @@
     height: 60px;
     border-bottom: 1px solid #bbbbbb;
 }
-.header .department-info {
-    padding: 16px;
-    font-size: 16px;
-    
+/* Choose restaurant side ====== */
+.department-info{
+    align-items: center;
+    line-height: 60px;
+    cursor: pointer;
 }
 
-    .header .department-info select {
-        height: 40px;
-        width: 200px;
+    .department-info .select-restaurant{
+        margin-left: 16px;
         border: none;
-        outline: none;
-        cursor: pointer;
+        height: 40px;
+        border-radius: 4px;
+        color: #000000;
         font-weight: bold;
         font-size: 15px;
+
     }
 
-        .header .department-info option{
-            cursor: pointer;
-            
-        }
+
+    .header .department-info option{
+        cursor: pointer;
+        
+    }
 
 
-        .header .account-info {
-            position: absolute;
-            right: 24px;
-            display: flex;
-            align-items: center;
-        }
+    .header .account-info {
+        position: absolute;
+        right: 24px;
+        display: flex;
+        align-items: center;
+    }
 
     .header .account-info .account-avatar {
         width: 30px;

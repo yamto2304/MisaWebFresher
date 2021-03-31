@@ -39,15 +39,22 @@
     }
     .paging-back-all{
         background-image: url('../../src/assets/icon/btn-firstpage.svg');
+        background-size: 36px;
+        
     }
     .paging-back-one{
         background-image: url('../../src/assets/icon/btn-prev-page.svg');
+        background-size: 36px;
+
     }
     .paging-next-one{
         background-image: url('../../src/assets/icon/btn-next-page.svg');
+        background-size: 36px;
+
     }
     .paging-next-all{
         background-image: url('../../src/assets/icon/btn-lastpage.svg');
+        background-size: 36px;
     }
     /* Button choose page------------------- */
 #bcp {
@@ -56,6 +63,7 @@
     margin: auto;
     -webkit-appearance: none; /*to disable the default appearance of radio button*/
     -moz-appearance: none;
+    height: 40px;
 }
     #bcp:hover{
         background-color: #BBBBBB;

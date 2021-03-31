@@ -19,7 +19,7 @@
           id="txtSearchEmployee"
           class="icon-search input-search"
           type="text"
-          placeholder="Tìm kiếm theo Mã, Tên hoặc Số điện thoại"
+          placeholder="Tìm kiếm theo mã, Tên hoặc Số điện thoại"
         />
         <select
           id="cbxDepartment"
