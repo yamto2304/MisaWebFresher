@@ -108,12 +108,17 @@
             <b>10</b> nhân viên/trang
         </div>
     </div>
+    <AddForm />
   </div>
 </template>
 
 <script>
+import AddForm from '../form/AddForm'
 export default {
   name: 'Customer',
+  components :{
+    AddForm
+  },
   methods: {
     btnAddCustomer() {
       // this.isHideParent = false;
@@ -130,6 +135,7 @@ export default {
       author : "Mel"
     }
   },
+  
   props: {
     msg: String
   }

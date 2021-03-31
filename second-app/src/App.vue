@@ -1,24 +1,24 @@
 <template>
   <div id="app">
-      <Navbar/> 
-      <Header/>
-      <Content/> 
+    <Navbar />
+    <Header />
+    <Content />
   </div>
 </template>
 <script>
-import Content from './components/layout/Content.vue'
-import Navbar from './components/layout/Navbar.vue'
-import Header from './components/layout/Header.vue'
+import Content from "./components/layout/Content.vue";
+import Navbar from "./components/layout/Navbar.vue";
+import Header from "./components/layout/Header.vue";
 export default {
-  name: 'App',
+  name: "App",
   components: {
     Navbar,
     Header,
-    Content,
+    Content
   }
-}
+};
 </script>
 
 <style lang='css'>
-  @import url('../style/general.css');
+@import url("../style/general.css");
 </style>
