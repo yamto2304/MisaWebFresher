@@ -1,0 +1,112 @@
+.btn-basic {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    background-color: #019160;
+    border-radius: 4px;
+    height: 40px;
+    font-size: 13px;
+    color: #ffffff;
+    padding-left: 24px;
+    padding-right: 24px;
+    border: none;
+    cursor: pointer;
+}
+    .btn-basic :hover{
+        background-color: #2FBE8E;
+    }
+    .btn-basic :active{
+        background-color: #01B075;
+    }
+
+.btn-seconds {
+    border: 1px solid #bbbbbb;
+    border-radius: 4px;
+    height: 40px;
+    font-size: 13px;
+    color: #000000;
+    padding-left: 24px;
+    padding-right: 24px;
+    text-align: center;
+    cursor: pointer;
+    
+}
+    .btn-seconds:hover{
+        background-color: #E9EBEE;
+    }
+    .btn-seconds:active{
+        background-color: #01B075;
+    }
+
+.btn-with-icon{
+    display: flex;
+    background-color: #019160;
+    align-items: center;
+    border-radius: 4px;
+    height: 40px;
+    /* width: 100px; */
+    color: #ffffff;
+    text-align: left;
+    font-size: 13px;
+    border: none;
+    padding-left: 16px;
+    padding-right: 16px;
+    cursor: pointer;
+}
+    .btn-with-icon:hover{
+        background-color: #2FBE8E;
+    }
+    .btn-with-icon:active{
+        background-color: #01B075;
+    }
+
+.btn-save{
+    position: absolute;
+    left: 536px;
+    margin-left: 40px;
+    align-self: center;
+}
+.btn-cancel{
+    position: absolute;
+    left: 460px;
+    align-self: center;
+    background-color: #BBBBBB;
+}
+.btn-refresh:hover{
+    background-color: #BBBBBB;
+    cursor: pointer;
+}
+
+.text-btn{
+    margin-left: 8px;
+}
+
+.icon-btn{
+    background-position: center;
+}
+
+/* .btnDelete{
+} */
+
+.btn-only-icon{
+    padding: 4px;
+    border-radius: 1px;
+    margin-left: 16px;
+    margin-right: 15px;
+    border: solid 1px #808080;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-circle{
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 40px;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+    .btn-circle:hover{
+        background-color: #BBBBBB;
+        cursor: pointer;
+    }
