@@ -1,0 +1,202 @@
+.header{
+    display: flex;
+    width: calc(100% - 221px);
+    height: 48px;
+    border-bottom: 1px solid #e5e5e5;
+}
+    /*  .account-side =======*/
+    .header .account-info{
+            height: 48px;
+            position: absolute;
+            right: 16px;
+            align-items: center;
+            display: flex;
+            margin-right: 16px;
+        }
+        .header .account-info .account-avatar{
+            width: 24px;
+            height: 24px;
+            background-image: url('/content/icon/avatar-default.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            margin: 16px;
+        }
+    /* Choose restaurant side ====== */
+    .department-info{
+        align-items: center;
+        line-height: 48px;
+        cursor: pointer;
+    }
+    
+        .department-info .select-restaurant{
+            margin-left: 16px;
+            border: none;
+            height: 40px;
+            border-radius: 4px;
+            color: #000000;
+        }
+    
+
+.content{
+    position: absolute;
+    top: 61px;
+    left: 221px;
+    width: calc( 100% - 253px);
+    height: calc(100vh - 93px);
+    padding: 16px;
+}
+    .header-content{
+        padding: 16px;
+        padding-top: 0;
+        display: flex;
+        align-items: center;
+    }
+        .title{
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .content-feature{
+            position: absolute;
+            right: 16px;
+        }
+    .filter-bar{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        height: 40px;
+        margin-bottom: 10px;
+    }
+        .filter-bar .filter-right{
+            position: absolute;
+            right: 16px;
+        }
+
+    /* Input ======================== */
+    input{
+        padding: 10px 16px;
+        border-radius: 4px;
+        outline: none;
+        border: 1px solid #bbbbbb;
+    }
+        input::placeholder{
+            font-size: 11px;
+        }
+        .input-search{
+            padding-left: 40px;
+        }
+
+    /* Table with data================== */
+    .data-table{
+        width: 100%;
+        height: calc(100vh - 230px) ;
+        overflow: scroll;
+    }
+/* Paging======================= */
+    .paging-bar{
+        height: 56px;
+        display: flex;
+        border-top: 1px solid #ccc;
+        align-items: center;
+    }
+    .paging-bar .paging-record-infor{
+        position: absolute;
+        left: 10px
+    }
+    .paging-bar .paging-option{
+        display: flex;
+        margin: auto;
+    }
+    .paging-bar .paging-record-option{
+        position: absolute;
+        right: 10px
+    }
+        .paging-number{
+            margin-left: 6px;
+        }
+        .paging-back-all{
+            background-image: url('/content/icon/btn-firstpage.svg');
+        }
+        .paging-back-one{
+            background-image: url('/content/icon/btn-prev-page.svg');
+        }
+        .paging-next-one{
+            background-image: url('/content/icon/btn-next-page.svg');
+        }
+        .paging-next-all{
+            background-image: url('/content/icon/btn-lastpage.svg');
+        }
+/* Button choose page------------------- */
+#bcp {
+    /* cursor: pointer; */
+    background-color: #E5E5E5;
+    margin: auto;
+    -webkit-appearance: none; /*to disable the default appearance of radio button*/
+    -moz-appearance: none;
+}
+    #bcp:hover{
+        background-color: #BBBBBB;
+    }
+    #bcp:checked { /*no need, if you don't disable default appearance*/
+        background-color: #01B075;
+    }
+    
+    #bcp:checked ~ span:first-of-type {
+        color: white;
+    }
+    /* Set position for number in button */
+    .paging-number label span:first-of-type {
+        position: relative;
+        left: -24px;
+        font-size: 13px;
+        color: black;
+    }
+    .paging-number label span {
+        position: relative;
+        top: -16px;
+        cursor: pointer;
+    }
+/* ========================= */
+table{
+    margin-top: 10px;
+    border-collapse: collapse;
+}
+table th, td {
+    border-bottom: 1px solid #bbbbbb;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding: 10px 16px;
+    text-align: center;  
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 150px;
+    max-height: 100%;
+    /* border-collapse: collapse; */
+
+}
+    thead th {
+        position: sticky;
+        top: 0;
+        /* background-color: #019160;   */
+    }
+
+    table tr:hover{
+        cursor: pointer;
+        background-color: #e5e5e5;
+    }
+    table tr:active{
+        background-color: #01B075;
+    }
+
+    
+#option-detail {
+    position: absolute;
+    display:flex;
+    background-color:aliceblue;
+    height: 40px;
+    align-items: center;
+    justify-content: space-between;
+    top: 5px;
+    border: 1px solid black;
+    padding: 5px;
+}
