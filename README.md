@@ -11,3 +11,5 @@ Khai báo, sử dụng 1 file .vue:
     + @[action]="doSmth"
 - prevent default event: cancel default event of element
 - ref:  Ánh xạ đến chính element
+
+* ERR ELIFECYCLE : npm install
