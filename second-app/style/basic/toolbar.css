@@ -1,0 +1,51 @@
+.filter-bar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    height: 40px;
+}
+
+    .filter-bar .filter-right {
+        position:absolute;
+        right: 16px;
+    }
+
+/* =========================== */
+.paging-bar{
+    border-top: 2px solid #bbbbbb;
+    position: relative;
+    bottom: 0;   
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0 16px;    
+    /* height: 56px; */
+}
+.paging-bar .paging-record-infor{
+    position: absolute;
+    left: 10px
+}
+.paging-bar .paging-option{
+    display: flex;
+    margin: auto;
+}
+.paging-bar .paging-record-option{
+    position: absolute;
+    right: 10px
+}
+    .paging-number{
+        margin-left: 6px;
+    }
+    .paging-back-all{
+        background-image: url('../../src/assets/icon/btn-firstpage.svg');
+    }
+    .paging-back-one{
+        background-image: url('../../src/assets/icon/btn-prev-page.svg');
+    }
+    .paging-next-one{
+        background-image: url('../../src/assets/icon/btn-next-page.svg');
+    }
+    .paging-next-all{
+        background-image: url('../../src/assets/icon/btn-lastpage.svg');
+    }
