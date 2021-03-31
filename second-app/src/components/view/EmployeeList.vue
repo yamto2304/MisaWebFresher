@@ -193,7 +193,7 @@ export default {
   font-style: italic;
 }
 
-#txtSearchEmployee {
+/* #txtSearchEmployee {
   min-width: 300px;
-}
+} */
 </style>

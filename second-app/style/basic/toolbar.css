@@ -49,3 +49,33 @@
     .paging-next-all{
         background-image: url('../../src/assets/icon/btn-lastpage.svg');
     }
+    /* Button choose page------------------- */
+#bcp {
+    /* cursor: pointer; */
+    background-color: #E5E5E5;
+    margin: auto;
+    -webkit-appearance: none; /*to disable the default appearance of radio button*/
+    -moz-appearance: none;
+}
+    #bcp:hover{
+        background-color: #BBBBBB;
+    }
+    #bcp:checked { /*no need, if you don't disable default appearance*/
+        background-color: #01B075;
+    }
+    
+    #bcp:checked ~ span:first-of-type {
+        color: white;
+    }
+    /* Set position for number in button */
+    .paging-number label span:first-of-type {
+        position: relative;
+        left: -24px;
+        font-size: 13px;
+        color: black;
+    }
+    .paging-number label span {
+        position: relative;
+        top: -16px;
+        cursor: pointer;
+    }
