@@ -33,10 +33,15 @@ namespace MISA.CukCuk.Api.Controllers
         public IActionResult Get()
         {
             //Khởi tạo kết nối tới Database
-            string connectionString = "";
+            string connectionString = "" +
+                "Host=47.241.69.179;" +
+                "Port=3306;" +
+                "User Id = dev;" +
+                "Password = 12345678;" +
+                "Database = MF0_NVManh_CukCuk02";
             IDbConnection dbConnection = new MySqlConnection(connectionString);
             //Thực hiện lấy dữ liệu từ Database
-            var customers = dbConnection.Query<Customer>("SELECT * FROM Customer");
+            var customers = dbConnection.Query<Customer>("Proc_GetCustomers",commandType:CommandType.StoredProcedure);
             //Kiểm tra kết quả và trả về cho Client
             if(customers.Count() == 0)
             {
@@ -91,7 +96,7 @@ namespace MISA.CukCuk.Api.Controllers
         {
             return StatusCode(200);
         }
-        //=============================================================
+//=============================================================
         /// <summary>
         /// Xoá khách hàng
         /// </summary>
