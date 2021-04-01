@@ -1,18 +1,18 @@
 <template>
   <div class="content">
     <!-- <h1>This is h1 tag form content</h1> -->
-    <!-- <router-view></router-view> -->
-    <AddForm />
+    <router-view></router-view>
+    <!-- <AddForm /> -->
 
   </div>
 </template>
 
 <script>
-import AddForm from '../form/AddForm'
+// import AddForm from '../form/AddForm'
 export default {
-  name: 'Content',
+  // name: 'Content',
   components :{
-    AddForm
+    // AddForm
   },
   data() {
     return {

@@ -6,7 +6,7 @@
           <button 
           class="btn-with-icon" 
           id="buttonAddCustomer"
-          v-on:click="refresh"
+          v-on:click="btnAddOnClick"
           >
               <div class="icon-add"></div>
               <div class="text-btn">Thêm khách hàng</div>
@@ -108,7 +108,7 @@
             <b>10</b> nhân viên/trang
         </div>
     </div>
-    <AddForm />
+    <AddForm @closePopup="closePopup" :isHide="isHideParent"/>
   </div>
 </template>
 
@@ -128,6 +128,10 @@ export default {
     refresh(){
         // loadData();
         window.location.reload();
+    },
+    //ClosePopup
+    closePopup(value){
+      this.isHideParent = value;
     }
   },
   data() {
