@@ -1,22 +1,35 @@
 <style scoped>
-.isHide {
+.isHide{
   display: none;
 }
+.red-text{
+  color: red;
+}
+.dialog-modal {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: black;
+  opacity: 0.4;
+}
 .m-dialog {
-  z-index: 999;
+  z-index: 999999999999999999999;
 }
-
-.dialog-header {
-  position: relative;
-  height: 40px;
-  line-height: 60px;
-  padding-left: 16px;
-  display: flex;
-  font-size: 24px;
+.dialog-content {
+  position:fixed;
+  width: 700px;
+  height: 583px;
+  left: calc(50% - 400px);
+  top: calc(50% - 300px);
+  border-radius: 5px;
+  background-color: #fff;
+  border: 1px solid #bbbbbb;
 }
-
-.dialog-header-close {
+.btn-close-form{
   position: absolute;
+  top: 16px;
   right: 16px;
   width: 24px;
   height: 24px;
@@ -29,344 +42,291 @@
   font-size: 24px;
   line-height: 24px;
 }
-.dialog-modal {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-color: black;
-  opacity: 0.4;
+.form-header {
+  position: relative;
+  height: 54px;
+  line-height: 60px;
+  padding-left: 16px;
+  display: flex;
+  font-size: 24px;
+}
+/* =========================== */
+/* .form-add-customer {
+    width: 700px;
+    height: 564px;
+    border-radius: 4px;
+    outline: none;
+    border: 1px solid #bbbbbb;
+} */
+
+.basic-info {
+    width: 100%;
+    height: 228px;
+    display: flex;
+}
+  .insert-image {
+      width: 200px;
+      height: 100%;
+      /* margin-right: 16px; */
+      margin-left: 24px;
+      /* border: 1px solid yellow; */
+  }
+
+  .insert-image .avatar {
+      border: 1px solid #bbbbbb;
+      border-radius: 50%;
+      width: 100%;
+      height: 188px;
+      background-image: url('../../assets/img/default-avatar.jpg');
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+  }
+  .insert-image .hint{
+      text-align: center;
+      width: 100%;
+  }
+
+  .basic-info .col-left-1{
+      width: 200px;
+      height: 100%;
+      margin-left: 24px;
+      margin-right: 16px;
+  }
+
+      .input-customer-field{
+          margin-top: 12px;
+          
+      }
+
+          .input-box-small{
+            width: 200px;
+              margin-top: 4px;
+          }
+
+          .input-date{
+              width: 201px;
+              height: 40px;
+          }
+
+          .input-box-medium{
+              width: 424px;
+              margin-top: 4px;   
+          }
+
+          .input-box-large{
+              margin-top: 4px;
+              width: 640px;
+          }
+      
+      .radio-box-small{
+          margin-top: 4px;
+          align-items: center;
+          text-align: left;
+          height: 36px;
+          line-height: 36px;
+      }
+
+  .col-right{
+      width: 200px;
+      height: 100%;
+      margin-right: 24px;
+  }
+      .group-customer{
+          border: none;
+          margin-top: 4px;
+          width: 202px;
+          height: 36px;
+          border-radius: 4px;
+          border: 1px solid #bbbbbb;
+          color: #000000;
+      }
+
+  .contact-info .col-left-2{
+      width: 424px;
+      height: 100%;
+      margin-left: 24px;
+      margin-right: 16px;
+  }
+
+.contact-info{
+    display: flex;
+    width: 100%;
+    height: 242px;
 }
 
-.dialog-content {
-  position: fixed;
-  border-radius: 5px;
-  width: 750px;
-  background-color: #fff;
-  left: calc(50% - 325px);
-  top: calc(50% - 450px);
+.form-footer {
+    display: flex;
+    width: 100%;
+    height: 60px;
+    background-color: #BBBBBB;
+    margin-top: 0px;
+    outline: none;
+    line-height: 60px;
+    /* align-self: center;
+    align-content: center; */
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
 }
-.dialog-body {
-  padding: 0 16px 16px 16px;
-}
-.dialog-footer {
-  display: flex;
-  width: 100%;
-  height: 60px;
-  background-color: #e9ebee;
-  border-radius: 0 0 5px 5px;
-  align-items: center;
-  justify-content: flex-end;
-  padding: 12px 24px;
-  box-sizing: border-box;
-}
-.el-avatar-employee {
-  padding-top: 16px;
-  padding-right: 16px;
-}
-.el-avatar-note {
-  font-size: 12px;
-}
-.el-avatar-employee .el-avatar {
-  border: 1px solid #ccc;
-  width: 160px;
-  height: 160px;
-  margin: 0 auto;
-  border-radius: 50%;
-  cursor: pointer;
-  background-image: url(/content/img/default-avatar.jpg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-}
-.currency-for-input {
+.btn-cancel{
   position: absolute;
-  right: 40px;
-  line-height: 40px;
-  font-style: italic;
+  left: 424px;
+  align-self: center;
+  background-color: #BBBBBB;
+  height: 40px;
+  width: 100px;
+  border-radius: 4px;
+  border: none;
+  line-height: 60px;
+  /* background-color: red; */
+}
+.btn-another{
+  display: flex;
+  background-color: #019160;
+  align-items: center;
+  border-radius: 4px;
+  height: 40px;
+  width: 100px;
+  color: #000000;
+  text-align: center;
+  border: none;
+  padding-left: 36px;
+  background-color: #BBBBBB;
+  cursor: pointer;
+}
+  .btn-another:active{
+    background-color: #019160;
+    border: none;
+  }
+  .btn-another:hover{
+    background-color: aliceblue;
+  }
+.btn-save{
+  position: absolute;
+  left: 524px;
+  margin-left: 40px;
+  align-self: center;
 }
 </style>
 <template>
-  <div>
-    <!-- <button id="btnAdd" class="m-btn m-btn-default" v-on:click="btnAddOnClick">
-      <div class="m-btn-icon icon-add"></div>
-      <div class="btn-text">Thêm nhân viên</div>
-    </button> -->
-    <div
-      class="m-dialog dialog-detail"
-      title="Thông tin nhân viên"
-      :class="{ isHide: isHide }"
+  
+    <div class="m-dialog"
+    title="Thông tin khách hàng"
+    :class="{isHide : isHide}"
     >
       <div class="dialog-modal"></div>
-      <div class="dialog-content">
-        <div class="dialog-header">
-          <div class="dialog-header-title">THÔNG TIN NHÂN VIÊN</div>
-          <div class="dialog-header-close">
-            <button v-on:click="btnCancelOnClick">x</button>
-          </div>
-        </div>
-        <div class="dialog-body">
-          <div class="m-row m-flex">
-            <div class="m-col el-avatar-employee m-flex-1">
-              <div class="el-avatar"></div>
-              <div class="el-avatar-note text-align-center">
-                (Vui lòng chọn ảnh có định dạng <br /><b
-                  >.jpg, .jpeg, .png, .gif. </b
-                >)
-              </div>
+      <div class="form-add-customer myForm dialog-content">
+        <div class="form-header">
+            <div class="heading">
+                <b>Thông tin khách hàng</b>
             </div>
-            <div class="m-col el-left m-flex-4">
-              <div class="group-label-info">A. Thông tin chung:</div>
-              <hr class="hr-group-label" />
-              <div class="m-row mg-top-0 m-flex">
-                <div class="m-col m-flex-1">
-                  <div class="m-label">
-                    Mã nhân viên (<span class="label-required">*</span>)
-                  </div>
-                  <div class="m-control">
-                    <input
-                      id="txtEmployeeCode"
-                      fieldName="EmployeeCode"
-                      required
-                      class="input-required"
-                      type="text"
-                      v-model="employee.EmployeeCode"
-                    />
-                  </div>
-                </div>
-                <div class="m-flex-1 mg-left-10px">
-                  <div class="m-label">
-                    Họ và tên (<span class="label-required">*</span>)
-                  </div>
-                  <div class="m-control">
-                    <input
-                      id="txtFullName"
-                      fieldName="FullName"
-                      class="input-required"
-                      type="text"
-                      required
-                      v-model="employee.FullName"
-                    />
-                  </div>
-                </div>
-              </div>
-              <div class="m-row m-flex">
-                <div class="m-flex-1">
-                  <div class="m-label">Ngày sinh</div>
-                  <input
-                    class="m-combobox-input"
-                    type="date"
-                    autocomplete="off"
-                    v-model="employee.DateOfBirth"
-                  />
-                </div>
-                <div class="m-flex-1 mg-left-10px">
-                  <div class="m-label">Giới tính</div>
-                  <select id="cbxGender" class="m-control" v-model="employee.Gender">
-                    <option value="1">Nam</option>
-                    <option value="0">Nữ</option>
-                  </select>
-                </div>
-              </div>
-              <div class="m-row m-flex">
-                <div class="m-flex-1">
-                  <div
-                    class="m-label"
-                    title="Số chứng minh thư nhân dân hoặc căn cước công dân"
-                  >
-                    Số CMTND/ Căn cước (<span class="label-required">*</span>)
-                  </div>
-                  <div class="m-control">
-                    <input
-                      id="txtIdentityNumber"
-                      fieldName="text"
-                      type="text"
-                      required
-                      v-model="employee.IdentityNumber"
-                    />
-                  </div>
-                </div>
-                <div class="m-flex-1 mg-left-10px">
-                  <div class="m-label">Ngày cấp</div>
-                  <input
-                    class="m-combobox-input"
-                    type="date"
-                    autocomplete="off"
-                    v-model="employee.IdentityDate"
-                  />
-                </div>
-              </div>
-              <div class="m-row m-flex">
-                <div class="m-flex-1">
-                  <div class="m-label">Nơi cấp</div>
-                  <div class="m-control">
-                    <input
-                      id="txtIdentityPlace"
-                      fieldName="PhoneNumber"
-                      class="input-required"
-                      type="text"
-                      v-model="employee.IdentityPlace"
-                    />
-                  </div>
-                </div>
-                <div class="m-flex-1"></div>
-              </div>
-              <div class="m-row m-flex">
-                <div class="m-col m-flex-1">
-                  <div class="m-label">
-                    Email (<span class="label-required">*</span>)
-                  </div>
-                  <div class="m-control">
-                    <input
-                      id="txtEmail"
-                      fieldName="Email"
-                      type="email"
-                      required
-                      placeholder="example@domain.com"
-                      v-model="employee.Email"
-                    />
-                  </div>
-                </div>
-                <div class="m-flex-1 mg-left-10px">
-                  <div class="m-label">
-                    Số điện thoại (<span class="label-required">*</span>)
-                  </div>
-                  <div class="m-control">
-                    <input
-                      id="txtPhoneNumber"
-                      fieldName="FullName"
-                      class="input-required"
-                      type="text"
-                      required
-                      v-model="employee.PhoneNumber"
-                    />
-                  </div>
-                </div>
-              </div>
-              <div class="group-label-info" style="margin-top: 30px">
-                B. Thông tin công việc:
-              </div>
-              <hr class="hr-group-label" />
-              <div class="m-row m-flex">
-                <div class="m-flex-1">
-                  <div class="m-label">Vị trí</div>
-                  <select
-                    id="cbxPosition"
-                    fieldName="CustomerGroupName"
-                    fieldValue="CustomerGroupId"
-                    api="/api/customergroups"
-                    class="m-control"
-                    v-model="employee.PositionName"
-                  >
-                    <option value="19165ed7-212e-21c4-0428-030d4265475f">
-                      Giám đốc
-                    </option>
-                    <option value="19165ed7-212e-21c4-0428-030d4265475f">
-                      Nhân viên
-                    </option>
-                  </select>
-                </div>
-                <div class="m-flex-1 mg-left-10px">
-                  <div class="m-label">Phòng ban</div>
-                  <select
-                    id="cbnDepartment"
-                    fieldName="CustomerGroupName"
-                    fieldValue="CustomerGroupId"
-                    api="/api/customergroups"
-                    class="m-control"
-                    v-model="employee.DepartmentId"
-                  >
-                    <option value="19165ed7-212e-21c4-0428-030d4265475f">
-                      Phòng nhân sự
-                    </option>
-                    <option value="19165ed7-212e-21c4-0428-030d4265475f">
-                      Phòng đào tạo
-                    </option>
-                  </select>
-                </div>
-              </div>
-              <div class="m-row m-flex">
-                <div class="m-flex-1">
-                  <div class="m-label">Mã số thuế cá nhân</div>
-                  <div class="m-control">
-                    <input id="txtAddress" fieldName="Address" type="text" />
-                  </div>
-                </div>
-                <div class="m-flex-1 mg-left-10px">
-                  <div class="m-label">Mức lương cơ bản</div>
-                  <div class="m-control">
-                    <input
-                      id="txtSalary"
-                      fieldName="Salary"
-                      type="text"
-                      style="text-align: right; padding-right: 56px"
-                    /><span class="currency-for-input">(VNĐ)</span>
-                  </div>
-                </div>
-              </div>
-              <div class="m-row m-flex">
-                <div class="m-flex-1">
-                  <div class="m-label">Ngày gia nhập</div>
-                  <input
-                    class="m-combobox-input"
-                    type="date"
-                    autocomplete="off"
-                  />
-                </div>
-                <div class="m-flex-1 mg-left-10px">
-                  <div class="m-label">Tình trạng công việc</div>
-                  <select
-                    id="cboWorkStatus"
-                    fieldName="CustomerGroupName"
-                    fieldValue="CustomerGroupId"
-                    api="/api/customergroups"
-                    class="m-control"
-                  >
-                    <option value="19165ed7-212e-21c4-0428-030d4265475f">
-                      Đang làm việc
-                    </option>
-                    <option value="19165ed7-212e-21c4-0428-030d4265475f">
-                      Đang thử việc
-                    </option>
-                    <option value="19165ed7-212e-21c4-0428-030d4265475f">
-                      Nghỉ việc
-                    </option>
-                  </select>
-                </div>
-              </div>
+            <div class="btn-close-form">
+              <button v-on:click="btnCancelOnClick">x</button>
             </div>
-          </div>
         </div>
-        <div class="dialog-footer">
-          <button id="btnCancel" class="m-btn m-btn-default m-btn-cancel" v-on:click="btnCancelOnClick">
-            Hủy
-          </button>
-          <button id="btnSave" @click="saveEmployee" class="m-btn m-btn-default">
-            <i class="far fa-save"></i><span class="btn-text">Lưu</span>
-          </button>
+        <div class="basic-info">
+            <div class="insert-image">
+                <div class="avatar"></div>
+                <div class="hint">Vui lòng chọn ảnh có định dạng <b>.jpg, .jpeg, .png, .gif.</b></div>
+            </div>
+            <div class="col-left-1">
+                <div class="input-customer-field">
+                    <label >Mã khách hàng (<span class="red-text">*</span>)</label>
+                    <input type="text" name ="customer-code" id="customerCode" onblur="validate(getCustomerInForm())" class="input-box-small" required>
+                </div>  
+                <div class="input-customer-field">
+                    <label >Mã thẻ thành viên</label>
+                    <input name="member-code" id="memberCode" class="input-box-small">
+                </div>
+                <div class="input-customer-field">
+                    <label >Ngày sinh</label>
+                    <input type="date" name="date-of-birth" id="dateOfBirth" class="input-box-small input-date">
+                </div>  
+            </div>
+            <div class="col-right">
+                <div class="input-customer-field">
+                    <label>Họ và tên (<span class="red-text">*</span>)</label>
+                    <input type="text" class="input-box-small" id="fullName" required>
+                </div> 
+                <div class="input-customer-field">
+                    <label>Nhóm khách hàng</label>
+                    <select class="group-customer" id=".customerGroupName">
+                        <option value="1">Nhóm1</option>
+                        <option value="2">Nhóm2</option>
+                    </select>
+                </div> 
+                <div class="input-customer-field">
+                    <label>Giới tính</label>
+                    <div class="radio-box-small" id="gender">
+                        <label><input  type="radio" checked name="gender" value="1"><span>Nam</span></label>
+                        <label><input  type="radio"  name="gender" value="2"><span>Nữ</span></label>
+                        <label><input  type="radio"  name="gender" value="3"><span>Khác</span></label>
+                    </div>
+                </div> 
+            </div>
+
         </div>
-      </div>
+        <div class="contact-info">
+            <div class="col-left-2">
+                <div class="input-customer-field">
+                    <label>Email</label>
+                    <input type="email" id="email" placeholder="example@domain.com" class="input-box-medium" >
+                </div>
+                <div class="input-customer-field">
+                    <label>Nhóm khách hàng</label>
+                    <input type="text" id="customerGroupName" class="input-box-medium" >
+                </div>
+                <div class="input-customer-field">
+                    <label>Địa chỉ</label>
+                    <input type="text" id="address" class="input-box-large">
+                </div>
+            </div>
+            <!-- SDT -->
+            <div class="col-right">
+                <div class="input-customer-field">
+                    <label>Số điện thoại (<span class="red-text">*</span>)</label>
+                    <input type="text" class="input-box-small" id="phoneNumber" required>
+                </div> 
+                <!-- Ms thue -->
+                <div class="input-customer-field">
+                    <label>Tên công ty</label>
+                    <input type="text" placeholder="Tên công ty" id="companyName" class="input-box-small">
+                </div>   
+            </div>
+
+        </div>
+        <div class="form-footer">
+            <div class="btn-cancel" style="vertical-align: top;">
+                <button class="btn-another">Hủy</button>
+            </div>
+            <div class="btn-save"  id="btnSave" >
+                <button class="btn-with-icon" style="width:100px">
+                    <div class="icon-btn icon-save"></div>
+                    <div class="text-btn">Lưu</div>
+                </button>
+            </div>
+        </div>
+      </div> 
     </div>
-  </div>
+  
 </template>
 <script>
 export default {
-  props: ['isHide'],
+  // props: ['isHide'],
   methods: {
     btnAddOnClick() {
       // this.isHide = false;
     },
     btnCancelOnClick() {
-      this.$emit('closePopup',true)
+      // this.$emit('closePopup',true)
       // this.isHide = true;
     },
     
   },
   data() {
     return {
-      dialog: false,
-      display: "none",
+      // dialog: false,
+      // display: "none",
       employee: {
         DateOfBirth: "1992-06-17T00:00:00",
         Address: "319 Prospect Hill Blvd, Keith Bldg, Boise, Idaho, 76994",

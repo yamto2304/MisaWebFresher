@@ -1,5 +1,6 @@
 <template>
   <div class="content-body">
+    <AddForm @closePopup="false" :isHide="false"/>
     <div class="header-content">
       <div class="title" >Danh sách khách hàng</div>
       <div class="content-feature">
@@ -108,20 +109,20 @@
             <b>10</b> nhân viên/trang
         </div>
     </div>
-    <AddForm @closePopup="closePopup" :isHide="isHideParent"/>
+    <!-- <AddForm @closePopup="false" :isHide="false"/> -->
   </div>
 </template>
-
 <script>
 import AddForm from '../form/AddForm'
 export default {
   name: 'Customer',
+  props: ['isHideParent'],
   components :{
     AddForm
   },
   methods: {
-    btnAddCustomer() {
-      // this.isHideParent = false;
+    btnAddOnClick() {
+      this.isHideParent = false;
       alert("btnAddCustomerOnClick")
     },
     //Refresh
@@ -136,13 +137,10 @@ export default {
   },
   data() {
     return {
-      author : "Mel"
+      author : "Mel",
+      // isHideParent : true
     }
   },
-  
-  props: {
-    msg: String
-  }
 }
 </script>
 <style scoped>
