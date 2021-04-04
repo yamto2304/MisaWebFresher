@@ -1,6 +1,11 @@
 ﻿using Dapper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+<<<<<<< HEAD
+=======
+using MISA.Core.Entities;
+using MISA.Core.Interfaces;
+>>>>>>> c919336b1b85fad91ce6c3cf456f2becd1f90c80
 using MISA.CukCuk.Api.Extensions;
 using MISA.CukCuk.Api.Model;
 using MySqlConnector;
@@ -17,7 +22,21 @@ namespace MISA.CukCuk.Api.Controllers
     /// </summary>
     public class CustomerController : BaseEntityController<Customer>
     {
+<<<<<<< HEAD
        
+=======
+        ICustomerService _customerService;
+        public CustomerController(ICustomerService customerService) : base(customerService)
+        {
+            _customerService = customerService;
+        }
+
+        [HttpGet ("getAll")]
+        public IActionResult GetAllCustomer()
+        {
+            return Ok(_customerService.GetAllCustomer());
+        }
+>>>>>>> c919336b1b85fad91ce6c3cf456f2becd1f90c80
 
         /// <summary>
         /// Sửa thông tin khách hàng
@@ -30,7 +49,11 @@ namespace MISA.CukCuk.Api.Controllers
         /// </returns>
         /// CreatedBy: NVMANH (01/04/2021)
         [HttpPut("{customerId}")]
+<<<<<<< HEAD
         public IActionResult Put(Customer customer, Guid customerId)
+=======
+        public IActionResult Put(CustomerND customer, Guid customerId)
+>>>>>>> c919336b1b85fad91ce6c3cf456f2becd1f90c80
         {
             // Validate dữ liệu:
             // - check trùng mã:

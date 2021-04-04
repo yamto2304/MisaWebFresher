@@ -9,7 +9,14 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+<<<<<<< HEAD
 using MISA.CukCuk.Api.Extensions;
+=======
+using MISA.Core.Interfaces;
+using MISA.Core.Services;
+using MISA.CukCuk.Api.Extensions;
+using MISA.Infrastructure.Repository;
+>>>>>>> c919336b1b85fad91ce6c3cf456f2becd1f90c80
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -36,6 +43,18 @@ namespace MISA.CukCuk.Api
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "MISA.CukCuk.Api", Version = "v1" });
             });
+<<<<<<< HEAD
+=======
+            //Chỉ định class nào làm việc cho interface nào
+            //BaseService làm việc cho IBaseService
+            services.AddScoped(typeof(IBaseService<>), typeof(BaseServiceFake<>));
+            services.AddScoped(typeof(IBaseRepository<>), typeof(BaseRepository<>));
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
+            services.AddScoped<ICustomerRepository, CustomerRepository>();
+            services.AddScoped<ICustomerGroupRepository, CustomerGroupRepository>();
+            services.AddScoped<ICustomerService, CustomerService>();
+
+>>>>>>> c919336b1b85fad91ce6c3cf456f2becd1f90c80
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
