@@ -13,9 +13,10 @@
   right: 0;
   background-color: black;
   opacity: 0.4;
+    z-index: 999;
 }
 .m-dialog {
-  z-index: 999999999999999999999;
+  z-index: 998;
 }
 .dialog-content {
   position:fixed;
@@ -26,6 +27,7 @@
   border-radius: 5px;
   background-color: #fff;
   border: 1px solid #bbbbbb;
+    z-index: 1000;
 }
 .btn-close-form{
   position: absolute;
@@ -209,13 +211,12 @@
 }
 </style>
 <template>
-  
     <div class="m-dialog"
     title="Thông tin khách hàng"
     :class="{ isHide:isHide }"
     >
       <div class="dialog-modal"></div>
-      <div class="form-add-customer myForm dialog-content">
+      <div class="dialog-content">
         <div class="form-header">
             <div class="heading">
                 <b>Thông tin khách hàng</b>
@@ -312,7 +313,6 @@
         </div>
       </div> 
     </div>
-  
 </template>
 <script>
 export default {

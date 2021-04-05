@@ -1,6 +1,7 @@
 <template>
-  <div class="content-body">
+<div>
     <AddForm :isHide="isHideParent" @closeForm="closeForm"/>
+ <div class="content-body">
     <div class="header-content">
       <div class="title" >Danh sách khách hàng</div>
       <div class="content-feature">
@@ -111,6 +112,8 @@
     </div>
     <!-- <AddForm @closePopup="false" :isHide="false"/> -->
   </div>
+</div>
+ 
 </template>
 <script>
 import AddForm from '../form/AddForm'
@@ -123,7 +126,7 @@ export default {
   methods: {
     btnAddOnClick() {
       this.isHideParent = false;
-      // alert("btnAddCustomerOnClick")
+      alert("btnAddCustomerOnClick");
     },
     //Refresh
     refresh(){

@@ -53,13 +53,14 @@
     padding-left: 16px;
     padding-right: 16px;
     cursor: pointer;
+    z-index: -1;
 }
-    .btn-with-icon:hover{
+    /* .btn-with-icon:hover{
         background-color: #2FBE8E;
     }
     .btn-with-icon:active{
         background-color: #01B075;
-    }
+    } */
 
 
 
