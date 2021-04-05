@@ -12,12 +12,14 @@
     border: none;
     cursor: pointer;
 }
-    .btn-basic :hover{
-        background-color: #2FBE8E;
-    }
-    .btn-basic :active{
-        background-color: #01B075;
-    }
+
+.btn-basic :hover {
+    background-color: #2FBE8E;
+}
+
+.btn-basic :active {
+    background-color: #01B075;
+}
 
 .btn-seconds {
     border: 1px solid #bbbbbb;
@@ -30,16 +32,17 @@
     padding-right: 24px;
     text-align: center;
     cursor: pointer;
-    
 }
-    .btn-seconds:hover{
-        background-color: #E9EBEE;
-    }
-    .btn-seconds:active{
-        background-color: #01B075;
-    }
 
-.btn-with-icon{
+.btn-seconds:hover {
+    background-color: #E9EBEE;
+}
+
+.btn-seconds:active {
+    background-color: #01B075;
+}
+
+.btn-with-icon {
     display: flex;
     background-color: #019160;
     align-items: center;
@@ -55,32 +58,32 @@
     cursor: pointer;
     z-index: -1;
 }
-    /* .btn-with-icon:hover{
-        background-color: #2FBE8E;
-    }
-    .btn-with-icon:active{
-        background-color: #01B075;
-    } */
 
+.btn-with-icon:hover {
+    background-color: #2FBE8E;
+}
 
+.btn-with-icon:active {
+    background-color: #01B075;
+}
 
-.btn-refresh:hover{
+.btn-refresh:hover {
     background-color: #BBBBBB;
     cursor: pointer;
 }
 
-.text-btn{
+.text-btn {
     margin-left: 8px;
 }
 
-.icon-btn{
+.icon-btn {
     background-position: center;
 }
 
 /* .btnDelete{
 } */
 
-.btn-only-icon{
+.btn-only-icon {
     padding: 4px;
     border-radius: 4px;
     margin-left: 16px;
@@ -90,7 +93,7 @@
     justify-content: center;
 }
 
-.btn-circle{
+.btn-circle {
     border: none;
     width: 40px;
     height: 40px;
@@ -98,9 +101,9 @@
     background-repeat: no-repeat;
     background-size: contain;
     background-color: #ffffff;
-
 }
-    .btn-circle:hover{
-        background-color: #BBBBBB;
-        cursor: pointer;
-    }
+
+.btn-circle:hover {
+    background-color: #BBBBBB;
+    cursor: pointer;
+}
