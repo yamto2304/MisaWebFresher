@@ -5,7 +5,7 @@
       "BouncyCastle.NetCore/1.8.5": {
         "type": "package",
         "compile": {
-          "lib/netstandard2.0/_._": {}
+          "lib/netstandard2.0/BouncyCastle.Crypto.dll": {}
         },
         "runtime": {
           "lib/netstandard2.0/BouncyCastle.Crypto.dll": {}
@@ -26,7 +26,7 @@
           "System.Memory": "4.5.2"
         },
         "compile": {
-          "lib/netstandard2.0/_._": {}
+          "lib/netstandard2.0/Google.Protobuf.dll": {}
         },
         "runtime": {
           "lib/netstandard2.0/Google.Protobuf.dll": {}
@@ -38,7 +38,7 @@
           "System.Memory": "4.5.3"
         },
         "compile": {
-          "lib/netstandard2.0/_._": {}
+          "lib/netstandard2.0/K4os.Compression.LZ4.dll": {}
         },
         "runtime": {
           "lib/netstandard2.0/K4os.Compression.LZ4.dll": {}
@@ -51,7 +51,7 @@
           "K4os.Hash.xxHash": "1.0.6"
         },
         "compile": {
-          "lib/netstandard2.0/_._": {}
+          "lib/netstandard2.0/K4os.Compression.LZ4.Streams.dll": {}
         },
         "runtime": {
           "lib/netstandard2.0/K4os.Compression.LZ4.Streams.dll": {}
@@ -63,7 +63,7 @@
           "System.Memory": "4.5.3"
         },
         "compile": {
-          "lib/netstandard2.0/_._": {}
+          "lib/netstandard2.0/K4os.Hash.xxHash.dll": {}
         },
         "runtime": {
           "lib/netstandard2.0/K4os.Hash.xxHash.dll": {}
@@ -231,7 +231,9 @@
           "System.Text.Encoding.CodePages": "4.4.0"
         },
         "compile": {
-          "lib/net5.0/_._": {}
+          "lib/net5.0/MySql.Data.dll": {},
+          "lib/net5.0/Ubiety.Dns.Core.dll": {},
+          "lib/net5.0/Zstandard.Net.dll": {}
         },
         "runtime": {
           "lib/net5.0/MySql.Data.dll": {},
@@ -266,7 +268,7 @@
           "SshNet.Security.Cryptography": "[1.3.0]"
         },
         "compile": {
-          "lib/netstandard2.0/_._": {}
+          "lib/netstandard2.0/Renci.SshNet.dll": {}
         },
         "runtime": {
           "lib/netstandard2.0/Renci.SshNet.dll": {}
@@ -275,7 +277,7 @@
       "SshNet.Security.Cryptography/1.3.0": {
         "type": "package",
         "compile": {
-          "lib/netstandard2.0/_._": {}
+          "lib/netstandard2.0/SshNet.Security.Cryptography.dll": {}
         },
         "runtime": {
           "lib/netstandard2.0/SshNet.Security.Cryptography.dll": {}
@@ -347,7 +349,7 @@
           "System.Security.Cryptography.ProtectedData": "4.4.0"
         },
         "compile": {
-          "ref/netstandard2.0/_._": {}
+          "ref/netstandard2.0/System.Configuration.ConfigurationManager.dll": {}
         },
         "runtime": {
           "lib/netstandard2.0/System.Configuration.ConfigurationManager.dll": {}
@@ -405,7 +407,7 @@
           "System.Security.Principal.Windows": "4.7.0"
         },
         "compile": {
-          "ref/netstandard2.0/_._": {}
+          "ref/netstandard2.0/System.Security.AccessControl.dll": {}
         },
         "runtime": {
           "lib/netstandard2.0/System.Security.AccessControl.dll": {}
@@ -454,7 +456,7 @@
           "System.Windows.Extensions": "4.7.0"
         },
         "compile": {
-          "ref/netcoreapp3.0/_._": {}
+          "ref/netcoreapp3.0/System.Security.Permissions.dll": {}
         },
         "runtime": {
           "lib/netcoreapp3.0/System.Security.Permissions.dll": {}
@@ -463,7 +465,7 @@
       "System.Security.Principal.Windows/4.7.0": {
         "type": "package",
         "compile": {
-          "ref/netcoreapp3.0/_._": {}
+          "ref/netcoreapp3.0/System.Security.Principal.Windows.dll": {}
         },
         "runtime": {
           "lib/netstandard2.0/System.Security.Principal.Windows.dll": {}
@@ -485,7 +487,7 @@
           "Microsoft.NETCore.Platforms": "2.0.0"
         },
         "compile": {
-          "ref/netstandard2.0/_._": {}
+          "ref/netstandard2.0/System.Text.Encoding.CodePages.dll": {}
         },
         "runtime": {
           "lib/netstandard2.0/System.Text.Encoding.CodePages.dll": {}
@@ -503,7 +505,7 @@
           "System.Drawing.Common": "4.7.0"
         },
         "compile": {
-          "ref/netcoreapp3.0/_._": {}
+          "ref/netcoreapp3.0/System.Windows.Extensions.dll": {}
         },
         "runtime": {
           "lib/netcoreapp3.0/System.Windows.Extensions.dll": {}
@@ -1556,30 +1558,26 @@
       "Dapper >= 2.0.78",
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 5.0.4",
       "Microsoft.AspNetCore.Authentication.OpenIdConnect >= 5.0.4",
+      "MySql.Data >= 8.0.23",
       "MySqlConnect >= 1.0.2",
       "MySqlConnector >= 1.3.2",
       "Swashbuckle.AspNetCore >= 6.1.1"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Tuani\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\hdtuan\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\Education\\20202\\Misa\\MisaWebFresher\\MisaWebFresher\\Api\\MISA.CukCuk\\MISA.CukCuk.Api\\MISA.CukCuk.Api.csproj",
+      "projectUniqueName": "C:\\Users\\hdtuan\\Desktop\\MisaWebFresher\\Api\\MISA.CukCuk\\MISA.CukCuk.Api\\MISA.CukCuk.Api.csproj",
       "projectName": "MISA.CukCuk.Api",
-      "projectPath": "F:\\Education\\20202\\Misa\\MisaWebFresher\\MisaWebFresher\\Api\\MISA.CukCuk\\MISA.CukCuk.Api\\MISA.CukCuk.Api.csproj",
-      "packagesPath": "C:\\Users\\Tuani\\.nuget\\packages\\",
-      "outputPath": "F:\\Education\\20202\\Misa\\MisaWebFresher\\MisaWebFresher\\Api\\MISA.CukCuk\\MISA.CukCuk.Api\\obj\\",
+      "projectPath": "C:\\Users\\hdtuan\\Desktop\\MisaWebFresher\\Api\\MISA.CukCuk\\MISA.CukCuk.Api\\MISA.CukCuk.Api.csproj",
+      "packagesPath": "C:\\Users\\hdtuan\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\hdtuan\\Desktop\\MisaWebFresher\\Api\\MISA.CukCuk\\MISA.CukCuk.Api\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\Tuani\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\hdtuan\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1616,6 +1614,10 @@
           "Microsoft.AspNetCore.Authentication.OpenIdConnect": {
             "target": "Package",
             "version": "[5.0.4, )"
+          },
+          "MySql.Data": {
+            "target": "Package",
+            "version": "[8.0.23, )"
           },
           "MySqlConnect": {
             "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",

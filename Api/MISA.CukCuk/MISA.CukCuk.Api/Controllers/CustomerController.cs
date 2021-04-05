@@ -1,13 +1,10 @@
 ﻿using Dapper;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using MISA.CukCuk.Api.Model;
-using MySqlConnector;
+using MySql.Data.MySqlClient;
 using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace MISA.CukCuk.Api.Controllers
 {
@@ -62,7 +59,27 @@ namespace MISA.CukCuk.Api.Controllers
         [HttpGet("{customerId}")]
         public IActionResult Get(Guid customerId)
         {
-            return StatusCode(200, 1);
+            //Khởi tạo kết nối tới Database
+            string connectionString = "" +
+                "Host=47.241.69.179;" +
+                "Port=3306;" +
+                "User Id = dev;" +
+                "Password = 12345678;" +
+                "Database = MF0_NVManh_CukCuk02";
+            IDbConnection dbConnection = new MySqlConnection(connectionString);
+            //Thực hiện lấy dữ liệu từ Database
+            var storeName = "Proc_GetCustomerById";
+            var storeParam = new
+            {
+                CustomerId = customerId
+            };
+            var customer = dbConnection.Query<Customer>(storeName, param: storeParam, commandType: CommandType.StoredProcedure).FirstOrDefault();
+            //Kiểm tra kết quả và trả về cho Client
+            if (customer == null)
+                return NoContent();
+            else
+                return StatusCode(200, customer);
+
         }
 //=============================================================
         /// <summary>

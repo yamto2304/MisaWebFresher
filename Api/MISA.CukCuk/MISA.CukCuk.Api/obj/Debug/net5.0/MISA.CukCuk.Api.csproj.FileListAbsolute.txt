@@ -103,3 +103,4 @@ F:\Education\20202\Misa\MisaWebFresher\MisaWebFresher\Api\MISA.CukCuk\MISA.CukCu
 F:\Education\20202\Misa\MisaWebFresher\MisaWebFresher\Api\MISA.CukCuk\MISA.CukCuk.Api\obj\Debug\net5.0\MISA.CukCuk.Api.RazorTargetAssemblyInfo.cache
 F:\Education\20202\Misa\MisaWebFresher\MisaWebFresher\Api\MISA.CukCuk\MISA.CukCuk.Api\obj\Debug\net5.0\MISA.CukCuk.Api.csproj.CopyComplete
 F:\Education\20202\Misa\MisaWebFresher\MisaWebFresher\Api\MISA.CukCuk\MISA.CukCuk.Api\obj\Debug\net5.0\MISA.CukCuk.Api.genruntimeconfig.cache
+C:\Users\hdtuan\Desktop\MisaWebFresher\Api\MISA.CukCuk\MISA.CukCuk.Api\bin\Debug\net5.0\MySqlConnector.dll
