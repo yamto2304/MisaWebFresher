@@ -1,6 +1,6 @@
 <template>
   <div class="content-body">
-    <AddForm @closePopup="false" :isHide="false"/>
+    <AddForm :isHide="isHideParent" @closeForm="closeForm"/>
     <div class="header-content">
       <div class="title" >Danh sách khách hàng</div>
       <div class="content-feature">
@@ -116,14 +116,14 @@
 import AddForm from '../form/AddForm'
 export default {
   name: 'Customer',
-  props: ['isHideParent'],
+  // props: ['isHideParent'],
   components :{
     AddForm
   },
   methods: {
     btnAddOnClick() {
       this.isHideParent = false;
-      alert("btnAddCustomerOnClick")
+      // alert("btnAddCustomerOnClick")
     },
     //Refresh
     refresh(){
@@ -131,14 +131,14 @@ export default {
         window.location.reload();
     },
     //ClosePopup
-    closePopup(value){
+    closeForm(value){
       this.isHideParent = value;
     }
   },
   data() {
     return {
       author : "Mel",
-      // isHideParent : true
+      isHideParent : true
     }
   },
 }

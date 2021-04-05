@@ -212,7 +212,7 @@
   
     <div class="m-dialog"
     title="Thông tin khách hàng"
-    :class="{isHide : isHide}"
+    :class="{ isHide:isHide }"
     >
       <div class="dialog-modal"></div>
       <div class="form-add-customer myForm dialog-content">
@@ -297,10 +297,14 @@
         </div>
         <div class="form-footer">
             <div class="btn-cancel" style="vertical-align: top;">
-                <button class="btn-another">Hủy</button>
+                <button class="btn-another"
+                v-on:click="btnCancelOnClick"
+                >Hủy</button>
             </div>
             <div class="btn-save"  id="btnSave" >
-                <button class="btn-with-icon" style="width:100px">
+                <button class="btn-with-icon" 
+                style="width:100px"
+                >
                     <div class="icon-btn icon-save"></div>
                     <div class="text-btn">Lưu</div>
                 </button>
@@ -312,21 +316,19 @@
 </template>
 <script>
 export default {
-  // props: ['isHide'],
+  props: ['isHide'],   //Giá trị từ parent truyển đến
   methods: {
     btnAddOnClick() {
       // this.isHide = false;
     },
     btnCancelOnClick() {
-      // this.$emit('closePopup',true)
+      this.$emit('closeForm',true)
       // this.isHide = true;
-    },
+    }
     
   },
   data() {
     return {
-      // dialog: false,
-      // display: "none",
       employee: {
         DateOfBirth: "1992-06-17T00:00:00",
         Address: "319 Prospect Hill Blvd, Keith Bldg, Boise, Idaho, 76994",
