@@ -21,6 +21,7 @@
 
 .btn-seconds {
     border: 1px solid #bbbbbb;
+    align-items: center;
     border-radius: 4px;
     height: 40px;
     font-size: 13px;
@@ -60,18 +61,8 @@
         background-color: #01B075;
     }
 
-.btn-save{
-    position: absolute;
-    left: 536px;
-    margin-left: 40px;
-    align-self: center;
-}
-.btn-cancel{
-    position: absolute;
-    left: 460px;
-    align-self: center;
-    background-color: #BBBBBB;
-}
+
+
 .btn-refresh:hover{
     background-color: #BBBBBB;
     cursor: pointer;

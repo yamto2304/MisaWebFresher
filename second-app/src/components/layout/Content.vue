@@ -2,8 +2,7 @@
   <div class="content">
     <!-- <h1>This is h1 tag form content</h1> -->
     <router-view></router-view>
-    <!-- <AddForm /> -->
-
+    <!-- <AddForm/> -->
   </div>
 </template>
 

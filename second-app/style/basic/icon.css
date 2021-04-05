@@ -41,3 +41,11 @@
     background-repeat: no-repeat;
     background-position: center;
 }
+.icon-save {
+    background-image: url('../../src/assets/icon/add.png');
+    width: 16px ;
+    height: 16px;
+    /* background-repeat: no-repeat; */
+    /* background-size: contain; */
+    background-position: center;
+}
