@@ -62,7 +62,7 @@
 
             }
 
-            .navbar .navbar-content .nav-item:focus{
+            /* .navbar .navbar-content .nav-item:focus{
                 background-color:#01B075;
                 text-decoration: none;
             }
@@ -71,7 +71,7 @@
                 background-color:#01B075;
                 text-decoration: none;
 
-            }
+            } */
 
             .nav-item .nav-item-icon {
                 width: 20px;
