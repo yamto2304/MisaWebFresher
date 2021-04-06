@@ -1,6 +1,7 @@
 <template>
   <div>
     <AddForm :isHide="isHideParent" @closeForm="closeForm" />
+    <SmallOption :isHide="isHideOption" />
     <div class="content-body">
       <div class="header-content">
         <div class="title">Danh sách khách hàng</div>
@@ -48,7 +49,8 @@
           </select>
         </div>
         <div class="filter-right">
-          <button class="btn-only-icon btn-refresh" id="refresh">
+          <button class="btn-only-icon btn-refresh" id="refresh"
+           v-on:click="btnRefreshOnClick">
             <div class="icon-refresh"></div>
           </button>
         </div>
@@ -75,6 +77,7 @@
               v-for="(customer, key) in customers"
               :key="customer.CustomerId"
               @click="activeRow(key)"
+              @dblclick="showSmallOption"
               :class="key === selectedRow ? 'row-actived' : '' "
             >
               <td>
@@ -171,11 +174,13 @@
 </template>
 <script>
 import AddForm from "../form/AddForm";
+import SmallOption from "../sub_item/SmallOption";
 export default {
   name: "Customer",
   // props: ['isHideParent'],
   components: {
     AddForm,
+    SmallOption,
   },
   methods: {
     btnAddOnClick() {
@@ -194,11 +199,19 @@ export default {
     activeRow(key){
       this.selectedRow = key
       // alert(customer.CustomerId)
+    },
+    showSmallOption(){
+
+    },
+    btnRefreshOnClick(){
+      // alert("refresh!");
+      this.isHideOption = !this.isHideOption;
     }
   },
   data() {
     return {
       author: "Mel",
+      isHideOption : true,
       selectedRow : null,
       isHideParent: true,
       customers: [
