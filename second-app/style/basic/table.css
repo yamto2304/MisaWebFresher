@@ -1,76 +1,52 @@
-/* .data-table{
-    width: 100%;
-    height: calc(100vh - 230px) ;
-    overflow: scroll;
-}
-
-table{
+table {
     margin-top: 10px;
     border-collapse: collapse;
 }
+
 table th, td {
     border-bottom: 1px solid #bbbbbb;
     padding-left: 16px;
     padding-right: 16px;
-    padding: 10px 16px;
-    text-align: center;  
-    overflow: hidden;
+    padding: 15px 16px;
+    text-align: left;
+    /* overflow: hidden; */
     text-overflow: ellipsis;
-    white-space: nowrap;
-    max-width: 150px;
-    max-height: 100%; */
-    /* border-collapse: collapse; */
-/* 
-}
-    thead th {
-        position: sticky;
-        top: 0;
-        background-color: #019160;  
-    }
-
-    table tr:hover{
-        cursor: pointer;
-        background-color: #e5e5e5;
-    }
-    table tr:active{
-        background-color: #01B075;
-    } */
-/* ========================= */
-table{
-    margin-top: 10px;
-    border-collapse: collapse;
-}
-table th, td {
-    border-bottom: 1px solid #bbbbbb;
-    padding-left: 16px;
-    padding-right: 16px;
-    padding: 10px 16px;
-    text-align: center;  
-    overflow: hidden;
-    text-overflow: ellipsis;
+    word-break: break-all;
     white-space: nowrap;
     max-width: 150px;
     max-height: 100%;
     /* border-collapse: collapse; */
-
 }
-    thead th {
-        position: sticky;
-        top: 0;
-        /* background-color: #019160;   */
-    }
 
-    /* table tr:hover{
-        cursor: pointer;
-        background-color: #e5e5e5;
-    } */
-    /* table tr:active{
-        background-color: #01B075;
-    } */
+thead th {
+    position: sticky;
+    top: 0;
+    background-color: #ffffff;
+}
+
+table tr:active {
+    background-color: #01B075;
+}
 
 /* Table with data================== */
-.data-table{
+
+.data-table {
     width: 100%;
-    height: calc(100vh - 230px) ;
-    overflow: scroll;
+    height: calc(100vh - 230px);
+    /* overflow: scroll; */
+    overflow-x: auto;
+    overflow-y: auto;
 }
+
+/* .data-table tbody tr:nth-child(2n+1) {
+    background-color: #fafafa;
+} */
+
+.data-table tbody tr:hover {
+    background-color: #d9d9d9;
+    cursor: pointer;
+}
+
+/* .data-table tbody tr:active {
+    background-color: #01B075;
+} */

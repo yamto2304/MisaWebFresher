@@ -1,4 +1,4 @@
-input, select {
+.input-box, select {
     padding: 10px 16px;
     border-radius: 4px;
     outline: none;
@@ -9,10 +9,10 @@ input, select {
     margin-right: 16px;
 }
 
-    input[type=radio] {
+    /* input[type=radio] {
         height: 20px;
         width: 20px;
-    }
+    } */
 
     input:focus, select:focus {
         border-color: #019160;
@@ -116,4 +116,7 @@ input, select {
         .m-combobox .m-combobox-data .mCombobox__item--selected {
             background-color: #019160 !important;
             color: #ffffff;
+        }
+        .input-customer-field #gender{
+            line-height: 40px;
         }

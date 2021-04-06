@@ -18,7 +18,7 @@
       <div class="filter-bar">
         <div class="filter-left">
           <input
-            class="icon-search input-search"
+            class="icon-search input-search input-box"
             type="text"
             placeholder="Tìm kiếm theo mã, Tên hoặc Số điện thoại"
           />
@@ -69,7 +69,46 @@
               <th>Tình trạng theo dõi</th>
             </tr>
           </thead>
-          <tbody id="body-data"></tbody>
+          <tbody id="body-data">
+            <tr
+              class="el-table__row"
+              v-for="(customer, key) in customers"
+              :key="customer.CustomerId"
+              @click="activeRow(key)"
+              :class="key === selectedRow ? 'row-actived' : '' "
+            >
+              <td>
+                <div class="cell">{{ customer.CustomerCode }}</div>
+              </td>
+              <td>
+                <div class="cell">{{ customer.FullName }}</div>
+              </td>
+              <td>
+                <div class="cell">{{ customer.Gender }}</div>
+              </td>
+              <td>
+                <div class="cell">{{ customer.Address }}</div>
+              </td>
+              <td>
+                <div class="cell">{{ customer.DateOfBirth }}</div>
+              </td>
+              <td>
+                <div class="cell">{{ customer.Email }}</div>
+              </td>
+              <td>
+                <div class="cell">{{ customer.PhoneNumber }}</div>
+              </td>
+              <td>
+                <div class="cell">{{ customer.CustomerGroupName }}</div>
+              </td>
+              <td>
+                <div class="cell">{{ customer.CompanyName }}</div>
+              </td>
+              <td>
+                <div class="cell">{{ customer.WorkStatusName }}</div>
+              </td>
+            </tr>
+          </tbody>
         </table>
       </div>
       <div class="paging-bar">
@@ -152,11 +191,78 @@ export default {
     closeForm(value) {
       this.isHideParent = value;
     },
+    activeRow(key){
+      this.selectedRow = key
+      // alert(customer.CustomerId)
+    }
   },
   data() {
     return {
       author: "Mel",
+      selectedRow : null,
       isHideParent: true,
+      customers: [
+        {
+          CustomerId: "one",
+          FullName: "Nguyễn Văn Mạnh",
+        },
+        {
+          CustomerId: "two",
+          FullName: "Nguyễn Văn Mạnh",
+        },
+        {
+          CustomerId: "three",
+          FullName: "Nguyễn Văn Mạnh",
+        },
+        {
+          CustomerId: "four",
+          FullName: "Nguyễn Văn Mạnh",
+        },
+        {
+          CustomerId: "five",
+          FullName: "Nguyễn Văn Mạnh",
+        },
+        {
+          CustomerId: "six",
+          FullName: "Nguyễn Văn Mạnh",
+        },
+        {
+          CustomerId: "seven",
+          FullName: "Nguyễn Văn Mạnh",
+        },
+        {
+          CustomerId: "eight",
+          FullName: "Nguyễn Văn Mạnh",
+        },
+        {
+          CustomerId: 90,
+          FullName: "Nguyễn Văn Mạnh",
+        },
+        {
+          CustomerId: 100,
+          FullName: "Nguyễn Văn Mạnh",
+        },
+        {
+          CustomerId: 110,
+          FullName: "Nguyễn Văn Mạnh",
+        },
+        {
+          CustomerId: 120,
+          FullName: "Nguyễn Văn Mạnh",
+        },
+        {
+          CustomerId: 130,
+          FullName: "Nguyễn Văn Mạnh",
+        },
+        {
+          CustomerId: 140,
+          FullName: "Nguyễn Văn Mạnh",
+        },
+        {
+          CustomerId: 15,
+          FullName: "Nguyễn Văn Mạnh",
+        },
+      ],
     };
   },
 };
@@ -165,5 +271,11 @@ export default {
 .input-search {
   padding-left: 40px;
   width: 300px;
+}
+.row-actived{
+  background-color: #01B075;
+}
+.row-actived:hover{
+  background-color: #01B075;
 }
 </style>

@@ -5,85 +5,100 @@
     height: 40px;
 }
 
-    .filter-bar .filter-right {
-        position:absolute;
-        right: 16px;
-    }
+.filter-bar .filter-right {
+    position: absolute;
+    right: 16px;
+}
 
 /* =========================== */
-.paging-bar{
+
+.paging-bar {
     border-top: 2px solid #bbbbbb;
     position: relative;
-    bottom: 0;   
+    bottom: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-
-    padding: 0 16px;    
+    padding: 0 16px;
     /* height: 56px; */
 }
-.paging-bar .paging-record-infor{
+
+.paging-bar .paging-record-infor {
     position: absolute;
     left: 10px
 }
-.paging-bar .paging-option{
+
+.paging-bar .paging-option {
     display: flex;
     margin: auto;
 }
-.paging-bar .paging-record-option{
+
+.paging-bar .paging-record-option {
     position: absolute;
     right: 10px
 }
-    .paging-number{
-        margin-left: 6px;
-    }
-    .paging-back-all{
-        background-image: url('../../src/assets/icon/btn-firstpage.svg');
-        background-size: 36px;
-        
-    }
-    .paging-back-one{
-        background-image: url('../../src/assets/icon/btn-prev-page.svg');
-        background-size: 36px;
 
-    }
-    .paging-next-one{
-        background-image: url('../../src/assets/icon/btn-next-page.svg');
-        background-size: 36px;
+.paging-number {
+    margin-left: 6px;
+}
 
-    }
-    .paging-next-all{
-        background-image: url('../../src/assets/icon/btn-lastpage.svg');
-        background-size: 36px;
-    }
-    /* Button choose page------------------- */
+.paging-back-all {
+    background-image: url('../../src/assets/icon/btn-firstpage.svg');
+    background-size: 30px;
+}
+
+.paging-back-one {
+    background-image: url('../../src/assets/icon/btn-prev-page.svg');
+    background-size: 30px;
+}
+
+.paging-next-one {
+    background-image: url('../../src/assets/icon/btn-next-page.svg');
+    background-size: 30px;
+}
+
+.paging-next-all {
+    background-image: url('../../src/assets/icon/btn-lastpage.svg');
+    background-size: 30px;
+}
+
+/* Button choose page------------------- */
+
 #bcp {
     /* cursor: pointer; */
     background-color: #E5E5E5;
     margin: auto;
-    -webkit-appearance: none; /*to disable the default appearance of radio button*/
+    -webkit-appearance: none;
+    /*to disable the default appearance of radio button*/
     -moz-appearance: none;
-    height: 40px;
+    height: 30px;
+    width: 30px;
 }
-    #bcp:hover{
-        background-color: #BBBBBB;
-    }
-    #bcp:checked { /*no need, if you don't disable default appearance*/
-        background-color: #01B075;
-    }
-    
-    #bcp:checked ~ span:first-of-type {
-        color: white;
-    }
-    /* Set position for number in button */
-    .paging-number label span:first-of-type {
-        position: relative;
-        left: -24px;
-        font-size: 13px;
-        color: black;
-    }
-    .paging-number label span {
-        position: relative;
-        top: -16px;
-        cursor: pointer;
-    }
+
+#bcp:hover {
+    background-color: #BBBBBB;
+}
+
+#bcp:checked {
+    /*no need, if you don't disable default appearance*/
+    background-color: #01B075;
+}
+
+#bcp:checked~span:first-of-type {
+    color: white;
+}
+
+/* Set position for number in button */
+
+.paging-number label span:first-of-type {
+    position: relative;
+    left: -20px;
+    font-size: 13px;
+    color: black;
+}
+
+.paging-number label span {
+    position: relative;
+    top: -10px;
+    cursor: pointer;
+}
