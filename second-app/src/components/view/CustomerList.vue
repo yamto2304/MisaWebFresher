@@ -6,9 +6,7 @@
       id="small-option"
       v-bind:style="{ left: coordinateX, top: coordinateY }"
     />
-    <div class="content-body"
-    v-on:click="closeOption"
-    >
+    <div class="content-body" v-on:click="closeOption">
       <div class="header-content">
         <div class="title">Danh sách khách hàng</div>
         <div class="content-feature">
@@ -90,34 +88,34 @@
               :class="key === selectedRow ? 'row-actived' : ''"
             >
               <td>
-                <div class="cell">{{ customer.CustomerCode }}</div>
+                <div class="cell">{{ customer.customerCode }}</div>
               </td>
               <td>
-                <div class="cell">{{ customer.FullName }}</div>
+                <div class="cell">{{ customer.fullName }}</div>
               </td>
               <td>
-                <div class="cell">{{ customer.Gender }}</div>
+                <div class="cell">{{ customer.gender }}</div>
               </td>
               <td>
-                <div class="cell">{{ customer.Address }}</div>
+                <div class="cell" :title="customer.address">{{ customer.address }}</div>
               </td>
               <td>
-                <div class="cell">{{ customer.DateOfBirth }}</div>
+                <div class="cell">{{ customer.dateOfBirth }}</div>
               </td>
               <td>
-                <div class="cell">{{ customer.Email }}</div>
+                <div class="cell"  :title="customer.email">{{ customer.email }}</div>
               </td>
               <td>
-                <div class="cell">{{ customer.PhoneNumber }}</div>
+                <div class="cell">{{ customer.phoneNumber }}</div>
               </td>
               <td>
-                <div class="cell">{{ customer.CustomerGroupName }}</div>
+                <div class="cell">{{ customer.customerGroupName }}</div>
               </td>
               <td>
-                <div class="cell">{{ customer.CompanyName }}</div>
+                <div class="cell"  :title="customer.companyName">{{ customer.companyName }}</div>
               </td>
               <td>
-                <div class="cell">{{ customer.WorkStatusName }}</div>
+                <div class="cell">{{ customer.workStatusName }}</div>
               </td>
             </tr>
           </tbody>
@@ -183,6 +181,8 @@
 </template>
 <script>
 import AddForm from "../form/AddForm";
+import * as axios from "axios";
+
 import SmallOption from "../sub_item/SmallOption";
 export default {
   name: "Customer",
@@ -224,9 +224,9 @@ export default {
       this.isHideOption = !this.isHideOption;
     },
     //Đóng form - click X hoặc "hủy"
-    closeOption(){
+    closeOption() {
       this.isHideOption = true;
-    }
+    },
   },
   // mounted(){
   //   showSmallOption($event)
@@ -239,69 +239,17 @@ export default {
       isHideParent: true,
       coordinateX: null,
       coordinateY: null,
-      customers: [
-        {
-          CustomerId: "one",
-          FullName: "Nguyễn Văn Mạnh",
-        },
-        {
-          CustomerId: "two",
-          FullName: "Nguyễn Văn Mạnh",
-        },
-        {
-          CustomerId: "three",
-          FullName: "Nguyễn Văn Mạnh",
-        },
-        {
-          CustomerId: "four",
-          FullName: "Nguyễn Văn Mạnh",
-        },
-        {
-          CustomerId: "five",
-          FullName: "Nguyễn Văn Mạnh",
-        },
-        {
-          CustomerId: "six",
-          FullName: "Nguyễn Văn Mạnh",
-        },
-        {
-          CustomerId: "seven",
-          FullName: "Nguyễn Văn Mạnh",
-        },
-        {
-          CustomerId: "eight",
-          FullName: "Nguyễn Văn Mạnh",
-        },
-        // {
-        //   CustomerId: 90,
-        //   FullName: "Nguyễn Văn Mạnh",
-        // },
-        // {
-        //   CustomerId: 100,
-        //   FullName: "Nguyễn Văn Mạnh",
-        // },
-        // {
-        //   CustomerId: 110,
-        //   FullName: "Nguyễn Văn Mạnh",
-        // },
-        // {
-        //   CustomerId: 120,
-        //   FullName: "Nguyễn Văn Mạnh",
-        // },
-        // {
-        //   CustomerId: 130,
-        //   FullName: "Nguyễn Văn Mạnh",
-        // },
-        // {
-        //   CustomerId: 140,
-        //   FullName: "Nguyễn Văn Mạnh",
-        // },
-        // {
-        //   CustomerId: 15,
-        //   FullName: "Nguyễn Văn Mạnh",
-        // },
-      ],
+      customers: [],
     };
+  },
+  async created() {
+    const response = await axios.get(
+      `https://localhost:44343/api/v1/Customers`
+    );
+
+    console.log(response.data[0]);
+    this.customers = response.data;
+    this.isLoading = false;
   },
 };
 </script>

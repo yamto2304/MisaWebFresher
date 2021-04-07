@@ -1,6 +1,7 @@
 table {
     margin-top: 10px;
     border-collapse: collapse;
+    width: 100%;
 }
 
 table th, td {
@@ -9,7 +10,7 @@ table th, td {
     padding-right: 16px;
     padding: 15px 16px;
     text-align: left;
-    /* overflow: hidden; */
+    overflow: hidden;
     text-overflow: ellipsis;
     word-break: break-all;
     white-space: nowrap;

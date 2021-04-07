@@ -1,5 +1,5 @@
 <template>
-  <div class="small-mess" id="small-mess" :class="{ isHide: isHide }">Halooo{{ message }}</div>
+  <div class="small-mess" id="small-mess" :class="{ isHide: isHide }">Halooo</div>
 </template>
 <script>
 export default {
