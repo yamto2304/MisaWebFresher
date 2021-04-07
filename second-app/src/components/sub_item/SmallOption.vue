@@ -23,7 +23,6 @@ export default {
 .small-option {
   z-index: 10;
   position: fixed;
-  height: 100px;
-  width: 100px;
+  
 }
 </style>

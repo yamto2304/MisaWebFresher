@@ -216,7 +216,7 @@ export default {
       this.coordinateX = event.clientX + "px";
       this.coordinateY = event.clientY - 20 + "px";
       this.isHideOption = false;
-      this.$emit("isHideOption", false);
+      // this.$emit("isHideOption", false);
     },
     //Click refresh
     btnRefreshOnClick() {
@@ -239,7 +239,6 @@ export default {
       isHideParent: true,
       coordinateX: null,
       coordinateY: null,
-      activeColor: null,
       customers: [
         {
           CustomerId: "one",

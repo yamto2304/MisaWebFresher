@@ -3,6 +3,7 @@
     class="m-dialog"
     title="Thông tin khách hàng"
     :class="{ isHide: isHide }"
+    v-on:dblclick="closeMessage"
   >
     <div class="dialog-modal"></div>
     <div class="dialog-content">
@@ -25,6 +26,7 @@
           <div class="input-customer-field">
             <label>Mã khách hàng(<span class="red-text">*</span>)</label>
             <input
+              ref="customerCode"
               type="text"
               name="customer-code"
               id="customerCode"
@@ -37,7 +39,11 @@
           </div>
           <div class="input-customer-field">
             <label>Mã thẻ thành viên</label>
-            <input name="member-code" id="memberCode" class="input-box-small input-box" />
+            <input
+              name="member-code"
+              id="memberCode"
+              class="input-box-small input-box"
+            />
           </div>
           <div class="input-customer-field">
             <label>Ngày sinh</label>
@@ -72,9 +78,9 @@
           <div class="input-customer-field">
             <p>Giới tính</p>
             <div class="radio-box-small" id="gender">
-              <input type="radio" checked name="nam" value="1">Nam
-              <input type="radio" name="nam" value="2">Nữ
-              <input type="radio" name="nam" value="3">Khác
+              <input type="radio" checked name="nam" value="1" />Nam
+              <input type="radio" name="nam" value="2" />Nữ
+              <input type="radio" name="nam" value="3" />Khác
             </div>
           </div>
         </div>
@@ -82,14 +88,16 @@
       <div class="contact-info">
         <div class="col-left-2">
           <div class="input-customer-field">
-            <label>Email {{ customer.Email }}</label>
+            <label>Email</label>
             <input
+              ref="email"
               type="email"
               id="email"
               placeholder="example@domain.com"
               class="input-box-medium input-box"
               v-model="customer.Email"
               v-on:blur="blurEmail()"
+              :class="{ isBlurAlert: emailAlert }"
             />
           </div>
           <div class="input-customer-field">
@@ -108,11 +116,7 @@
         <!-- SDT -->
         <div class="col-right">
           <div class="input-customer-field">
-            <label
-              >Số điện thoại {{ customer.PhoneNumber }}(<span class="red-text"
-                >*</span
-              >)</label
-            >
+            <label>Số điện thoại(<span class="red-text">*</span>)</label>
             <input
               type="text"
               class="input-box-small input-box"
@@ -142,11 +146,15 @@
         <div class="btn-save" id="btnSave">
           <button class="btn-with-icon" style="width: 100px">
             <div class="icon-btn icon-save"></div>
-            <div class="text-btn">Lưu</div>
+            <div class="text-btn" v-on:dblclick="btnSaveOnClick">Lưu</div>
           </button>
         </div>
       </div>
-    <SmallMessage/>
+      <SmallMessage
+        :isHide="isHideMessage"
+        id="small-message"
+        v-bind:style="{ left: coordinateX, top: coordinateY }"
+      />
     </div>
   </div>
 </template>
@@ -154,13 +162,14 @@
 import SmallMessage from "../sub_item/SmallMessage";
 export default {
   props: {
+    emailAlert: Boolean,
     phoneNumberAlert: Boolean,
     customerCodeAlert: Boolean,
     fullNameAlert: Boolean,
     isHide: Boolean,
     message: String,
   },
-  components:{
+  components: {
     SmallMessage,
   },
   methods: {
@@ -172,30 +181,34 @@ export default {
     },
     //OnBlur CustomerCode Input
     blurCustomerCode() {
+      // this.showSmallMessage(id);
       if (!this.customer.CustomerCode) {
-        alert(this.errorCustomerCodeEmpty);
+        // alert(this.errorCustomerCodeEmpty);
         this.customerCodeAlert = true;
       } else this.customerCodeAlert = false;
     },
     //OnBlur FullName Input
     blurName() {
+      // this.showSmallMessage();
       if (!this.customer.FullName) {
-        alert(this.errorNameEmpty);
+        // alert(this.errorNameEmpty);
         this.fullNameAlert = true;
       } else this.fullNameAlert = false;
     },
     //OnBlur PhoneNumber Input
     blurPhoneNumber() {
+      this.showSmallMessage();
       if (!this.customer.PhoneNumber) {
         //Lỗi để trống
-        alert(this.errorPhoneNumberEmpty);
+        // alert(this.errorPhoneNumberEmpty);
         this.phoneNumberAlert = true;
       } else this.phoneNumberAlert = false;
     },
     blurEmail() {
+      // this.showSmallMessage();
       if (!this.customer.Email) return;
       if (!this.validateEmail(this.customer.Email)) {
-        this.openMessageBlur(this.errorEmailFormat);
+        this.emailAlert = true;
       }
     },
 
@@ -203,21 +216,35 @@ export default {
       const re = /\S+@\S+\.\S+/;
       return re.test(String(email).toLowerCase());
     },
-    openMessageBlur(message){
-      alert(message);
-    }
+    showSmallMessage() {
+      // this.coordinateX = document
+      //   .querySelector("#" + id)
+      //   .getBoundingClientRect().x;
+      // this.coordinateY = document
+      //   .querySelector("#" + id)
+      //   .getBoundingClientRect().y;
+      // this.isHideMessage = false;
+    },
+    closeMessage() {
+      this.isHideMessage = true;
+    },
   },
-  mounted(){
-    this.openMessageBlur
+  mounted() {
+    this.openMessageBlur;
   },
   data() {
     return {
-      errorEmailFormat: "Định dạng email không đúng",
-      errorEmailEmpty: "Email không được để trống",
-      errorNameEmpty: "Tên khách hàng không được để trống",
-      errorPhoneNumberEmpty: "Số điện thoại không được để trống ",
-      errorPhoneNumberFormat: "Sai định dạng số điện thoại",
-      errorCustomerCodeEmpty: "Mã khách hàng không được để trống",
+      coordinateX: null,
+      coordinateY: null,
+      isHideMessage: true,
+      error: {
+        EmailFormat: "Định dạng email không đúng",
+        EmailEmpty: "Email không được để trống",
+        NameEmpty: "Tên khách hàng không được để trống",
+        PhoneNumberEmpty: "Số điện thoại không được để trống ",
+        PhoneNumberFormat: "Sai định dạng số điện thoại",
+        CustomerCodeEmpty: "Mã khách hàng không được để trống",
+      },
       customer: {
         customerId: "68915a99-9694-11eb-8a1f-00163e047e89",
         customerCode: "Kho23432",
