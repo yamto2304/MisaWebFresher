@@ -146,16 +146,22 @@
           </button>
         </div>
       </div>
+    <SmallMessage/>
     </div>
   </div>
 </template>
 <script>
+import SmallMessage from "../sub_item/SmallMessage";
 export default {
   props: {
     phoneNumberAlert: Boolean,
     customerCodeAlert: Boolean,
     fullNameAlert: Boolean,
     isHide: Boolean,
+    message: String,
+  },
+  components:{
+    SmallMessage,
   },
   methods: {
     btnSaveOnClick() {
@@ -189,7 +195,7 @@ export default {
     blurEmail() {
       if (!this.customer.Email) return;
       if (!this.validateEmail(this.customer.Email)) {
-        alert(this.errorEmailFormat);
+        this.openMessageBlur(this.errorEmailFormat);
       }
     },
 
@@ -197,9 +203,12 @@ export default {
       const re = /\S+@\S+\.\S+/;
       return re.test(String(email).toLowerCase());
     },
-    // validatePhoneNumber(input) {
-    //   return !isNaN(input) && parseInt("input", 10) >= 0;
-    // },
+    openMessageBlur(message){
+      alert(message);
+    }
+  },
+  mounted(){
+    this.openMessageBlur
   },
   data() {
     return {

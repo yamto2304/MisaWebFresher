@@ -1,8 +1,14 @@
 <template>
   <div>
     <AddForm :isHide="isHideParent" @closeForm="closeForm" />
-    <SmallOption :isHide="isHideOption" />
-    <div class="content-body">
+    <SmallOption
+      :isHide="isHideOption"
+      id="small-option"
+      v-bind:style="{ left: coordinateX, top: coordinateY }"
+    />
+    <div class="content-body"
+    v-on:click="closeOption"
+    >
       <div class="header-content">
         <div class="title">Danh sách khách hàng</div>
         <div class="content-feature">
@@ -49,8 +55,11 @@
           </select>
         </div>
         <div class="filter-right">
-          <button class="btn-only-icon btn-refresh" id="refresh"
-           v-on:click="btnRefreshOnClick">
+          <button
+            class="btn-only-icon btn-refresh"
+            id="refresh"
+            v-on:click="btnRefreshOnClick"
+          >
             <div class="icon-refresh"></div>
           </button>
         </div>
@@ -77,8 +86,8 @@
               v-for="(customer, key) in customers"
               :key="customer.CustomerId"
               @click="activeRow(key)"
-              @dblclick="showSmallOption"
-              :class="key === selectedRow ? 'row-actived' : '' "
+              @dblclick="showSmallOption($event)"
+              :class="key === selectedRow ? 'row-actived' : ''"
             >
               <td>
                 <div class="cell">{{ customer.CustomerCode }}</div>
@@ -183,6 +192,7 @@ export default {
     SmallOption,
   },
   methods: {
+    //Mở form thêm khách hàng
     btnAddOnClick() {
       this.isHideParent = false;
       // alert("btnAddCustomerOnClick");
@@ -196,24 +206,40 @@ export default {
     closeForm(value) {
       this.isHideParent = value;
     },
-    activeRow(key){
-      this.selectedRow = key
+    //Bôi đậm hàng được click
+    activeRow(key) {
+      this.selectedRow = key;
       // alert(customer.CustomerId)
     },
-    showSmallOption(){
-
+    //Hiện Option sửa, xóa tại vị trí click
+    showSmallOption(event) {
+      this.coordinateX = event.clientX + "px";
+      this.coordinateY = event.clientY - 20 + "px";
+      this.isHideOption = false;
+      this.$emit("isHideOption", false);
     },
-    btnRefreshOnClick(){
+    //Click refresh
+    btnRefreshOnClick() {
       // alert("refresh!");
       this.isHideOption = !this.isHideOption;
+    },
+    //Đóng form - click X hoặc "hủy"
+    closeOption(){
+      this.isHideOption = true;
     }
   },
+  // mounted(){
+  //   showSmallOption($event)
+  // },
   data() {
     return {
       author: "Mel",
-      isHideOption : true,
-      selectedRow : null,
+      isHideOption: true,
+      selectedRow: null,
       isHideParent: true,
+      coordinateX: null,
+      coordinateY: null,
+      activeColor: null,
       customers: [
         {
           CustomerId: "one",
@@ -247,34 +273,34 @@ export default {
           CustomerId: "eight",
           FullName: "Nguyễn Văn Mạnh",
         },
-        {
-          CustomerId: 90,
-          FullName: "Nguyễn Văn Mạnh",
-        },
-        {
-          CustomerId: 100,
-          FullName: "Nguyễn Văn Mạnh",
-        },
-        {
-          CustomerId: 110,
-          FullName: "Nguyễn Văn Mạnh",
-        },
-        {
-          CustomerId: 120,
-          FullName: "Nguyễn Văn Mạnh",
-        },
-        {
-          CustomerId: 130,
-          FullName: "Nguyễn Văn Mạnh",
-        },
-        {
-          CustomerId: 140,
-          FullName: "Nguyễn Văn Mạnh",
-        },
-        {
-          CustomerId: 15,
-          FullName: "Nguyễn Văn Mạnh",
-        },
+        // {
+        //   CustomerId: 90,
+        //   FullName: "Nguyễn Văn Mạnh",
+        // },
+        // {
+        //   CustomerId: 100,
+        //   FullName: "Nguyễn Văn Mạnh",
+        // },
+        // {
+        //   CustomerId: 110,
+        //   FullName: "Nguyễn Văn Mạnh",
+        // },
+        // {
+        //   CustomerId: 120,
+        //   FullName: "Nguyễn Văn Mạnh",
+        // },
+        // {
+        //   CustomerId: 130,
+        //   FullName: "Nguyễn Văn Mạnh",
+        // },
+        // {
+        //   CustomerId: 140,
+        //   FullName: "Nguyễn Văn Mạnh",
+        // },
+        // {
+        //   CustomerId: 15,
+        //   FullName: "Nguyễn Văn Mạnh",
+        // },
       ],
     };
   },
@@ -285,10 +311,10 @@ export default {
   padding-left: 40px;
   width: 300px;
 }
-.row-actived{
-  background-color: #01B075;
+.row-actived {
+  background-color: #01b075;
 }
-.row-actived:hover{
-  background-color: #01B075;
+.row-actived:hover {
+  background-color: #01b075;
 }
 </style>

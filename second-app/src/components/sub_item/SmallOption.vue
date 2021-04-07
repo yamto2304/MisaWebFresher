@@ -1,7 +1,6 @@
 <template>
   <!-- Option sửa/ xóa một nhaan viên-->
-  <div id="option-detail"
-  class="small-option"
+  <div id="option-detail" class="small-option" 
   :class="{ isHide: isHide }"
   >
     <button id="btnEdit">Sửa</button>
@@ -10,16 +9,21 @@
 </template>
 <script>
 export default {
-    props: {
-        isHide:Boolean,
-    }
+  props: {
+    isHide: Boolean,
+    coordinateX : Number,
+    coordinateY : Number,
+  },
 };
 </script>
 <style scoped>
 .isHide {
   display: none;
 }
-.small-option{
-    z-index: 10;
+.small-option {
+  z-index: 10;
+  position: fixed;
+  height: 100px;
+  width: 100px;
 }
 </style>
