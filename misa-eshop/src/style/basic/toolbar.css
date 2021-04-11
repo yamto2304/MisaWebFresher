@@ -1,0 +1,54 @@
+/* Pagging bar */
+
+.paging-bar {
+    display: flex;
+    position: relative;
+    bottom: 0px;
+    height: 32px;
+    width: calc(100% - 20px);
+    background-color: #ffffff;
+    /* background-color: red; */
+    /* line-height: 32px;   */
+    padding: 10px; 
+}
+
+.paging-option{
+    /* display:flex;
+    line-height: 52px;
+    vertical-align: center;
+    height: 100%;
+    margin-left: 12px; */
+}
+.btn-paging{
+    /* padding: 0;
+    right: auto;
+    top: 3px;
+    margin: 1px;
+    
+    outline: 0;
+    white-space: nowrap;
+    overflow: hidden;
+
+    width: 22px;
+    height: 22px;
+    background-color: #fff;
+    border: 1px solid #6b6f9d;
+    border-radius: 3px;
+    cursor: pointer;
+    vertical-align: middle; */
+
+    /* text-align: center; */
+}
+
+.paging-record-infor{
+    /* position: absolute;
+    right: 10px;
+    top: 8px;
+    margin: 0;
+    padding: 0 4px;
+    white-space: nowrap; */
+}
+
+.paging-text{
+    
+}

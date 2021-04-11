@@ -1,0 +1,98 @@
+.header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: calc(100% - 150px);
+    height: 52px;
+    /* border-bottom: 1px solid #bbbbbb; */
+    border: none;
+}
+
+.header-box-name {
+    background-color: #fff;
+    height: 100%;
+    width: 122px;
+    line-height: 52px;
+}
+
+.header-name {
+    font-size: 18px;
+    color: #212121;
+    padding-left: 20px;
+}
+
+.header-center-box {
+    width: calc(100% - 272px);
+    line-height: 52px;
+    display: flex;
+    height: 52px;
+    /* background-color: burlywood; */
+
+}
+
+.btn-misa-support {
+    position: absolute;
+    top: 0px;
+    right: 106px;
+    height: 52px;
+    width: 46px;
+    border: 1px solid #5897ce;
+    background-color: #2b3173;
+    cursor: pointer;
+}
+
+.btn-notify {
+    position: absolute;
+    right: 51px;
+    height: 50px;
+    width: 50px;
+    border: 1px solid #e5e6eb;
+    border-left: none;
+    cursor: pointer;
+    justify-content: center;
+
+    /* #5fa2dd */
+    /* #f6f6f6 */
+}
+
+.btn-help {
+    position: absolute;
+    right: 0;
+    height: 50px;
+    width: 50px;
+    border-top: 1px solid #e5e6eb;
+    border-bottom: 1px solid #e5e6eb;
+    cursor: pointer;
+
+    /* #5fa2dd */
+    /* #f6f6f6 */
+}
+
+select {
+    margin-right: 16px;
+    width: 162px;
+    margin: 0px;
+    height: 32px;
+    right: auto;
+    top: 10px;
+    background-color: #fff;
+    border: 1px solid #c3c3c3;
+    border-radius: 3px;
+    padding: 0px 30px;
+    /* font-weight: 500; */
+}
+.btn-store-info{
+    position: absolute;
+    right:  344px;
+}
+.btn-user-setting{
+    width: 180px;
+    border: none !important;
+    position: absolute;
+    right:  150px;
+}
+    .user-setting{
+        height: 52px;
+        width: 180px;
+        border: none;
+    }

@@ -1,0 +1,132 @@
+.navbar {
+    position: relative;
+    left: 0;
+    top: 0;
+    float: left;
+    width: 150px;
+    height: 100vh;
+    /* background-color: #ffffff; */
+    /* border-right: 1px solid #bbbbbb; */
+}
+
+.navbar .logo-box {
+    width: 150px;
+    right: auto;
+    left: 0px;
+    top: 0px;
+    margin: 0px;
+    height: 52px;
+    cursor: pointer;
+    overflow: hidden;
+    position: static;
+    background-color: #1e235a;
+    color: #fff;
+    font-weight: 600;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.navbar .logo-box .eshop-logo {
+    width: 150px;
+    padding-top: 3px;
+    height: 50px;
+    background-position: 0 center;
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    background-image: url('../../assets/Logo_Full_White.png');
+}
+
+.navbar .navbar-content {
+    width: 100%;
+    height: calc(100vh - 52px);
+    background-color: #2b3173;
+    /* overflow: auto; */
+    overflow-y: auto;
+    overflow-x: hidden;
+    position: static;
+    left: 0px;
+    top: 0px;
+}
+
+.navbar .navbar-content .center-content-menu{
+    position: static!important;
+    height: auto;
+    /* overflow: hidden!important; */
+    overflow: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 0!important;
+}
+
+.navbar .navbar-content .bottom-content-menu{
+    border-top: 1px solid #190472!important;
+    width: 150px;
+    margin: 0 auto;
+    height: 40px;
+    
+}
+
+.navbar .navbar-content .nav-item {
+    position: relative;
+    display: inline-block;
+    width: 150px;
+    margin: 0 auto;
+    height: 40px;
+    color: #aaacc7;
+    text-decoration: none;
+    box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    
+    background-color: #2b3173;
+    cursor: pointer;
+
+    vertical-align: center;
+}
+
+.navbar .navbar-content .nav-item:active{
+    background-color: #00577b;
+}
+
+.navbar .navbar-content .nav-item:hover{
+    background-color: #1E235A;
+}
+
+.navbar .navbar-content .active-item{
+    background-color: #1E235A;
+    /* active 1E235A */
+    /* basic 2b3173 */
+}
+
+
+
+
+.nav-item .nav-item-text {
+    position: absolute;
+    left: 0;
+    bottom: 3px;
+    padding-left: 40px;
+    height: 26px;
+    width: 110px;
+    text-align: left;
+}
+
+/* .navbar .navbar-content .nav-item:hover {
+    background-color: #e5e5e5;
+    color: #000000;
+    text-decoration: none;
+} */
+
+.nav-item .nav-item-icon {
+    position: absolute;
+    /* width: 100%; */
+    height: 38px;
+    left: 8px;
+    top: 2px;
+    width: 22px;
+    text-align: center;
+    /* background-image: url(/QLCH/resources/images/slibarmenu.png?v=1); */
+    background-repeat: no-repeat;
+}
+

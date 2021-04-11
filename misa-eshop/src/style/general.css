@@ -1,0 +1,60 @@
+@import "./basic/button.css";
+@import "./basic/icon.css";
+@import "./basic/input.css";
+@import "./basic/toolbar.css";
+
+@import "./layout/navbar.css";
+@import "./layout/header.css";
+@import "./layout/content.css";
+
+
+ body {
+     margin: 0;
+     font-family: GoogleSans-Regular !important;
+     font-size: 13px !important;
+ }
+
+@font-face {
+    font-family: 'GoogleSans-Regular';
+    src: url('../assets/font/GoogleSans-Regular.otf') format('opentype');
+}
+@font-face {
+    font-family: 'GoogleSans-Bold';
+    src: url('../assets/font/GoogleSans-Bold.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'GoogleSans-Italic';
+    src: url('../assets/font/GoogleSans-Italic.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'GoogleSans-Light';
+    src: url('../assets/font/GoogleSans-Light.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'GoogleSans-Thin';
+    src: url('../assets/font/GoogleSans-Thin.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'GoogleSans-Black';
+    src: url('../assets/font/GoogleSans-Black.otf') format('opentype');
+}
+
+::-webkit-scrollbar {
+    width: 5px !important;
+    height: 5px !important;
+}
+
+::-webkit-scrollbar-track {
+    width: 6px;
+    background-color: #bbb;
+    height: calc(100vh - 40px - 53px);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #808080;
+    border-radius: 8px
+}

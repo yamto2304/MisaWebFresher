@@ -1,0 +1,154 @@
+.icon-option-default-16 {
+    width: 16px;
+    height: 16px;
+    /* background-image: url('../../src/assets/icon/option.png'); */
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.icon-dashboard {
+    /* background-image: url('../../src/assets/icon/dashboard.png'); */
+}
+
+.icon-report {
+    /* background-image: url('../../src/assets/icon/report.png'); */
+}
+
+.icon-personnel {
+    /* background-image: url('../../src/assets/icon/dic-employee.png'); */
+}
+
+.icon-setting {
+    /* background-image: url('../../src/assets/icon/setting.png'); */
+}
+
+.icon-add {
+    background-image: url('../../assets/icon/common-icon.png');
+    width: 16px;
+    height: 16px;
+    margin-right: 3px;
+    background-position: -1px -127px;
+}
+
+.icon-duplicate {
+    background-image: url('../../assets/icon/common-icon.png');
+    width: 16px;
+    height: 16px;
+    margin-right: 3px;
+    background-position: -976px -127px;
+}
+
+.icon-edit {
+    background-image: url('../../assets/icon/common-icon.png');
+    width: 16px;
+    height: 16px;
+    margin-right: 3px;
+    background-position: -77px -203px;
+}
+
+.icon-delete {
+    background-image: url('../../assets/icon/common-icon.png');
+    width: 16px;
+    height: 16px;
+    margin-right: 3px;
+    background-position: -1076px -127px;
+}
+
+.icon-reload {
+    background-image: url('../../assets/icon/common-icon.png');
+    width: 16px;
+    height: 16px;
+    margin-right: 3px;
+    background-position: -876px -127px;
+}
+
+.icon-help-18 {
+    background-image: url('../../assets/icon/icon_help_18.png');
+    width: 18px;
+    height: 18px;
+    margin-right: 3px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.icon-notify-18 {
+    background-image: url('../../assets/icon/icon-notify-18.png');
+    width: 18px;
+    height: 18px;
+    margin-right: 3px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.icon-misa-support {
+    background: #2b3173 url('../../assets/icon/icon-misa-support.png');
+    /* width: 45px ;
+    height: 45px; */
+    /* margin-right: 3px; */
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.icon-overview {
+    background-image: url('../../assets/icon/slibar-menu.png');
+    background-position: 0px 6px;
+}
+
+.icon-report {
+    background-image: url('../../assets/icon/slibar-menu.png');
+    background-position: -29px -273px;
+}
+
+.icon-order {
+    background-image: url('../../assets/icon/slibar-menu.png');
+    background-position: -29px -273px;
+}
+
+.icon-purchase {
+    background-image: url('../../assets/icon/slibar-menu.png');
+    background-position: -29px -33px;
+}
+
+.icon-promotion {
+    background-image: url('../../assets/icon/slibar-menu.png');
+    background-position: 0px -193px;
+}
+
+.icon-store-manager {
+    background-image: url('../../assets/icon/slibar-menu.png');
+    background-position: 0px -233px;
+}
+
+.icon-goods {
+    background-image: url('../../assets/icon/slibar-menu.png');
+    background-position: 0px -350px;
+}
+
+/* ========================= */
+
+.icon-search {
+    /* background-image: url('../../src/assets/icon/search.png'); */
+    background-repeat: no-repeat;
+    background-position: 16px center;
+    padding-left: 16px;
+    padding-right: 8px;
+}
+
+.icon-refresh {
+    /* background-image: url('../../src/assets/icon/refresh.png'); */
+    width: 20px;
+    height: 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.icon-save {
+    /* background-image: url('../../src/assets/icon/add.png'); */
+    width: 16px;
+    height: 16px;
+    /* background-repeat: no-repeat; */
+    /* background-size: contain; */
+    background-position: center;
+}
+
+/* =================================== */
