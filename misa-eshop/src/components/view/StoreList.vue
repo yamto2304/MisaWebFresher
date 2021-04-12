@@ -1,7 +1,12 @@
 <template>
   <div class="store-list-content">
     <div class="header-content">
-      <button class="btn-with-icon" title="Ctrl + 1">
+    <!-- <AddAndEdit /> -->
+      <button 
+        class="btn-with-icon" 
+        title="Ctrl + 1" 
+        v-on:click="btnAddOnClick()"
+      >
         <div class="icon-add"></div>
         <div class="text-btn">Thêm mới</div>
       </button>
@@ -120,14 +125,25 @@
   </div>
 </template>
 <script>
+// import AddAndEdit from "../form/AddAndEdit";
 export default {
   name: "Store",
   // props: ['isHideParent'],
-  components: {},
-  methods: {},
+  components: {
+    // AddAndEdit,
+  },
+  methods: {
+    //Mở form thêm khách hàng
+    btnAddOnClick() {
+      alert("click !");
+      this.isHideParent = false;
+      // alert("btnAddCustomerOnClick");
+    },
+  },
 
   data() {
     return {
+      isHideOption: true,
       stores: [
         {
           storeCode: 1,

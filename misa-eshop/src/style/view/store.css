@@ -53,10 +53,10 @@
     /* border-color: red; */
 }
 .grid table tr:active{
-    background-color: #e2e4f1;
+    background-color: #E2E4F1;
 }
 .grid table tr:hover{
-    background-color: #e2e4f4;
+    background-color: #EAEFF4;
 }
 
 .table-row {}
