@@ -27,4 +27,7 @@ export default {
 
 <style lang='css'>
 @import url("./style/general.css");
+/* .html{
+  overflow: hidden;
+} */
 </style>

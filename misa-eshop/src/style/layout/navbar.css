@@ -42,7 +42,7 @@
     height: calc(100vh - 52px);
     background-color: #2b3173;
     /* overflow: auto; */
-    overflow-y: auto;
+    overflow-y: hidden;
     overflow-x: hidden;
     position: static;
     left: 0px;
@@ -53,10 +53,11 @@
     position: static!important;
     height: auto;
     /* overflow: hidden!important; */
-    overflow: auto;
+    /* overflow: auto; */
     overflow-y: auto;
     overflow-x: hidden;
     padding: 0!important;
+    max-width: calc(100% - 41px);
 }
 
 .navbar .navbar-content .bottom-content-menu{
@@ -64,7 +65,7 @@
     width: 150px;
     margin: 0 auto;
     height: 40px;
-    
+    /* overflow: hidden; */
 }
 
 .navbar .navbar-content .nav-item {

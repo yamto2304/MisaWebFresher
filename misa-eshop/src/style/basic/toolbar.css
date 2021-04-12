@@ -1,6 +1,7 @@
 /* Pagging bar */
 
 .paging-bar {
+    overflow: hidden;
     display: flex;
     position: relative;
     bottom: 0px;
@@ -11,16 +12,27 @@
     /* line-height: 32px;   */
     padding: 10px; 
 }
-
+.paging-content{
+    display: flex;
+    position: relative;
+    left: 0;
+    top: 0;
+    /* margin */
+    /* height: 32px; */
+    width: 100%;
+    line-height: 32px;
+    /* vertical-align: middle; */
+}
 .paging-option{
-    /* display:flex;
+    display:flex;
     line-height: 52px;
-    vertical-align: center;
-    height: 100%;
-    margin-left: 12px; */
+    position: relative;
+    align-items: center;
+    /* height: 100%; */
+    /* margin-left: 12px; */
 }
 .btn-paging{
-    /* padding: 0;
+    padding: 0;
     right: auto;
     top: 3px;
     margin: 1px;
@@ -35,20 +47,47 @@
     border: 1px solid #6b6f9d;
     border-radius: 3px;
     cursor: pointer;
-    vertical-align: middle; */
+    vertical-align: middle; 
 
-    /* text-align: center; */
+    text-align: center;
+
+    margin-right: 1px;
 }
 
 .paging-record-infor{
-    /* position: absolute;
+    position: absolute;
     right: 10px;
-    top: 8px;
+    /* top: 8px; */
     margin: 0;
     padding: 0 4px;
-    white-space: nowrap; */
+    white-space: nowrap;
 }
 
 .paging-text{
-    
+    align-self: center;
+    text-align: center;
+    padding: 0px 4px;
+    margin: 4px;
+    white-space: nowrap;
+
+}
+.input-paging{
+    width: 34px;
+    height: 14px;
+    padding: 4px 6px;
+    text-align-last: center;
+    border: 1px solid #6b6f9d;
+    border-radius: 3px;
+
+    margin: 4px;
+}
+.select-number-records{
+    /* remove arrow */
+    -webkit-appearance: none;
+
+    padding-left: 4px;
+    margin-left: 4px;
+    height: 26px;
+    width: 60px;
+    text-indent: 1px;
 }

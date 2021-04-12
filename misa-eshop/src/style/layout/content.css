@@ -21,11 +21,27 @@
     border-width: 1px 1px 0px;
     margin: 0px;
     right: auto;
-    left: 0px;
+    left: 1px;
     top: 0px;
 }
 
 .data-content {
+    position: relative;
+    top: 0;
+    left: 0;
+    right: auto;
+    overflow: hidden;
     width: 100%;
-    height: calc(100vh - 40px - 52px - 64px);
+    height: calc(100vh - 40px - 52px - 65px);
+    background-color: #f0f0f0!important;
+    /* Border ============================== */
+    border-right: 0 !important;
+    border-top-color: #e1e1e1!important;
+    border-top-width: 1px!important;
+    border-left-color: #e1e1e1!important;
+    border-left-width: 1px!important;
+    border: 1px solid #d0d0d0;
+    border-bottom-color: #fff;
+    border-bottom-width: 0!important;
+    /* ====================================== */
 }

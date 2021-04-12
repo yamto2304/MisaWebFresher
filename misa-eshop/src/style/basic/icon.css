@@ -6,22 +6,6 @@
     background-repeat: no-repeat;
 }
 
-.icon-dashboard {
-    /* background-image: url('../../src/assets/icon/dashboard.png'); */
-}
-
-.icon-report {
-    /* background-image: url('../../src/assets/icon/report.png'); */
-}
-
-.icon-personnel {
-    /* background-image: url('../../src/assets/icon/dic-employee.png'); */
-}
-
-.icon-setting {
-    /* background-image: url('../../src/assets/icon/setting.png'); */
-}
-
 .icon-add {
     background-image: url('../../assets/icon/common-icon.png');
     width: 16px;
@@ -82,10 +66,6 @@
 
 .icon-misa-support {
     background: #2b3173 url('../../assets/icon/icon-misa-support.png');
-    /* width: 45px ;
-    height: 45px; */
-    /* margin-right: 3px; */
-    background-position: center;
     background-repeat: no-repeat;
 }
 
@@ -123,32 +103,29 @@
     background-image: url('../../assets/icon/slibar-menu.png');
     background-position: 0px -350px;
 }
-
-/* ========================= */
-
-.icon-search {
-    /* background-image: url('../../src/assets/icon/search.png'); */
-    background-repeat: no-repeat;
-    background-position: 16px center;
-    padding-left: 16px;
-    padding-right: 8px;
+/*===================== paging ==============================*/
+.icon-return{
+    background-image: url('../../assets/icon/common-icon.png');
+    background-position: -649px -124px;
 }
-
-.icon-refresh {
-    /* background-image: url('../../src/assets/icon/refresh.png'); */
-    width: 20px;
-    height: 20px;
-    background-repeat: no-repeat;
-    background-position: center;
+.icon-back{
+    background-image: url('../../assets/icon/common-icon.png');
+    background-position: -700px -124px;
 }
-
-.icon-save {
-    /* background-image: url('../../src/assets/icon/add.png'); */
-    width: 16px;
-    height: 16px;
-    /* background-repeat: no-repeat; */
-    /* background-size: contain; */
-    background-position: center;
+.icon-next{
+    background-image: url('../../assets/icon/common-icon.png');
+    background-position: -749px -124px;
 }
-
-/* =================================== */
+.icon-end{
+    background-image: url('../../assets/icon/common-icon.png');
+    background-position: -798px -124px;
+}
+.icon-refresh{
+    background-image: url('../../assets/icon/common-icon.png');
+    background-position: -849px -124px;
+}
+/* ======================================= */
+.icon-arrow-down{
+    background: url('../../assets/icon/icon-arrow-down.png') no-repeat;
+    background-position: 38px center;
+}
