@@ -36,12 +36,12 @@
     background-color: #f0f0f0!important;
     /* Border ============================== */
     border-right: 0 !important;
-    border-top-color: #e1e1e1!important;
-    border-top-width: 1px!important;
-    border-left-color: #e1e1e1!important;
-    border-left-width: 1px!important;
+    /* border-top-color: #e1e1e1!important; */
+    /* border-top-width: 1px!important; */
+    /* border-left-color: #e1e1e1!important; */
+    /* border-left-width: 1px!important; */
     border: 1px solid #d0d0d0;
     border-bottom-color: #fff;
-    border-bottom-width: 0!important;
+    /* border-bottom-width: 0!important; */
     /* ====================================== */
 }

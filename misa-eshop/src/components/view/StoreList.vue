@@ -1,7 +1,7 @@
 <template>
   <div class="store-list-content">
     <div class="header-content">
-    <!-- <AddAndEdit /> -->
+    <AddAndEdit :isHide="isHideParent"/>
       <button 
         class="btn-with-icon" 
         title="Ctrl + 1" 
@@ -125,12 +125,12 @@
   </div>
 </template>
 <script>
-// import AddAndEdit from "../form/AddAndEdit";
+import AddAndEdit from "../form/AddAndEdit";
 export default {
   name: "Store",
   // props: ['isHideParent'],
   components: {
-    // AddAndEdit,
+    AddAndEdit,
   },
   methods: {
     //Mở form thêm khách hàng
@@ -143,6 +143,7 @@ export default {
 
   data() {
     return {
+      isHideParent:true,
       isHideOption: true,
       stores: [
         {

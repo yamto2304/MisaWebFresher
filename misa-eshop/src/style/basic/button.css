@@ -37,7 +37,7 @@
     padding: 0 5px;
     background-color: #2b3173;
     justify-content: center;
-    border-right: 1px solid #190472 !important;
+    /* border-right: 1px solid #190472 !important; */
     outline: none;
 }
 
