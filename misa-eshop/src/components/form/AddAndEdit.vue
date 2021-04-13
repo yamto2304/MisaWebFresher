@@ -4,7 +4,11 @@
     <div class="dialog-content">
       <div class="form-header">
         <div class="heading"><b>Thêm mới cửa hàng</b></div>
-        <div class="btn-close-form"><button class="btn-x">X</button></div>
+        <div class="btn-close-form" v-on:click="btnCancelOnClick">
+          <button class="btn-x" v-on:click="btnCancelOnClick" title="Đóng">
+            X
+          </button>
+        </div>
       </div>
       <div class="form-content">
         <div class="box-content">
@@ -67,22 +71,34 @@
       <div class="form-footer">
         <button class="btn-with-icon btn-help-footer">
           <div class="icon-help-13"></div>
-          <div class="text-btn theme-color-text">Trợ giúp</div>
+          <div class="text-btn theme-color-text" title="F1">Trợ giúp</div>
         </button>
-        <div class="footer-feature">
+        <div class="footer-feature" v-on:click="btnSaveOnClick">
           <button class="btn-with-icon btn-save-footer">
             <div class="icon-save"></div>
-            <div class="text-btn theme-color-text" style="color: #ffffff">
+            <div
+              class="text-btn theme-color-text"
+              style="color: #ffffff"
+              title="Ctrl+S"
+            >
               Lưu
             </div>
           </button>
-          <button class="btn-with-icon btn-save-add">
+          <button
+            class="btn-with-icon btn-save-add"
+            v-on:click="btnSaveAndAddOnClick"
+          >
             <div class="icon-add-form"></div>
-            <div class="text-btn theme-color-text">Lưu và Thêm mới</div>
+            <div class="text-btn theme-color-text" title="Ctrl+Shift+S">
+              Lưu và Thêm mới
+            </div>
           </button>
-          <button class="btn-with-icon btn-cancel-form">
+          <button
+            class="btn-with-icon btn-cancel-form"
+            v-on:click="btnCancelOnClick"
+          >
             <div class="icon-cancel-form"></div>
-            <div class="text-btn theme-color-text">Huỷ bỏ</div>
+            <div class="text-btn theme-color-text" title="Ctrl+B">Huỷ bỏ</div>
           </button>
         </div>
       </div>
@@ -93,14 +109,46 @@
 export default {
   props: {
     isHide: Boolean,
+    isAddMode: Boolean,
   },
   components: {},
   methods: {
+    /**===============================================================================
+     * Lưu
+     * Active : Click button "Lưu"
+     * Result : Save a shop (Add new or Edit) and close form, reset form mode to "add"
+     * CreatedBy : Tuanhd(14/4/2021)
+     =================================================================================*/
     btnSaveOnClick() {
-      alert(this.customer.PhoneNumber);
-    },
-    btnCancelOnClick() {
+      if (this.isAddMode) {
+        alert("Thêm mới");
+      } else {
+        alert("Chỉnh sửa");
+      }
       this.$emit("closeForm", true);
+      this.$emit("isAddMode", true);
+    },
+    /**=============================================
+     * Đóng form
+     * Active : Click button X, button Cancel
+     * Result : Close form, reset form mode to "add"
+     * CreatedBy : Tuanhd(14/4/2021)
+     ==============================================*/
+    btnCancelOnClick() {
+      // this.$emit("changeFormMode", "add");
+      // this.formMode = "add";
+      // alert(this.formMode);
+      this.$emit("closeForm", true);
+      this.$emit("isAddMode", true);
+    },
+    /**===============================================================================
+     * Lưu và thêm mới
+     * Active : Click button "Lưu và thêm mới"
+     * Result : Save a shop (Add new or Edit) and reopen AddAndEdit form (with no data)
+     * CreatedBy : Tuanhd(14/4/2021)
+     =================================================================================*/
+    btnSaveAndAddOnClick() {
+      alert("Lưu và thêm mới");
     },
     //OnBlur CustomerCode Input
     blurCustomerCode() {

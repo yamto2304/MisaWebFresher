@@ -1,10 +1,14 @@
 <template>
   <div class="store-list-content">
     <div class="header-content">
-    <AddAndEdit :isHide="isHideParent"/>
-      <button 
-        class="btn-with-icon" 
-        title="Ctrl + 1" 
+      <AddAndEdit
+        :isHide="isHideParent"
+        @closeForm="closeForm"
+        :isAddMode="isParentAddMode"
+      />
+      <button
+        class="btn-with-icon"
+        title="Ctrl + 1"
         v-on:click="btnAddOnClick()"
       >
         <div class="icon-add"></div>
@@ -14,7 +18,11 @@
         <div class="icon-duplicate"></div>
         <div class="text-btn">Nhân bản</div>
       </button>
-      <button class="btn-with-icon" title="Ctrl + E">
+      <button
+        class="btn-with-icon"
+        title="Ctrl + E"
+        v-on:click="btnEditOnClick()"
+      >
         <div class="icon-edit"></div>
         <div class="text-btn">Sửa</div>
       </button>
@@ -73,8 +81,8 @@
           <tbody>
             <tr
               class="el-table__row"
-              v-for="store in stores"
-              :key="store.storeId"
+              v-for="(store, key) in stores"
+              :key="store.storeCode"
               @click="activeRow(key)"
               :class="key === selectedRow ? 'row-actived' : ''"
             >
@@ -128,23 +136,72 @@
 import AddAndEdit from "../form/AddAndEdit";
 export default {
   name: "Store",
-  // props: ['isHideParent'],
+  props: {
+    store: Object,
+  },
   components: {
     AddAndEdit,
   },
   methods: {
-    //Mở form thêm khách hàng
+    /**=======================================
+     * Thêm mới store
+     * Active : Click button Add
+     * Result : Open Form to Add store
+     * CreatedBy : Tuanhd(14/4/2021)
+     =========================================*/
     btnAddOnClick() {
-      alert("click !");
       this.isHideParent = false;
-      // alert("btnAddCustomerOnClick");
+      this.isParentAddMode = true;
+    },
+    btnEditOnClick() {
+      //Lấy ID của bản ghi được chọn
+      //Gọi Api lấy dữ liệu từ Id đã lấy
+      //Update form mode to "Edit"
+      //Binding + show dữ liệu lên form
+      this.isHideParent = false;
+      this.isParentAddMode = false;
+    },
+    /**====================================================================
+     * Đóng form
+     * Active : Recive data from child
+     * <param name="value">Form có ẩn hay không ?</param>
+     * Result(value = true) : Close that child and show StoreList component
+     * Result(value = false): Still open form
+     * CreatedBy : Tuanhd(14/4/2021)
+     =====================================================================*/
+    closeForm(value) {
+      // alert(value);
+      this.isHideParent = value;
+    },
+    /**==================================================
+     * Chuyển form mode về Add
+     * Active : Recive data from child
+     * <param name="value">Form thêm hay sửa ?</param>
+     * Result(value = true) : This form will add a store
+     * Result(value = false): This form will edit a store
+     * CreatedBy : Tuanhd(14/4/2021)
+     ===================================================*/
+    isAddMode(value) {
+      this.isAddMode = value;
+    },
+    /**=====================================================
+     * Chọn dòng được click
+     * Active : Click a row in data table
+     * <param name="key">Id của dòng được chọn</param>
+     * Result : Save Id of selected row to selectecRow param
+     * CreatedBy : Tuanhd(14/4/2021)
+     ======================================================*/
+    activeRow(key) {
+      this.selectedRow = key;
     },
   },
 
   data() {
     return {
-      isHideParent:true,
-      isHideOption: true,
+      isParentAddMode: true,
+      selectedRow: null,
+      seletedStore: [],
+      isHideParent: true,
       stores: [
         {
           storeCode: 1,
@@ -181,4 +238,10 @@ export default {
 };
 </script>
 <style scoped>
+.row-actived {
+  background-color: #e2e4f1;
+}
+.row-actived:hover {
+  background-color: #e2e4f1;
+}
 </style>

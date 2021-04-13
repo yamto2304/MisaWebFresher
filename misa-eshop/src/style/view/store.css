@@ -29,10 +29,8 @@
     position: sticky;
     top: 0;
     background-color: #ffffff;
-    /* border-right: 1px solid #bbbbbb; */
     border-right: 1px solid #e4e4e4;
     /* border-left: 1px solid #e4e4e4; */
-
     padding: 0;
     /* border-left: 1px solid #bbbbbb; */
 }
@@ -42,23 +40,18 @@
 }
 
 .grid table td {
-    /* border-bottom: 1px solid #bbbbbb; */
     border-right: 1px solid #d0d0d0;
     border-bottom: 1px solid #d0d0d0;
-
     /*border-left: 1px solid #bbbbbb;*/
     padding: 7px 10px 6px;
-    
-    text-align: left;
+        text-align: left;
     white-space: nowrap;
     box-sizing: border-box;
     overflow: hidden;
     text-overflow: ellipsis;
     word-break: break-all;
 margin: 0;
-    /* border-color: #d0d0d0; */
     height: 32px;
-    /* border-color: red; */
 }
 .grid table tr:active{
     background-color: #E2E4F1;
@@ -69,15 +62,15 @@ margin: 0;
 
 .table-row {}
 
-.row-actived {}
+
 
 .grid table th .cell {
     padding: 15px 16px !important;
 }
 
-tbody tr:nth-child(2n+1) {
+/* tbody tr:nth-child(2n+1) {
     background-color: #fafafa;
-}
+} */
 
 /* ================= */
 
@@ -115,7 +108,7 @@ tbody tr:nth-child(2n+1) {
 .store-status {
     position: relative;
     right: 0;
-    /* width: 149px; */
+    width: 149px;
 }
 /* =========== */
 .th-name{
