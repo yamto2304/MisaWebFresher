@@ -73,8 +73,11 @@
           <div class="icon-help-13"></div>
           <div class="text-btn theme-color-text" title="F1">Trợ giúp</div>
         </button>
-        <div class="footer-feature" v-on:click="btnSaveOnClick">
-          <button class="btn-with-icon btn-save-footer">
+        <div class="footer-feature">
+          <button
+            class="btn-with-icon btn-save-footer"
+            v-on:click="btnSaveOnClick"
+          >
             <div class="icon-save"></div>
             <div
               class="text-btn theme-color-text"
@@ -148,7 +151,10 @@ export default {
      * CreatedBy : Tuanhd(14/4/2021)
      =================================================================================*/
     btnSaveAndAddOnClick() {
+      this.$emit("closeForm", true);
       alert("Lưu và thêm mới");
+      this.$emit("isAddMode", true);
+      // this.$emit("closeForm", false);
     },
     //OnBlur CustomerCode Input
     blurCustomerCode() {
@@ -305,6 +311,7 @@ input:focus {
   cursor: pointer;
   outline: none;
 }
+/* =========================================== */
 .form-content {
   background-color: #dfdfdf;
   background-color: #fff;

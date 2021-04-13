@@ -158,6 +158,7 @@ export default {
       //Gọi Api lấy dữ liệu từ Id đã lấy
       //Update form mode to "Edit"
       //Binding + show dữ liệu lên form
+      alert("Edit store with code" + this.selectedRow);
       this.isHideParent = false;
       this.isParentAddMode = false;
     },

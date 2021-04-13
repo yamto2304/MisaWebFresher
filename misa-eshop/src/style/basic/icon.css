@@ -162,3 +162,19 @@
     margin-bottom: 3px;
     margin-right: 5px;
 }
+.icon-popup-question{
+    background-image: url('../../assets/icon/icon-popup.png');
+    background-position: -165px -2px;
+    height: 44px;
+    width: 44px;
+    background-repeat: no-repeat;
+    margin-right: 12px;
+}
+.icon-cancel-blue {
+    background-image: url('../../assets/icon/icon-cancel-blue.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 20px;
+    height: 20px;
+    margin-right: 3px;
+}
