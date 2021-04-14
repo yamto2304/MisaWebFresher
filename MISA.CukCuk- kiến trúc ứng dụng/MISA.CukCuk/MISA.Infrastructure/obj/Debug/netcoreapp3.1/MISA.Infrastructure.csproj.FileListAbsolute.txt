@@ -1,0 +1,24 @@
+D:\PRIVATE\GitHub\MISA.Web2021_03\MISA.Web2021_03\Api\MISA.CukCuk\MISA.Infrastructure\obj\Debug\netcoreapp3.1\MISA.Infrastructure.AssemblyInfoInputs.cache
+D:\PRIVATE\GitHub\MISA.Web2021_03\MISA.Web2021_03\Api\MISA.CukCuk\MISA.Infrastructure\obj\Debug\netcoreapp3.1\MISA.Infrastructure.AssemblyInfo.cs
+D:\PRIVATE\GitHub\MISA.Web2021_03\MISA.Web2021_03\Api\MISA.CukCuk\MISA.Infrastructure\obj\Debug\netcoreapp3.1\MISA.Infrastructure.csproj.CoreCompileInputs.cache
+D:\PRIVATE\GitHub\MISA.Web2021_03\MISA.Web2021_03\Api\MISA.CukCuk\MISA.Infrastructure\bin\Debug\netcoreapp3.1\MISA.Infrastructure.deps.json
+D:\PRIVATE\GitHub\MISA.Web2021_03\MISA.Web2021_03\Api\MISA.CukCuk\MISA.Infrastructure\bin\Debug\netcoreapp3.1\MISA.Infrastructure.dll
+D:\PRIVATE\GitHub\MISA.Web2021_03\MISA.Web2021_03\Api\MISA.CukCuk\MISA.Infrastructure\bin\Debug\netcoreapp3.1\MISA.Infrastructure.pdb
+D:\PRIVATE\GitHub\MISA.Web2021_03\MISA.Web2021_03\Api\MISA.CukCuk\MISA.Infrastructure\bin\Debug\netcoreapp3.1\MISA.Core.dll
+D:\PRIVATE\GitHub\MISA.Web2021_03\MISA.Web2021_03\Api\MISA.CukCuk\MISA.Infrastructure\bin\Debug\netcoreapp3.1\MISA.Core.pdb
+D:\PRIVATE\GitHub\MISA.Web2021_03\MISA.Web2021_03\Api\MISA.CukCuk\MISA.Infrastructure\obj\Debug\netcoreapp3.1\MISA.Infrastructure.csprojAssemblyReference.cache
+D:\PRIVATE\GitHub\MISA.Web2021_03\MISA.Web2021_03\Api\MISA.CukCuk\MISA.Infrastructure\obj\Debug\netcoreapp3.1\MISA.Infrastructure.csproj.CopyComplete
+D:\PRIVATE\GitHub\MISA.Web2021_03\MISA.Web2021_03\Api\MISA.CukCuk\MISA.Infrastructure\obj\Debug\netcoreapp3.1\MISA.Infrastructure.dll
+D:\PRIVATE\GitHub\MISA.Web2021_03\MISA.Web2021_03\Api\MISA.CukCuk\MISA.Infrastructure\obj\Debug\netcoreapp3.1\MISA.Infrastructure.pdb
+C:\Users\hdtuan\Desktop\GIthub\MISA.CukCuk- kiến trúc ứng dụng\MISA.CukCuk\MISA.Infrastructure\bin\Debug\netcoreapp3.1\MISA.Infrastructure.deps.json
+C:\Users\hdtuan\Desktop\GIthub\MISA.CukCuk- kiến trúc ứng dụng\MISA.CukCuk\MISA.Infrastructure\bin\Debug\netcoreapp3.1\MISA.Infrastructure.dll
+C:\Users\hdtuan\Desktop\GIthub\MISA.CukCuk- kiến trúc ứng dụng\MISA.CukCuk\MISA.Infrastructure\bin\Debug\netcoreapp3.1\MISA.Infrastructure.pdb
+C:\Users\hdtuan\Desktop\GIthub\MISA.CukCuk- kiến trúc ứng dụng\MISA.CukCuk\MISA.Infrastructure\bin\Debug\netcoreapp3.1\MISA.Core.dll
+C:\Users\hdtuan\Desktop\GIthub\MISA.CukCuk- kiến trúc ứng dụng\MISA.CukCuk\MISA.Infrastructure\bin\Debug\netcoreapp3.1\MISA.Core.pdb
+C:\Users\hdtuan\Desktop\GIthub\MISA.CukCuk- kiến trúc ứng dụng\MISA.CukCuk\MISA.Infrastructure\obj\Debug\netcoreapp3.1\MISA.Infrastructure.csprojAssemblyReference.cache
+C:\Users\hdtuan\Desktop\GIthub\MISA.CukCuk- kiến trúc ứng dụng\MISA.CukCuk\MISA.Infrastructure\obj\Debug\netcoreapp3.1\MISA.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\hdtuan\Desktop\GIthub\MISA.CukCuk- kiến trúc ứng dụng\MISA.CukCuk\MISA.Infrastructure\obj\Debug\netcoreapp3.1\MISA.Infrastructure.AssemblyInfo.cs
+C:\Users\hdtuan\Desktop\GIthub\MISA.CukCuk- kiến trúc ứng dụng\MISA.CukCuk\MISA.Infrastructure\obj\Debug\netcoreapp3.1\MISA.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\hdtuan\Desktop\GIthub\MISA.CukCuk- kiến trúc ứng dụng\MISA.CukCuk\MISA.Infrastructure\obj\Debug\netcoreapp3.1\MISA.Infrastructure.csproj.CopyComplete
+C:\Users\hdtuan\Desktop\GIthub\MISA.CukCuk- kiến trúc ứng dụng\MISA.CukCuk\MISA.Infrastructure\obj\Debug\netcoreapp3.1\MISA.Infrastructure.dll
+C:\Users\hdtuan\Desktop\GIthub\MISA.CukCuk- kiến trúc ứng dụng\MISA.CukCuk\MISA.Infrastructure\obj\Debug\netcoreapp3.1\MISA.Infrastructure.pdb
