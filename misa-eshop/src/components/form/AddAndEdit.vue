@@ -16,19 +16,34 @@
             <div class="row-item-name">
               Mã cửa hàng <span class="red-text">*</span>
             </div>
-            <input class="row-input-big" />
+            <input
+              class="row-input-big"
+              :class="{ isBlurAlert: this.storeCodeAlert }"
+              v-model="store.storeCode"
+              v-on:blur="blurStoreCode()"
+            />
           </div>
           <div class="form-row-basic">
             <div class="row-item-name">
               Tên cửa hàng <span class="red-text">*</span>
             </div>
-            <input class="row-input-big" />
+            <input
+              class="row-input-big"
+              :class="{ isBlurAlert: this.storeNameAlert }"
+              v-model="store.storeName"
+              v-on:blur="blurStoreName()"
+            />
           </div>
           <div class="form-row-high">
             <div class="row-item-name">
               Địa chỉ <span class="red-text">*</span>
             </div>
-            <input class="row-input-big" />
+            <input
+              class="row-input-big"
+              :class="{ isBlurAlert: this.storeAddressAlert }"
+              v-model="store.address"
+              v-on:blur="blurStoreAddress()"
+            />
           </div>
           <div class="form-row-basic">
             <div class="row-item-left">
@@ -37,23 +52,23 @@
             </div>
             <div class="row-item-right">
               <div class="row-item-name">Mã số thuế</div>
-              <input class="row-input-small" />
+              <input class="row-input-small" v-model="store.phoneNumber" />
             </div>
           </div>
           <div class="form-row-basic">
             <div class="row-item-left">
               <div class="row-item-name">Quốc gia</div>
-              <input class="row-input-small" />
+              <input class="row-input-small" v-model="store.countryId" />
             </div>
           </div>
           <div class="form-row-basic">
             <div class="row-item-left">
               <div class="row-item-name">Tỉnh/Thành phố</div>
-              <input class="row-input-small" />
+              <input class="row-input-small" v-model="store.provinceId" />
             </div>
             <div class="row-item-right">
               <div class="row-item-name">Quận/Huyện</div>
-              <input class="row-input-small" />
+              <input class="row-input-small" v-model="store.districtId" />
             </div>
           </div>
           <div class="form-row-basic">
@@ -63,7 +78,7 @@
             </div>
             <div class="row-item-right">
               <div class="row-item-name">Đường phố</div>
-              <input class="row-input-small" />
+              <input class="row-input-small" v-model="store.wardId" />
             </div>
           </div>
         </div>
@@ -109,10 +124,17 @@
   </div>
 </template>
 <script>
+import axios from "axios";
 export default {
   props: {
     isHide: Boolean,
     isAddMode: Boolean,
+
+    storeCodeAlert: Boolean,
+    storeNameAlert: Boolean,
+    storeAddressAlert: Boolean,
+
+    store: Object,
   },
   components: {},
   methods: {
@@ -122,9 +144,13 @@ export default {
      * Result : Save a shop (Add new or Edit) and close form, reset form mode to "add"
      * CreatedBy : Tuanhd(14/4/2021)
      =================================================================================*/
-    btnSaveOnClick() {
+    async btnSaveOnClick() {
       if (this.isAddMode) {
-        alert("Thêm mới");
+        const response = await axios.post(
+          "https://localhost:44343/api/v1/Stores",
+          this.store
+        );
+        console.log(response);
       } else {
         alert("Chỉnh sửa");
       }
@@ -156,54 +182,43 @@ export default {
       this.$emit("isAddMode", true);
       // this.$emit("closeForm", false);
     },
-    //OnBlur CustomerCode Input
-    blurCustomerCode() {
-      // this.showSmallMessage(id);
-      if (!this.customer.CustomerCode) {
-        // alert(this.errorCustomerCodeEmpty);
-        this.customerCodeAlert = true;
-      } else this.customerCodeAlert = false;
+    /**================================================
+     * Check Mã cửa hàng
+     * Active : Mouse click outside the StoreCode input
+     * Result : The border become red
+     * CreatedBy : Tuanhd(14/4/2021)
+     =================================================*/
+    blurStoreCode() {
+      if (this.store.StoreCode == null) {
+        // alert(this.store.StoreCode);
+        console.log(this.store.StoreCode);
+        this.storeCodeAlert = true;
+      } else this.storeCodeAlert = false;
     },
-    //OnBlur FullName Input
-    blurName() {
+    /**================================================
+     * Check Tên cửa hàng
+     * Active : Mouse click outside the StoreName input
+     * Result : The border become red
+     * CreatedBy : Tuanhd(14/4/2021)
+     ==================================================*/
+    blurStoreName() {
       // this.showSmallMessage();
-      if (!this.customer.FullName) {
+      if (!this.store.StoreName) {
         // alert(this.errorNameEmpty);
-        this.fullNameAlert = true;
-      } else this.fullNameAlert = false;
+        this.storeNameAlert = true;
+      } else this.storeNameAlert = false;
     },
-    //OnBlur PhoneNumber Input
-    blurPhoneNumber() {
-      this.showSmallMessage();
-      if (!this.customer.PhoneNumber) {
-        //Lỗi để trống
-        // alert(this.errorPhoneNumberEmpty);
-        this.phoneNumberAlert = true;
-      } else this.phoneNumberAlert = false;
-    },
-    blurEmail() {
+    /**===================================================
+     * Check Địa chỉ cửa hàng
+     * Active : Mouse click outside the StoreAddress input
+     * Result : The border become red
+     * CreatedBy : Tuanhd(14/4/2021)
+     =====================================================*/
+    blurStoreAddress() {
       // this.showSmallMessage();
-      if (!this.customer.Email) return;
-      if (!this.validateEmail(this.customer.Email)) {
-        this.emailAlert = true;
-      }
-    },
-
-    validateEmail(email) {
-      const re = /\S+@\S+\.\S+/;
-      return re.test(String(email).toLowerCase());
-    },
-    showSmallMessage() {
-      // this.coordinateX = document
-      //   .querySelector("#" + id)
-      //   .getBoundingClientRect().x;
-      // this.coordinateY = document
-      //   .querySelector("#" + id)
-      //   .getBoundingClientRect().y;
-      // this.isHideMessage = false;
-    },
-    closeMessage() {
-      this.isHideMessage = true;
+      if (!this.store.StoreAddress) {
+        this.storeAddressAlert = true;
+      } else this.storeAddressAlert = false;
     },
   },
   mounted() {
@@ -211,29 +226,7 @@ export default {
   },
   data() {
     return {
-      coordinateX: null,
-      coordinateY: null,
-      isHideMessage: true,
-      error: {},
-      customer: {
-        customerId: "68915a99-9694-11eb-8a1f-00163e047e89",
-        customerCode: "Kho23432",
-        fullName: "Lê Quang Ngân",
-        dateOfBirth: null,
-        gender: null,
-        memberCardCode: null,
-        customerGroupId: "7a0b757e-41eb-4df6-c6f8-494a84b910f4",
-        phoneNumber: "090909090",
-        companyName: null,
-        companyTaxCode: null,
-        email: "Ngan@gmail.com",
-        address: null,
-        note: null,
-        createdDate: null,
-        createdBy: null,
-        modifiedDate: null,
-        modifiedBy: null,
-      },
+      // store: {},
     };
   },
 };
@@ -243,7 +236,7 @@ export default {
   display: none;
 }
 .isBlurAlert {
-  border-color: red;
+  border-color: red !important;
 }
 .m-dialog {
   z-index: 998;

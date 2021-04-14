@@ -5,6 +5,7 @@
         :isHide="isHideParent"
         @closeForm="closeForm"
         :isAddMode="isParentAddMode"
+        :store="selectedStore"
       />
       <button
         class="btn-with-icon"
@@ -81,10 +82,10 @@
           <tbody>
             <tr
               class="el-table__row"
-              v-for="(store, key) in stores"
-              :key="store.storeCode"
-              @click="activeRow(key)"
-              :class="key === selectedRow ? 'row-actived' : ''"
+              v-for="store in stores"
+              :key="store.storeId"
+              @click="activeRow(store.storeId)"
+              :class="store.storeId === selectedRow ? 'row-actived' : ''"
             >
               <td>
                 <div class="cell">{{ store.storeCode }}</div>
@@ -93,7 +94,7 @@
                 <div class="cell">{{ store.storeName }}</div>
               </td>
               <td>
-                <div class="cell">{{ store.storeAddress }}</div>
+                <div class="cell">{{ store.address }}</div>
               </td>
               <td>
                 <div class="cell">{{ store.phoneNumber }}</div>
@@ -118,7 +119,7 @@
           <div class="btn-paging icon-next"></div>
           <div class="btn-paging icon-end"></div>
           <div class="btn-paging icon-refresh"></div>
-          <select class="select-number-records icon-arrow-down">
+          <select class="select-number-records">
             <option>15</option>
             <option>25</option>
             <option>50</option>
@@ -134,6 +135,7 @@
 </template>
 <script>
 import AddAndEdit from "../form/AddAndEdit";
+import * as axios from "axios";
 export default {
   name: "Store",
   props: {
@@ -150,18 +152,44 @@ export default {
      * CreatedBy : Tuanhd(14/4/2021)
      =========================================*/
     btnAddOnClick() {
+      //Hiện form thêm mới
       this.isHideParent = false;
+      //Cài đặt mode của form là Add
       this.isParentAddMode = true;
+      //Truyền xuống Object rỗng để làm trống form
+      this.selectedStore = {};
     },
+
+    /**================================
+     * Chỉnh sửa store
+     * Active : Click button Edit
+     * Result : Open form (added data)
+     * CreatedBy : Tuanhd(14/4/2021)
+     ================================*/
     btnEditOnClick() {
-      //Lấy ID của bản ghi được chọn
-      //Gọi Api lấy dữ liệu từ Id đã lấy
+      //Id của bản ghi được chọn lưu tại biến selectedRow
+      if (this.selectedRow == null) {
+        alert("Chưa chọn bản ghi để sửa");
+        return;
+      } else {
+        //Gọi Api lấy dữ liệu từ Id đã lấy
+        axios
+          .get("https://localhost:44343/api/v1/Stores/" + this.selectedRow)
+          .then((res) => {
+            //Đẩy data thu được vào biến selectedStore và truyền xuống con
+            this.selectedStore = res.data;
+            console.log(res);
+          })
+          .catch((res) => {
+            console.log(res);
+          });
+      }
       //Update form mode to "Edit"
-      //Binding + show dữ liệu lên form
-      alert("Edit store with code" + this.selectedRow);
-      this.isHideParent = false;
       this.isParentAddMode = false;
+      //Hiện form Sửa
+      this.isHideParent = false;
     },
+
     /**====================================================================
      * Đóng form
      * Active : Recive data from child
@@ -171,9 +199,9 @@ export default {
      * CreatedBy : Tuanhd(14/4/2021)
      =====================================================================*/
     closeForm(value) {
-      // alert(value);
       this.isHideParent = value;
     },
+
     /**==================================================
      * Chuyển form mode về Add
      * Active : Recive data from child
@@ -185,6 +213,7 @@ export default {
     isAddMode(value) {
       this.isAddMode = value;
     },
+
     /**=====================================================
      * Chọn dòng được click
      * Active : Click a row in data table
@@ -199,43 +228,29 @@ export default {
 
   data() {
     return {
+      //Form có ở mode Add không ?
       isParentAddMode: true,
+      //Dòng được chọn
       selectedRow: null,
-      seletedStore: [],
+      //Object store được chọn
+      selectedStore: [],
+      //Ẩn form
       isHideParent: true,
-      stores: [
-        {
-          storeCode: 1,
-          storeName: "Store 1",
-          storeAddress: "Address 1",
-          phoneNumber: 1,
-          status: 1,
-        },
-        {
-          storeCode: 2,
-          storeName: "Store 2",
-          storeAddress: "Address 2",
-          phoneNumber: 2,
-          status: 2,
-        },
-        {
-          storeCode: 3,
-          storeName: "Store 3",
-          storeAddress: "Address 3",
-          phoneNumber: 3,
-          status: 3,
-        },
-        {
-          storeCode: 4,
-          storeName: "Store 4",
-          storeAddress: "Address 4",
-          phoneNumber: 4,
-          status: 4,
-        },
-      ],
+      stores: [],
     };
   },
-  async created() {},
+  /**=============================
+   * Lấy dữ liệu khi load trang 
+   * CreatedBy : Tuanhd(14/4/2021)
+   ==============================*/
+  async created() {
+    //Lấy dữ liệu từ API
+    const response = await axios.get(`https://localhost:44343/api/v1/Stores`);
+
+    console.log(response.data[0]);
+    //Lưu dữ liệu vào biến stores để chạy v-for show dữ liệu lên bảng
+    this.stores = response.data;
+  },
 };
 </script>
 <style scoped>

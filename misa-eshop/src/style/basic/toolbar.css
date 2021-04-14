@@ -86,8 +86,17 @@
     -webkit-appearance: none;
 
     padding-left: 4px;
+    padding-right: 4px;
     margin-left: 4px;
     height: 26px;
-    width: 60px;
+    width: 50px;
     text-indent: 1px;
+
+    background: url('../../assets/icon/icon-arrow-down.png') no-repeat;
+    background-position: 32px center;
+}
+.store-infor{
+    text-align-last: center;
+    padding: 0 7px;
+    -webkit-appearance: none;
 }

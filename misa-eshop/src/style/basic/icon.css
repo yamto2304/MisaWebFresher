@@ -151,7 +151,8 @@
 /* ======================================= */
 .icon-arrow-down{
     background: url('../../assets/icon/icon-arrow-down.png') no-repeat;
-    background-position: 38px center;
+    background-position: center;
+    
 }
 /* ================================= */
 .icon-save{
@@ -177,4 +178,12 @@
     width: 20px;
     height: 20px;
     margin-right: 3px;
+}
+.icon-avatar{
+    background-image: url('../../assets/icon/icon-avatar.png');
+    width: 36px!important;
+    height: 36px!important;
+    border-radius: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
 }

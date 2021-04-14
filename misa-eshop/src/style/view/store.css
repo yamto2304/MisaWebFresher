@@ -15,6 +15,7 @@
 
 .grid table {
     width: 100%;
+    border-collapse: collapse;
 }
 
 .grid table thead {
@@ -23,16 +24,13 @@
 
 .grid table thead tr th {
     white-space: nowrap;
-    /* border-bottom: 1px solid #bbbbbb; */
     text-align: center;
     font-weight: bold !important;
     position: sticky;
     top: 0;
     background-color: #ffffff;
     border-right: 1px solid #e4e4e4;
-    /* border-left: 1px solid #e4e4e4; */
     padding: 0;
-    /* border-left: 1px solid #bbbbbb; */
 }
 
 .grid table th .cell {
@@ -44,25 +42,25 @@
     border-bottom: 1px solid #d0d0d0;
     /*border-left: 1px solid #bbbbbb;*/
     padding: 7px 10px 6px;
-        text-align: left;
+    text-align: left;
     white-space: nowrap;
     box-sizing: border-box;
     overflow: hidden;
     text-overflow: ellipsis;
     word-break: break-all;
-margin: 0;
+    margin: 0;
     height: 32px;
 }
-.grid table tr:active{
+
+.grid table tr:active {
     background-color: #E2E4F1;
 }
-.grid table tr:hover{
+
+.grid table tr:hover {
     background-color: #EAEFF4;
 }
 
 .table-row {}
-
-
 
 .grid table th .cell {
     padding: 15px 16px !important;
@@ -105,13 +103,16 @@ margin: 0;
     margin: 0;
     /* padding: 7px 10px 6px; */
 }
+
 .store-status {
     position: relative;
     right: 0;
     width: 149px;
 }
+
 /* =========== */
-.th-name{
+
+.th-name {
     position: absolute;
     top: 0;
     background-color: #f0f0f0 !important;
@@ -119,14 +120,16 @@ margin: 0;
     width: 100%;
     line-height: 32px;
 }
-.th-filter{
-    position:absolute;
+
+.th-filter {
+    position: absolute;
     bottom: 2px;
     height: 30px;
     width: 100% !important;
     /* background-color: red  !important; */
 }
-.btn-filter{
+
+.btn-filter {
     position: absolute;
     left: 0;
     margin: 0px;
@@ -139,11 +142,14 @@ margin: 0;
     border: 1px solid #e1e1e1;
     outline: none;
 }
-.btn-filter:active{
-    border: 1px solid black;
+
+.btn-filter:active {
+    /* border: 1px solid black; */
 }
+
 /* ========== */
-.input-filter{
+
+.input-filter {
     position: absolute;
     right: 0;
     margin: 0px;
@@ -154,7 +160,13 @@ margin: 0;
     border-radius: 0;
     padding: 5px 10px;
     border: 1px solid #e1e1e1;
+    outline: none;
 }
-.input-filter:active{
-    border: red;
+
+.input-filter:focus {
+    border-color: #636dde;
+}
+
+input:focus {
+    border-color: #636dde;
 }
