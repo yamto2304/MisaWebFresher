@@ -190,7 +190,7 @@ namespace MISA.CukCuk.Api.Controllers
                     moreInfo = "https://openapi.misa.com.vn/errorcode/misa-001",
                     traceId = "ba9587fd-1a79-4ac5-a0ca-2c9f74dfd3fb"
                 };
-                return BadRequest(erroInfo);
+                return Ok(erroInfo);
             }
             //Thực hiện lấy dữ liệu từ Db
             var storeName = "Proc_UpdateStore";

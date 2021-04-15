@@ -143,7 +143,7 @@ import * as axios from "axios";
 export default {
   name: "Store",
   props: {
-    store: Object,
+    // store: Object,
   },
   components: {
     AddAndEdit,
@@ -161,7 +161,7 @@ export default {
       //Cài đặt mode của form là Add
       this.isParentAddMode = true;
       //Truyền xuống Object rỗng để làm trống form
-      this.selectedStore = {};
+      this.selectedStore = this.emptyStore;
     },
 
     /**================================
@@ -176,17 +176,17 @@ export default {
         alert("Chưa chọn bản ghi để sửa");
         return;
       } else {
-        //Gọi Api lấy dữ liệu từ Id đã lấy
-        axios
-          .get("https://localhost:44343/api/v1/Stores/" + this.selectedRow)
-          .then((res) => {
-            //Đẩy data thu được vào biến selectedStore và truyền xuống con
-            this.selectedStore = res.data;
-            console.log(res);
-          })
-          .catch((res) => {
-            console.log(res);
-          });
+        // //Gọi Api lấy dữ liệu từ Id đã lấy
+        // axios
+        //   .get("https://localhost:44343/api/v1/Stores/" + this.selectedRow)
+        //   .then((res) => {
+        //     //Đẩy data thu được vào biến selectedStore và truyền xuống con
+        //     this.selectedStore = res.data;
+        //     console.log(res);
+        //   })
+        //   .catch((res) => {
+        //     console.log(res);
+        //   });
       }
       //Update form mode to "Edit"
       this.isParentAddMode = false;
@@ -203,20 +203,19 @@ export default {
         return;
       } else {
         //Mở delete alert
-        
 
         // ===============================================
-        //Gọi Api lấy dữ liệu từ Id đã lấy
-        // axios
-        //   .delete("https://localhost:44343/api/v1/Stores/" + this.selectedRow)
-        //   .then((res) => {
-        //     //Đẩy data thu được vào biến selectedStore và truyền xuống con
-        //     // this.selectedStore = res.data;
-        //     console.log(res);
-        //   })
-        //   .catch((res) => {
-        //     console.log(res);
-        //   });
+        //Gọi Api xoá dữ liệu
+        axios
+          .delete("https://localhost:44343/api/v1/Stores/" + this.selectedRow)
+          .then((res) => {
+            //Đẩy data thu được vào biến selectedStore và truyền xuống con
+            // this.selectedStore = res.data;
+            console.log(res);
+          })
+          .catch((res) => {
+            console.log(res);
+          });
       }
     },
     /**====================================================================
@@ -250,8 +249,20 @@ export default {
      * Result : Save Id of selected row to selectecRow param
      * CreatedBy : Tuanhd(14/4/2021)
      ======================================================*/
-    activeRow(key) {
+     activeRow(key) {
       this.selectedRow = key;
+      //Gọi Api lấy dữ liệu từ Id đã lấy
+       axios
+        .get("https://localhost:44343/api/v1/Stores/" + this.selectedRow)
+        .then((res) => {
+          //Đẩy data thu được vào biến selectedStore và truyền xuống con
+          this.selectedStore = res.data;
+          // console.log(res);
+        })
+        .catch((res) => {
+          console.log(res);
+        });
+      console.log(this.selectedStore);
     },
   },
 
@@ -262,10 +273,28 @@ export default {
       //Dòng được chọn
       selectedRow: null,
       //Object store được chọn
-      selectedStore: [],
+      selectedStore: {},
       //Ẩn form
       isHideParent: true,
       stores: [],
+      emptyStore: {
+        // storeId: null,
+        // storeCode: null,
+        // StoreName: null,
+        // Address: null,
+        // PhoneNumber: null,
+        // StoreTaxCode: null,
+        // CountryId: null,
+        // ProvinceId: null,
+        // DistrictId: null,
+        // WardId: null,
+        // Street: null,
+        // Status: null,
+        // CreatedDate: null,
+        // CreatedBy: null,
+        // ModifiedDate: null,
+        // ModifiedBy: null,
+      },
     };
   },
   /**=============================
@@ -276,7 +305,7 @@ export default {
     //Lấy dữ liệu từ API
     const response = await axios.get(`https://localhost:44343/api/v1/Stores`);
 
-    console.log(response.data[0]);
+    console.log(response.data);
     //Lưu dữ liệu vào biến stores để chạy v-for show dữ liệu lên bảng
     this.stores = response.data;
   },

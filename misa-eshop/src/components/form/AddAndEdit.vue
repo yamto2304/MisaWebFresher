@@ -17,10 +17,10 @@
               Mã cửa hàng <span class="red-text">*</span>
             </div>
             <input
-              class="row-input-big"
-              :class="{ isBlurAlert: this.storeCodeAlert }"
               v-model="store.storeCode"
-              v-on:blur="blurStoreCode()"
+              class="row-input-big"
+              :class="{ isBlurAlert: storeCodeAlert }"
+              v-on:blur="blurStoreCode"
             />
           </div>
           <div class="form-row-basic">
@@ -28,9 +28,9 @@
               Tên cửa hàng <span class="red-text">*</span>
             </div>
             <input
-              class="row-input-big"
-              :class="{ isBlurAlert: this.storeNameAlert }"
               v-model="store.storeName"
+              class="row-input-big"
+              :class="{ isBlurAlert: storeNameAlert }"
               v-on:blur="blurStoreName()"
             />
           </div>
@@ -39,20 +39,20 @@
               Địa chỉ <span class="red-text">*</span>
             </div>
             <input
-              class="row-input-big"
-              :class="{ isBlurAlert: this.storeAddressAlert }"
               v-model="store.address"
+              class="row-input-big"
               v-on:blur="blurStoreAddress()"
+              :class="{ isBlurAlert: storeAddressAlert }"
             />
           </div>
           <div class="form-row-basic">
             <div class="row-item-left">
               <div class="row-item-name">Số điện thoại</div>
-              <input class="row-input-small" />
+              <input class="row-input-small" v-model="store.phoneNumber" />
             </div>
             <div class="row-item-right">
               <div class="row-item-name">Mã số thuế</div>
-              <input class="row-input-small" v-model="store.phoneNumber" />
+              <input class="row-input-small" v-model="store.storeTaxCode" />
             </div>
           </div>
           <div class="form-row-basic">
@@ -74,11 +74,11 @@
           <div class="form-row-basic">
             <div class="row-item-left">
               <div class="row-item-name">Phường/Xã</div>
-              <input class="row-input-small" />
+              <input class="row-input-small" v-model="store.wardId" />
             </div>
             <div class="row-item-right">
               <div class="row-item-name">Đường phố</div>
-              <input class="row-input-small" v-model="store.wardId" />
+              <input class="row-input-small" v-model="store.street" />
             </div>
           </div>
         </div>
@@ -125,16 +125,13 @@
 </template>
 <script>
 import axios from "axios";
+// import axios from "axios";
 export default {
   props: {
     isHide: Boolean,
     isAddMode: Boolean,
 
-    storeCodeAlert: Boolean,
-    storeNameAlert: Boolean,
-    storeAddressAlert: Boolean,
-
-    // store: Object,
+    store: { type: Object, default: null },
   },
   components: {},
   methods: {
@@ -144,18 +141,34 @@ export default {
      * Result : Save a shop (Add new or Edit) and close form, reset form mode to "add"
      * CreatedBy : Tuanhd(14/4/2021)
      =================================================================================*/
-    async btnSaveOnClick() {
+    btnSaveOnClick() {
       if (this.isAddMode) {
-        const response = await axios.post(
-          "https://localhost:44343/api/v1/Stores",
-          this.store
-        );
-        console.log(response);
+        axios.post("https://localhost:44343/api/v1/Stores", this.store)
+        .then((res) => {
+            console.log(res);
+          })
+          .catch((res) => {
+            console.log(res);
+          });
+        // console.log(this.store); 
+        // console.log(response);
       } else {
-        alert("Chỉnh sửa");
+        console.log("edit");
+        axios
+          .put(
+            "https://localhost:44343/api/v1/Stores/" + this.store.storeId,
+            this.store
+          )
+          .then((res) => {
+            console.log(res.data.userMsg);
+          })
+          .catch((res) => {
+            console.log(res);
+          });
+        // alert("Chỉnh sửa");
       }
-      this.$emit("closeForm", true);
-      this.$emit("isAddMode", true);
+      // this.$emit("closeForm", true);
+      // this.$emit("isAddMode", true);
     },
     /**=============================================
      * Đóng form
@@ -177,10 +190,11 @@ export default {
      * CreatedBy : Tuanhd(14/4/2021)
      =================================================================================*/
     btnSaveAndAddOnClick() {
-      this.$emit("closeForm", true);
-      alert("Lưu và thêm mới");
-      this.$emit("isAddMode", true);
-      // this.$emit("closeForm", false);
+      console.log(this.store);
+      console.log(this.isAddMode);
+      // this.$emit("closeForm", true);
+      // alert("Lưu và thêm mới");
+      // this.$emit("isAddMode", true);
     },
     /**================================================
      * Check Mã cửa hàng
@@ -189,9 +203,11 @@ export default {
      * CreatedBy : Tuanhd(14/4/2021)
      =================================================*/
     blurStoreCode() {
-      if (this.store.StoreCode.value() == null) {
+      // console.log(this.store);
+      // console.log(this.store);
+      if (!this.store.storeCode) {
         // alert(this.store.StoreCode);
-        console.log(this.store.StoreCode);
+        // console.log(this.store.StoreCode);
         this.storeCodeAlert = true;
       } else this.storeCodeAlert = false;
     },
@@ -203,7 +219,7 @@ export default {
      ==================================================*/
     blurStoreName() {
       // this.showSmallMessage();
-      if (!this.store.StoreName) {
+      if (!this.store.storeName) {
         // alert(this.errorNameEmpty);
         this.storeNameAlert = true;
       } else this.storeNameAlert = false;
@@ -216,17 +232,35 @@ export default {
      =====================================================*/
     blurStoreAddress() {
       // this.showSmallMessage();
-      if (!this.store.StoreAddress) {
+      if (!this.store.address) {
         this.storeAddressAlert = true;
       } else this.storeAddressAlert = false;
     },
   },
-  mounted() {
-    
-  },
+  mounted() {},
   data() {
     return {
-       store: {},
+      storeCodeAlert: false,
+      storeNameAlert: false,
+      storeAddressAlert: false,
+      // store: {
+      // storeId: null,
+      // storeCode: null,
+      // StoreName: null,
+      // Address: null,
+      // PhoneNumber: null,
+      // StoreTaxCode: null,
+      // CountryId: null,
+      // ProvinceId: null,
+      // DistrictId: null,
+      // WardId: null,
+      // Street: null,
+      // Status: null,
+      // CreatedDate: null,
+      // CreatedBy: null,
+      // ModifiedDate: null,
+      // ModifiedBy: null,
+      // },
     };
   },
 };
