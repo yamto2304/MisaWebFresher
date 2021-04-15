@@ -11,13 +11,25 @@
 
  body {
      margin: 0;
-     font-family: GoogleSans-Regular !important;
+     font-family: Roboto-Regular !important;
      font-size: 13px !important;
+ }
+ input{
+     outline: none;
+ }
+
+ .disable-item{
+     opacity: 0.5;
+     pointer-events: none;
  }
 
 @font-face {
     font-family: 'GoogleSans-Regular';
     src: url('../assets/font/GoogleSans-Regular.otf') format('opentype');
+}
+@font-face {
+    font-family: 'Roboto-Regular';
+    src: url('../assets/font/Roboto-Regular.ttf') format('opentype');
 }
 @font-face {
     font-family: 'GoogleSans-Bold';
@@ -38,12 +50,19 @@
     font-family: 'GoogleSans-Thin';
     src: url('../assets/font/GoogleSans-Thin.otf') format('opentype');
 }
-
+@font-face {
+    font-family: 'Roboto-Thin';
+    src: url('../assets/font/Roboto-Thin.ttf') format('opentype');
+}
 @font-face {
     font-family: 'GoogleSans-Black';
     src: url('../assets/font/GoogleSans-Black.otf') format('opentype');
 }
 
+@font-face {
+    font-family: 'Roboto-Black';
+    src: url('../assets/font/Roboto-Black.ttf') format('opentype');
+}
 ::-webkit-scrollbar {
     width: 5px !important;
     height: 5px !important;

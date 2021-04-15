@@ -3,7 +3,9 @@
     <div class="dialog-modal"></div>
     <div class="dialog-content">
       <div class="form-header">
-        <div class="heading"><b>Thêm mới cửa hàng</b></div>
+        <div class="heading">
+          <b>{{ formHeading }}</b>
+        </div>
         <div class="btn-close-form" v-on:click="btnCancelOnClick">
           <button class="btn-x" v-on:click="btnCancelOnClick" title="Đóng">
             X
@@ -58,23 +60,35 @@
           <div class="form-row-basic">
             <div class="row-item-left">
               <div class="row-item-name">Quốc gia</div>
-              <input class="row-input-small" v-model="store.countryId" />
+              <!-- <input class="row-input-small" v-model="store.countryId" /> -->
+              <select class="select-location" v-model="store.countryId">
+                <option value="VN">Việt Nam</option>
+              </select>
             </div>
           </div>
           <div class="form-row-basic">
             <div class="row-item-left">
               <div class="row-item-name">Tỉnh/Thành phố</div>
-              <input class="row-input-small" v-model="store.provinceId" />
+              <!-- <input class="row-input-small" v-model="store.provinceId" /> -->
+              <select class="select-location" v-model="store.provinceId">
+                <option value="VN"></option>
+              </select>
             </div>
             <div class="row-item-right">
               <div class="row-item-name">Quận/Huyện</div>
-              <input class="row-input-small" v-model="store.districtId" />
+              <!-- <input class="row-input-small" v-model="store.districtId" /> -->
+              <select class="select-district" v-model="store.districtId">
+                <option value="VN"></option>
+              </select>
             </div>
           </div>
           <div class="form-row-basic">
             <div class="row-item-left">
               <div class="row-item-name">Phường/Xã</div>
-              <input class="row-input-small" v-model="store.wardId" />
+              <!-- <input class="row-input-small" v-model="store.wardId" /> -->
+              <select class="select-location" v-model="store.wardId">
+                <option value="VN"></option>
+              </select>
             </div>
             <div class="row-item-right">
               <div class="row-item-name">Đường phố</div>
@@ -130,7 +144,7 @@ export default {
   props: {
     isHide: Boolean,
     isAddMode: Boolean,
-
+    formHeading: String,
     store: { type: Object, default: null },
   },
   components: {},
@@ -143,14 +157,15 @@ export default {
      =================================================================================*/
     btnSaveOnClick() {
       if (this.isAddMode) {
-        axios.post("https://localhost:44343/api/v1/Stores", this.store)
-        .then((res) => {
+        axios
+          .post("https://localhost:44343/api/v1/Stores", this.store)
+          .then((res) => {
             console.log(res);
           })
           .catch((res) => {
             console.log(res);
           });
-        // console.log(this.store); 
+        // console.log(this.store);
         // console.log(response);
       } else {
         console.log("edit");
@@ -192,6 +207,7 @@ export default {
     btnSaveAndAddOnClick() {
       console.log(this.store);
       console.log(this.isAddMode);
+      console.log(this.store.countryId);
       // this.$emit("closeForm", true);
       // alert("Lưu và thêm mới");
       // this.$emit("isAddMode", true);
@@ -319,6 +335,7 @@ input:focus {
   width: 100%;
   font-size: 16px;
   align-items: center;
+  cursor: move;
 }
 .heading {
   margin: 10px 14px;
@@ -424,6 +441,22 @@ input:focus {
   height: 20px;
   width: 157px;
   padding: 5px 10px;
+}
+.select-location {
+  outline: none;
+  border: 1px solid #e4e4e4;
+  width: 179px;
+  padding: 5px 10px;
+  border-radius: 3px;
+}
+.select-district {
+  outline: none;
+  border: 1px solid #e4e4e4;
+  width: 208px;
+  padding: 5px 10px;
+  border-radius: 3px;
+  position: relative;
+  left: 0;
 }
 /* =============================================== */
 .form-footer {

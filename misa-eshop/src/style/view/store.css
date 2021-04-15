@@ -53,7 +53,7 @@
 }
 
 .grid table tr:active {
-    background-color: #E2E4F1;
+    background-color: #EAE4F1;
 }
 
 .grid table tr:hover {
@@ -66,9 +66,12 @@
     padding: 15px 16px !important;
 }
 
-/* tbody tr:nth-child(2n+1) {
-    background-color: #fafafa;
-} */
+tbody tr:nth-child(2n+1) {
+    background-color: #f6f6f6;
+}
+tbody tr:nth-child(2n+2) {
+    background-color: #ffffff;
+}
 
 /* ================= */
 
@@ -108,6 +111,16 @@
     position: relative;
     right: 0;
     width: 149px;
+}
+.select-filter{
+    width: 155px;
+    outline: none;
+    border: 1px solid #e1e1e1;
+    /* border-left-width: 2px !important; */
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 50%;
 }
 
 /* =========== */

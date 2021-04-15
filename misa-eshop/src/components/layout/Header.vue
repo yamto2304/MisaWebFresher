@@ -7,22 +7,22 @@
       <div class="btn-store-info">
         <select class="store-infor ">
           <option>Chuỗi cửa hàng</option>
-          <option>-- Kho tổng</option>
-          <option>-- misard</option>
+          <option>   Kho tổng</option>
+          <option>   misard</option>
         </select>
       </div>
 
       <div class="btn-user-setting">
         <div class="user-info">
           <div class="icon-avatar"></div>
-          <div class="user-name">Hoàng Đình Tuấn</div>
+          <div class="user-name"><b>Hoàng Đình Tuấn</b></div>
           <div class="right-side-icon"></div>
         </div>
         <div class="menu">
           <ul class="sub-menu">
-            <li><div href="#">WordPress</div></li>
-            <li><div href="#">SEO</div></li>
-            <li><div href="#">Hosting</div></li>
+            <li><div href="#">Thay đổi mật khẩu</div></li>
+            <li><div href="#">Góp ý</div></li>
+            <li><div href="#">Đăng xuất</div></li>
           </ul>
         </div>
 

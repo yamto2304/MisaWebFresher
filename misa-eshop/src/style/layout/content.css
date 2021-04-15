@@ -41,6 +41,7 @@
     /* border-left-color: #e1e1e1!important; */
     /* border-left-width: 1px!important; */
     border: 1px solid #d0d0d0;
+    border-top: none !important;
     border-bottom-color: #fff;
     /* border-bottom-width: 0!important; */
     /* ====================================== */

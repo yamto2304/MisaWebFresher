@@ -125,7 +125,9 @@ namespace MISA.CukCuk.Api.Controllers
                 {
                     devMsg = "CustomerCode duplicate",
                     userMsg = "Thông tin mã khách hàng không được phép trùng",
-                    errorCode = "misa-001"
+                    errorCode = "misa-001",
+                    moreInfo = "https://openapi.misa.com.vn/errorcode/misa-001",
+                    traceId = "ba9587fd-1a79-4ac5-a0ca-2c9f74dfd3fb"
                 };
                 return BadRequest(erroInfo);
             }
