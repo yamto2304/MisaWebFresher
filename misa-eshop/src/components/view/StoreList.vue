@@ -27,7 +27,11 @@
         <div class="icon-edit"></div>
         <div class="text-btn">Sửa</div>
       </button>
-      <button class="btn-with-icon" title="Ctrl + D">
+      <button
+        class="btn-with-icon"
+        title="Ctrl + D"
+        v-on:click="btnDeleteOnClick()"
+      >
         <div class="icon-delete"></div>
         <div class="text-btn">Xóa</div>
       </button>
@@ -189,7 +193,32 @@ export default {
       //Hiện form Sửa
       this.isHideParent = false;
     },
+    /**
+     * Xóa cửa hàng
+     * Active :
+     */
+    btnDeleteOnClick() {
+      if (this.selectedRow == null) {
+        alert("Chưa chọn bản ghi để xóa");
+        return;
+      } else {
+        //Mở delete alert
+        
 
+        // ===============================================
+        //Gọi Api lấy dữ liệu từ Id đã lấy
+        // axios
+        //   .delete("https://localhost:44343/api/v1/Stores/" + this.selectedRow)
+        //   .then((res) => {
+        //     //Đẩy data thu được vào biến selectedStore và truyền xuống con
+        //     // this.selectedStore = res.data;
+        //     console.log(res);
+        //   })
+        //   .catch((res) => {
+        //     console.log(res);
+        //   });
+      }
+    },
     /**====================================================================
      * Đóng form
      * Active : Recive data from child

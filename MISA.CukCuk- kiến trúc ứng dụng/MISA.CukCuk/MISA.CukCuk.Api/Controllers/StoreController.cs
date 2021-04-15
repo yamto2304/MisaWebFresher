@@ -102,8 +102,8 @@ namespace MISA.CukCuk.Api.Controllers
         public IActionResult Post(Store store)
         {
             //Validate dữ liệu
-            //- Check trùng mã
 
+            //- Check trùng mã
             //Khởi tạo kết nối tới database
             string connectionString = "" +
                 "Host=47.241.69.179; " +
@@ -117,11 +117,17 @@ namespace MISA.CukCuk.Api.Controllers
             var sqlCheckExitsCode = "Select StoreCode from Store Where StoreCode = @StoreCode";
             DynamicParameters dynamicParameters = new DynamicParameters();
             dynamicParameters.Add("@StoreCode", store.StoreCode);
-
-            var storeExitscode = dbConnection.Query<string>(sqlCheckExitsCode, dynamicParameters);
-            if(storeExitscode.Count() > 0)
+            var storeExitsCode = dbConnection.Query<string>(sqlCheckExitsCode, dynamicParameters);
+           
+            if(storeExitsCode.Count() > 0)
             {
-                return BadRequest("Mã khách hàng không được phép trùng");
+                var erroInfo = new
+                {
+                    devMsg = "CustomerCode duplicate",
+                    userMsg = "Thông tin mã khách hàng không được phép trùng",
+                    errorCode = "misa-001"
+                };
+                return BadRequest(erroInfo);
             }
 
             //Thực hiện lấy dữ liệu từ Db
@@ -153,7 +159,53 @@ namespace MISA.CukCuk.Api.Controllers
         [HttpPut("{storeId}")]
         public IActionResult Put(Store store, Guid storeId)
         {
-            return StatusCode(200);
+            //Validate dữ liệu
+
+            //- Check trùng mã
+            //Khởi tạo kết nối tới database
+            string connectionString = "" +
+                "Host=47.241.69.179; " +
+                "Port=3306;" +
+                "User Id= dev; " +
+                "Password=12345678;" +
+                "Database= TEST.MISA.eShop";
+            IDbConnection dbConnection = new MySqlConnection(connectionString);
+
+            //Kiểm tra xem có Object nào có cùng mã hay không
+            store.StoreId = storeId;
+            //Check store trùng code (trừ chính mình)
+            var sqlCheckExitsCode = "Select StoreCode from Store Where StoreCode = @StoreCode AND StoreId <> @StoreId";
+            DynamicParameters dynamicParameters = new DynamicParameters();
+            dynamicParameters.Add("@StoreCode", store.StoreCode);
+            dynamicParameters.Add("@StoreId", store.StoreId);
+
+            var storeExitscode = dbConnection.Query<string>(sqlCheckExitsCode, dynamicParameters);
+            if (storeExitscode.Count() > 0)
+            {
+                var erroInfo = new
+                {
+                    devMsg = "CustomerCode duplicate",
+                    userMsg = "Thông tin mã khách hàng không được phép trùng",
+                    errorCode = "misa-001",
+                    moreInfo = "https://openapi.misa.com.vn/errorcode/misa-001",
+                    traceId = "ba9587fd-1a79-4ac5-a0ca-2c9f74dfd3fb"
+                };
+                return BadRequest(erroInfo);
+            }
+            //Thực hiện lấy dữ liệu từ Db
+            var storeName = "Proc_UpdateStore";
+            var storeParam = store;
+            var rowAffects = dbConnection.Execute(storeName, param: storeParam, commandType: CommandType.StoredProcedure);
+
+            //Kiểm tra kết quả và return 
+            if (rowAffects == 0)
+            {
+                return NoContent();
+            }
+            else
+            {
+                return Ok(store);
+            }
         }
 
         /// <summary>
@@ -166,10 +218,42 @@ namespace MISA.CukCuk.Api.Controllers
         ///  - Nếu có lỗi hoặc Exceotion xảy ra trên Server : 500 
         /// </returns>
         /// CreatedBy: Tuanhd (14/04/2021)
+        /// ModifiedBy : Tuanhd (15/04/2021)
         [HttpDelete("{storeId}")]
         public IActionResult Delete(Guid storeId)
         {
-            return StatusCode(200);
+            //Khởi tạo kết nối tới database
+            string connectionString = "" +
+                "Host=47.241.69.179; " +
+                "Port=3306;" +
+                "User Id= dev; " +
+                "Password=12345678;" +
+                "Database= TEST.MISA.eShop";
+            IDbConnection dbConnection = new MySqlConnection(connectionString);
+            //Thực hiện xoá dữ liệu từ Db
+            var storeParam = new
+            {
+                StoreId = storeId
+            };
+            var rowAffect = dbConnection.Execute("Proc_DeleteStore",param: storeParam, commandType: CommandType.StoredProcedure);
+
+            //Kiểm tra kết quả và return 
+            if (rowAffect == 0)
+            {
+                var erroInfo = new
+                {
+                    devMsg = "No record deleted !",
+                    userMsg = "Không thể xóa, vui lòng kiểm tra lại",
+                    errorCode = "misa-002",
+                    moreInfo = "https://openapi.misa.com.vn/errorcode/misa-001",
+                    traceId = "ba9587fd-1a79-4ac5-a0ca-2c9f74dfd3fb"
+                };
+                return BadRequest(erroInfo);
+            }
+                else
+            {
+                return Ok(rowAffect + " bản ghi đã được xóa thành công !");
+            }           
         }
     }
 }

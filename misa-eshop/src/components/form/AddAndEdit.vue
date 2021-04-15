@@ -134,7 +134,7 @@ export default {
     storeNameAlert: Boolean,
     storeAddressAlert: Boolean,
 
-    store: Object,
+    // store: Object,
   },
   components: {},
   methods: {
@@ -189,7 +189,7 @@ export default {
      * CreatedBy : Tuanhd(14/4/2021)
      =================================================*/
     blurStoreCode() {
-      if (this.store.StoreCode == null) {
+      if (this.store.StoreCode.value() == null) {
         // alert(this.store.StoreCode);
         console.log(this.store.StoreCode);
         this.storeCodeAlert = true;
@@ -222,11 +222,11 @@ export default {
     },
   },
   mounted() {
-    this.openMessageBlur;
+    
   },
   data() {
     return {
-      // store: {},
+       store: {},
     };
   },
 };

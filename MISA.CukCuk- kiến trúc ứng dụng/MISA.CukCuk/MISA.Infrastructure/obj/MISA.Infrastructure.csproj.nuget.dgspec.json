@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\hdtuan\\Desktop\\GIthub\\MISA.CukCuk- kiến trúc ứng dụng\\MISA.CukCuk\\MISA.Infrastructure\\MISA.Infrastructure.csproj": {}
+    "C:\\Users\\Tuani\\OneDrive\\Desktop\\Github\\MisaWebFresher\\MISA.CukCuk- kiến trúc ứng dụng\\MISA.CukCuk\\MISA.Infrastructure\\MISA.Infrastructure.csproj": {}
   },
   "projects": {
-    "C:\\Users\\hdtuan\\Desktop\\GIthub\\MISA.CukCuk- kiến trúc ứng dụng\\MISA.CukCuk\\MISA.Core\\MISA.Core.csproj": {
+    "C:\\Users\\Tuani\\OneDrive\\Desktop\\Github\\MisaWebFresher\\MISA.CukCuk- kiến trúc ứng dụng\\MISA.CukCuk\\MISA.Core\\MISA.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\hdtuan\\Desktop\\GIthub\\MISA.CukCuk- kiến trúc ứng dụng\\MISA.CukCuk\\MISA.Core\\MISA.Core.csproj",
+        "projectUniqueName": "C:\\Users\\Tuani\\OneDrive\\Desktop\\Github\\MisaWebFresher\\MISA.CukCuk- kiến trúc ứng dụng\\MISA.CukCuk\\MISA.Core\\MISA.Core.csproj",
         "projectName": "MISA.Core",
-        "projectPath": "C:\\Users\\hdtuan\\Desktop\\GIthub\\MISA.CukCuk- kiến trúc ứng dụng\\MISA.CukCuk\\MISA.Core\\MISA.Core.csproj",
-        "packagesPath": "C:\\Users\\hdtuan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\hdtuan\\Desktop\\GIthub\\MISA.CukCuk- kiến trúc ứng dụng\\MISA.CukCuk\\MISA.Core\\obj\\",
+        "projectPath": "C:\\Users\\Tuani\\OneDrive\\Desktop\\Github\\MisaWebFresher\\MISA.CukCuk- kiến trúc ứng dụng\\MISA.CukCuk\\MISA.Core\\MISA.Core.csproj",
+        "packagesPath": "C:\\Users\\Tuani\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Tuani\\OneDrive\\Desktop\\Github\\MisaWebFresher\\MISA.CukCuk- kiến trúc ứng dụng\\MISA.CukCuk\\MISA.Core\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\hdtuan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Tuani\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -58,17 +62,21 @@
         }
       }
     },
-    "C:\\Users\\hdtuan\\Desktop\\GIthub\\MISA.CukCuk- kiến trúc ứng dụng\\MISA.CukCuk\\MISA.Infrastructure\\MISA.Infrastructure.csproj": {
+    "C:\\Users\\Tuani\\OneDrive\\Desktop\\Github\\MisaWebFresher\\MISA.CukCuk- kiến trúc ứng dụng\\MISA.CukCuk\\MISA.Infrastructure\\MISA.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\hdtuan\\Desktop\\GIthub\\MISA.CukCuk- kiến trúc ứng dụng\\MISA.CukCuk\\MISA.Infrastructure\\MISA.Infrastructure.csproj",
+        "projectUniqueName": "C:\\Users\\Tuani\\OneDrive\\Desktop\\Github\\MisaWebFresher\\MISA.CukCuk- kiến trúc ứng dụng\\MISA.CukCuk\\MISA.Infrastructure\\MISA.Infrastructure.csproj",
         "projectName": "MISA.Infrastructure",
-        "projectPath": "C:\\Users\\hdtuan\\Desktop\\GIthub\\MISA.CukCuk- kiến trúc ứng dụng\\MISA.CukCuk\\MISA.Infrastructure\\MISA.Infrastructure.csproj",
-        "packagesPath": "C:\\Users\\hdtuan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\hdtuan\\Desktop\\GIthub\\MISA.CukCuk- kiến trúc ứng dụng\\MISA.CukCuk\\MISA.Infrastructure\\obj\\",
+        "projectPath": "C:\\Users\\Tuani\\OneDrive\\Desktop\\Github\\MisaWebFresher\\MISA.CukCuk- kiến trúc ứng dụng\\MISA.CukCuk\\MISA.Infrastructure\\MISA.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\Tuani\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Tuani\\OneDrive\\Desktop\\Github\\MisaWebFresher\\MISA.CukCuk- kiến trúc ứng dụng\\MISA.CukCuk\\MISA.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\hdtuan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Tuani\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -82,8 +90,8 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\hdtuan\\Desktop\\GIthub\\MISA.CukCuk- kiến trúc ứng dụng\\MISA.CukCuk\\MISA.Core\\MISA.Core.csproj": {
-                "projectPath": "C:\\Users\\hdtuan\\Desktop\\GIthub\\MISA.CukCuk- kiến trúc ứng dụng\\MISA.CukCuk\\MISA.Core\\MISA.Core.csproj"
+              "C:\\Users\\Tuani\\OneDrive\\Desktop\\Github\\MisaWebFresher\\MISA.CukCuk- kiến trúc ứng dụng\\MISA.CukCuk\\MISA.Core\\MISA.Core.csproj": {
+                "projectPath": "C:\\Users\\Tuani\\OneDrive\\Desktop\\Github\\MisaWebFresher\\MISA.CukCuk- kiến trúc ứng dụng\\MISA.CukCuk\\MISA.Core\\MISA.Core.csproj"
               }
             }
           }

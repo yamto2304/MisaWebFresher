@@ -16,3 +16,12 @@ C:\Users\hdtuan\Desktop\GIthub\MISA.CukCuk- kiến trúc ứng dụng\MISA.CukCu
 C:\Users\hdtuan\Desktop\GIthub\MISA.CukCuk- kiến trúc ứng dụng\MISA.CukCuk\MISA.Core\obj\Debug\netcoreapp3.1\MISA.Core.csproj.CoreCompileInputs.cache
 C:\Users\hdtuan\Desktop\GIthub\MISA.CukCuk- kiến trúc ứng dụng\MISA.CukCuk\MISA.Core\obj\Debug\netcoreapp3.1\MISA.Core.dll
 C:\Users\hdtuan\Desktop\GIthub\MISA.CukCuk- kiến trúc ứng dụng\MISA.CukCuk\MISA.Core\obj\Debug\netcoreapp3.1\MISA.Core.pdb
+C:\Users\Tuani\OneDrive\Desktop\Github\MisaWebFresher\MISA.CukCuk- kiến trúc ứng dụng\MISA.CukCuk\MISA.Core\bin\Debug\netcoreapp3.1\MISA.Core.deps.json
+C:\Users\Tuani\OneDrive\Desktop\Github\MisaWebFresher\MISA.CukCuk- kiến trúc ứng dụng\MISA.CukCuk\MISA.Core\bin\Debug\netcoreapp3.1\MISA.Core.dll
+C:\Users\Tuani\OneDrive\Desktop\Github\MisaWebFresher\MISA.CukCuk- kiến trúc ứng dụng\MISA.CukCuk\MISA.Core\bin\Debug\netcoreapp3.1\MISA.Core.pdb
+C:\Users\Tuani\OneDrive\Desktop\Github\MisaWebFresher\MISA.CukCuk- kiến trúc ứng dụng\MISA.CukCuk\MISA.Core\obj\Debug\netcoreapp3.1\MISA.Core.csprojAssemblyReference.cache
+C:\Users\Tuani\OneDrive\Desktop\Github\MisaWebFresher\MISA.CukCuk- kiến trúc ứng dụng\MISA.CukCuk\MISA.Core\obj\Debug\netcoreapp3.1\MISA.Core.AssemblyInfoInputs.cache
+C:\Users\Tuani\OneDrive\Desktop\Github\MisaWebFresher\MISA.CukCuk- kiến trúc ứng dụng\MISA.CukCuk\MISA.Core\obj\Debug\netcoreapp3.1\MISA.Core.AssemblyInfo.cs
+C:\Users\Tuani\OneDrive\Desktop\Github\MisaWebFresher\MISA.CukCuk- kiến trúc ứng dụng\MISA.CukCuk\MISA.Core\obj\Debug\netcoreapp3.1\MISA.Core.csproj.CoreCompileInputs.cache
+C:\Users\Tuani\OneDrive\Desktop\Github\MisaWebFresher\MISA.CukCuk- kiến trúc ứng dụng\MISA.CukCuk\MISA.Core\obj\Debug\netcoreapp3.1\MISA.Core.dll
+C:\Users\Tuani\OneDrive\Desktop\Github\MisaWebFresher\MISA.CukCuk- kiến trúc ứng dụng\MISA.CukCuk\MISA.Core\obj\Debug\netcoreapp3.1\MISA.Core.pdb

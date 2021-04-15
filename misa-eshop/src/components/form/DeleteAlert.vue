@@ -114,8 +114,6 @@ export default {
   border: 1px solid #e4e4e4;
   display: flex;
 }
-.text-content {
-}
 /* ======================================== */
 .form-footer {
   background-color: #ffffff;
