@@ -69,7 +69,7 @@ export default {
       //Gọi Api xoá dữ liệu
       console.log(this.storeId);
       axios
-        .delete("https://localhost:44343/api/v1/Stores/" + this.storeId)
+        .delete("https://localhost:44314/api/v1/Stores/" + this.storeId)
         .then((res) => {
           //Đẩy data thu được vào biến selectedStore và truyền xuống con
           // this.selectedStore = res.data;

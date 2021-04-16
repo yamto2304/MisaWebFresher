@@ -271,7 +271,7 @@ export default {
       this.isHaveRowClicked = true;
       //Gọi Api lấy dữ liệu từ Id đã lấy
       axios
-        .get("https://localhost:44343/api/v1/Stores/" + this.selectedRow)
+        .get("https://localhost:44314/api/v1/Stores/" + this.selectedRow)
         .then((res) => {
           //Đẩy data thu được vào biến selectedStore và truyền xuống con
           this.selectedStore = res.data;
@@ -328,7 +328,7 @@ export default {
    ==============================*/
   async created() {
     //Lấy dữ liệu từ API
-    const response = await axios.get(`https://localhost:44343/api/v1/Stores`);
+    const response = await axios.get(`https://localhost:44314/api/v1/Stores`);
 
     console.log(response.data.length + " Bản ghi được tìm thấy !");
     //Lưu dữ liệu vào biến stores để chạy v-for show dữ liệu lên bảng

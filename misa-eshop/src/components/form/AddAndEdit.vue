@@ -158,7 +158,7 @@ export default {
     btnSaveOnClick() {
       if (this.isAddMode) {
         axios
-          .post("https://localhost:44343/api/v1/Stores", this.store)
+          .post("https://localhost:44314/api/v1/Stores", this.store)
           .then((res) => {
             console.log(res);
           })
@@ -171,7 +171,7 @@ export default {
         console.log("edit");
         axios
           .put(
-            "https://localhost:44343/api/v1/Stores/" + this.store.storeId,
+            "https://localhost:44314/api/v1/Stores/" + this.store.storeId,
             this.store
           )
           .then((res) => {
