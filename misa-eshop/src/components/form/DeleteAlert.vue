@@ -11,8 +11,8 @@
       <div class="form-content">
         <div class="icon-popup-question"></div>
         <div class="text-content">
-          Bạn có chắc chắn muốn xóa <b>{{ storeName }}</b> khỏi danh sách
-          cửa hàng ?
+          Bạn có chắc chắn muốn xóa <b>{{ storeName }}</b> khỏi danh sách cửa
+          hàng ?
         </div>
       </div>
       <div class="form-footer">
@@ -69,17 +69,17 @@ export default {
       //Gọi Api xoá dữ liệu
       console.log(this.storeId);
       axios
-        .delete("https://localhost:44314/api/v1/Stores/" + this.storeId)
+        .delete("https://localhost:44314/api/v1/Store/" + this.storeId)
         .then((res) => {
           //Đẩy data thu được vào biến selectedStore và truyền xuống con
           // this.selectedStore = res.data;
-          console.log(res);
+          console.log(res.data.devMsg);
           //Đóng alert
           this.$emit("closeAlert", true);
           //Load dữ liệu
         })
         .catch((res) => {
-          //Có thể mở form mới hoặc thông báo khác
+          // Có thể mở form mới hoặc thông báo khác
           console.log(res);
         });
     },

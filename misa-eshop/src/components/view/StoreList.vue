@@ -7,12 +7,12 @@
       :store="selectedStore"
       :formHeading="isParentAddMode ? 'Thêm mới cửa hàng' : 'Sửa cửa hàng'"
     />
-    <!-- <DeleteAlert
+    <DeleteAlert
       :isHideAlert="isHideParentAlert"
       :storeName="selectedStore.storeName"
       :storeId="selectedStore.storeId"
       @closeAlert="closeAlert"
-    /> -->
+    />
     <div class="header-content">
       <button
         style="border-right: 1px solid #190472"
@@ -51,7 +51,7 @@
         <div class="icon-delete"></div>
         <div class="text-btn">Xóa</div>
       </button>
-      <button class="btn-with-icon btn-end" title="Ctrl + Y">
+      <button class="btn-with-icon btn-end" title="Ctrl + Y" @click="loadData">
         <div class="icon-reload"></div>
         <div class="text-btn">Nạp</div>
       </button>
@@ -100,6 +100,7 @@
               </th>
             </tr>
           </thead>
+          <BaseLoading :showLoading="showLoading"/>
           <tbody>
             <tr
               class="el-table__row"
@@ -168,7 +169,8 @@
 </template>
 <script>
 import AddAndEdit from "../form/AddAndEdit";
-// import DeleteAlert from "../form/DeleteAlert";
+import DeleteAlert from "../form/DeleteAlert";
+import BaseLoading from "../view/BaseLoading";
 import * as axios from "axios";
 export default {
   name: "Store",
@@ -177,7 +179,8 @@ export default {
   },
   components: {
     AddAndEdit,
-    // DeleteAlert,
+    DeleteAlert,
+    BaseLoading,
   },
   methods: {
     /**=======================================
@@ -233,7 +236,21 @@ export default {
     closeForm(value) {
       this.isHideParent = value;
     },
-
+    loadDataFake(value) {
+      if (value) {
+        this.showLoading = true;
+        console.log("loadData Fake!!");
+        //Lấy dữ liệu từ API
+        // await axios
+        //   .get(`https://localhost:44314/api/v1/Store`)
+        //   .then((response) => {
+        //     //Lưu dữ liệu vào biến stores để chạy v-for show dữ liệu lên bảng
+        //     this.stores = response.data.data;
+        //     console.log(response.data.data.length + " Bản ghi được tìm thấy !");
+        //   });
+        this.showLoading = false;
+      }
+    },
     /**====================================================================
      * Đóng alert
      * Active : Recive data from child
@@ -242,7 +259,7 @@ export default {
      * Result(value = false): Still open form
      * CreatedBy : Tuanhd(16/4/2021)
      =====================================================================*/
-    closeAlert(value){
+    closeAlert(value) {
       this.isHideParentAlert = value;
     },
 
@@ -259,6 +276,23 @@ export default {
       this.isAddMode = value;
     },
 
+    reload() {
+      this.loadData();
+    },
+
+    async loadData() {
+      this.showLoading = true;
+      console.log("loadData !!");
+      // Lấy dữ liệu từ API
+      await axios
+        .get(`https://localhost:44314/api/v1/Store`)
+        .then((response) => {
+          //Lưu dữ liệu vào biến stores để chạy v-for show dữ liệu lên bảng
+          this.stores = response.data.data;
+          console.log(response.data.data.length + " Bản ghi được tìm thấy !");
+        });
+      this.showLoading = false;
+    },
     /**=======================================================================
      * Chọn dòng được click, đẩy dữ liệu của dòng được click vào selectedStore
      * Active : Click a row in data table
@@ -271,10 +305,11 @@ export default {
       this.isHaveRowClicked = true;
       //Gọi Api lấy dữ liệu từ Id đã lấy
       axios
-        .get("https://localhost:44314/api/v1/Stores/" + this.selectedRow)
+        .get("https://localhost:44314/api/v1/Store/" + this.selectedRow)
         .then((res) => {
           //Đẩy data thu được vào biến selectedStore và truyền xuống con
-          this.selectedStore = res.data;
+          this.selectedStore = res.data.data;
+          // console.log(res);
           // console.log(res);
         })
         .catch((res) => {
@@ -302,6 +337,7 @@ export default {
       //Hiện form cảnh báo delete
       isHideParentAlert: true,
       stores: [],
+      showLoading: true,
       emptyStore: {
         // storeId: null,
         // storeCode: null,
@@ -326,13 +362,8 @@ export default {
    * Lấy dữ liệu khi load trang 
    * CreatedBy : Tuanhd(14/4/2021)
    ==============================*/
-  async created() {
-    //Lấy dữ liệu từ API
-    const response = await axios.get(`https://localhost:44314/api/v1/Store`);
-
-    console.log(response.data.data.length + " Bản ghi được tìm thấy !");
-    //Lưu dữ liệu vào biến stores để chạy v-for show dữ liệu lên bảng
-    this.stores = response.data.data;
+  created() {
+    this.loadData();
   },
 };
 </script>

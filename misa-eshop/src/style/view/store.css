@@ -4,6 +4,9 @@
     position: absolute;
     top: 0;
     left: 0;
+    overflow-x: scroll;
+    overflow-y: visible;
+    max-height: calc(100vh - 160px);
 }
 
 .grid {
@@ -78,7 +81,8 @@ tbody tr:nth-child(2n+2) {
 .store-code {
     position: relative;
     left: 0;
-    width: 160px !important;
+    /* width: 160px !important; */
+    width: 15%;
     height: 64px !important;
     margin: 0;
     padding: 0;
@@ -88,21 +92,24 @@ tbody tr:nth-child(2n+2) {
 .store-name {
     position: relative;
     left: 0;
-    width: 250px !important;
+    /* width: 250px !important; */
+    width: 17%;
     margin: 0;
 }
 
 .store-address {
     position: relative;
     left: 0;
-    width: 458px !important;
+    /* width: 458px !important; */
+    width: 38%;
     margin: 0;
 }
 
 .store-phone {
     position: relative;
     left: 0;
-    width: 109px !important;
+    /* width: 109px !important; */
+    width: 15%;
     margin: 0;
     /* padding: 7px 10px 6px; */
 }
@@ -110,7 +117,8 @@ tbody tr:nth-child(2n+2) {
 .store-status {
     position: relative;
     right: 0;
-    width: 149px;
+    /* width: 149px; */
+    width: 15%;
 }
 .select-filter{
     width: 155px;

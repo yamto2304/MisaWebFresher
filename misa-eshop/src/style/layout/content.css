@@ -10,6 +10,7 @@
 
 .store-list-content {
     background-color: #f0f0f0 !important;
+    height: 100%;
 }
 
 .store-list-content .header-content {
