@@ -4,9 +4,12 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
-using Microsoft.AspNetCore.Diagnostics;
-using Microsoft.AspNetCore.Http;
-using MISA.eShop.WebApp.Extensions;
+using MISA.eShop.Core.Interfaces;
+using MISA.eShop.Core.Interfaces.Repository;
+using MISA.eShop.Core.Interfaces.Service;
+using MISA.eShop.Core.Services;
+using MISA.eShop.Infrastructure.Repository;
+using System;
 
 namespace MISA.eShop.WebApp
 {
@@ -22,23 +25,26 @@ namespace MISA.eShop.WebApp
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors(); //add cors
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "MISA.eShop.WebApp", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "MISA.CukCuk", Version = "v1" });
             });
-            services.AddCors(options =>
-            {
-                options.AddDefaultPolicy(
-                    builder =>
-                    {
-                        builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
-                    });
-            });
-            //services.AddSwaggerGen(c =>
-            //{
-            //    c.SwaggerDoc("v1", new OpenApiInfo { Title = "MISA.CukCuk.Api", Version = "v1" });
-            //});
+            //add scoped
+            services.AddScoped(typeof(IBaseService<>), typeof(BaseService<>));
+            services.AddScoped(typeof(IBaseRepository<>), typeof(BaseRepository<>));
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
+            services.AddScoped<ICountryRepository, CountryRepository>();
+            services.AddScoped<ICountryService, CountryService>();
+            services.AddScoped<IDistrictRepository, DistrictRepository>();
+            services.AddScoped<IDistrictService, DistrictService>();
+            services.AddScoped<IProvinceRepository, ProvinceRepository>();
+            services.AddScoped<IProvinceService, ProvinceService>();
+            services.AddScoped<IStoreRepository, StoreRepository>();
+            services.AddScoped<IStoreService, StoreService>();
+            services.AddScoped<IWardRepository, WardRepository>();
+            services.AddScoped<IWardService, WardService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -48,45 +54,14 @@ namespace MISA.eShop.WebApp
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "MISA.eShop.WebApp v1"));
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "MISA.CukCuk v1"));
             }
-            // X? lý Exception
-            //app.UseExceptionHandler(c => c.Run(async context =>
-            //{
-            //    var exception = context.Features
-            //        .Get<IExceptionHandlerPathFeature>()
-            //        .Error;
 
-            //    if (exception is ValidateExceptions)
-            //    {
-            //        var responseBadRequest = new
-            //        {
-            //            devMsg = exception.Message,
-            //            userMsg = "Có l?i x?y ra, vui lòng liên h? MISA ?? ???c tr? giúp!",
-            //            errorCode = "misa-400",
-            //            moreInfo = "https://openapi.misa.com.vn/errorcode/misa-001",
-            //            traceId = "ba9587fd-1a79-4ac5-a0ca-2c9f74dfd3fb"
-            //        };
-            //        context.Response.StatusCode = StatusCodes.Status400BadRequest;
-            //        await context.Response.WriteAsJsonAsync(responseBadRequest);
-            //    }
+            app.UseCors(x => x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader().SetPreflightMaxAge(TimeSpan.FromMinutes(10)));
 
-            //    var response = new
-            //    {
-            //        devMsg = exception.Message,
-            //        userMsg = "Có l?i x?y ra, vui lòng liên h? MISA ?? ???c tr? giúp!",
-            //        errorCode = "misa-005",
-            //        moreInfo = "https://openapi.misa.com.vn/errorcode/misa-001",
-            //        traceId = "ba9587fd-1a79-4ac5-a0ca-2c9f74dfd3fb"
-            //    };
-
-            //    await context.Response.WriteAsJsonAsync(response);
-            //}));
             app.UseHttpsRedirection();
 
             app.UseRouting();
-
-            app.UseCors();
 
             app.UseAuthorization();
 

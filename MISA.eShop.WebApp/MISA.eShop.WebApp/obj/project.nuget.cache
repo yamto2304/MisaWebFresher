@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "UBsW3sSkeUEYtsyZfhvWQuUgtgN+l46vCMshz2mRXVDq0ANlctKeNdh+xPbdaGF5Y6kXDlRXUOpXBbKtouCn1Q==",
+  "dgSpecHash": "EZYljIysvvzisDhUM5mG34bT3Od4D0Y2Di4U5Qg6AKh9R/PrQQBMW1uxBymScHU5wErsiubtTJv3/May7BiGHA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Tuani\\OneDrive\\Desktop\\MISA.eShop.WebApp\\MISA.eShop.WebApp\\MISA.eShop.WebApp.csproj",
+  "projectFilePath": "C:\\Users\\Tuani\\OneDrive\\Desktop\\Github\\MisaWebFresher\\MISA.eShop.WebApp\\MISA.eShop.WebApp\\MISA.eShop.WebApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Tuani\\.nuget\\packages\\dapper\\2.0.78\\dapper.2.0.78.nupkg.sha512",
     "C:\\Users\\Tuani\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",

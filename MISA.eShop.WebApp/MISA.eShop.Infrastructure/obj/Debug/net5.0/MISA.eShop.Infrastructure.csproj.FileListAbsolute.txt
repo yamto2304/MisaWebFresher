@@ -1,0 +1,15 @@
+C:\Users\Tuani\OneDrive\Desktop\Github\MisaWebFresher\MISA.eShop.WebApp\MISA.eShop.Infrastructure\bin\Debug\net5.0\MISA.eShop.Core.dll
+C:\Users\Tuani\OneDrive\Desktop\Github\MisaWebFresher\MISA.eShop.WebApp\MISA.eShop.Infrastructure\obj\Debug\net5.0\MISA.eShop.Infrastructure.csprojAssemblyReference.cache
+C:\Users\Tuani\OneDrive\Desktop\Github\MisaWebFresher\MISA.eShop.WebApp\MISA.eShop.Infrastructure\obj\Debug\net5.0\MISA.eShop.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Tuani\OneDrive\Desktop\Github\MisaWebFresher\MISA.eShop.WebApp\MISA.eShop.Infrastructure\obj\Debug\net5.0\MISA.eShop.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\Tuani\OneDrive\Desktop\Github\MisaWebFresher\MISA.eShop.WebApp\MISA.eShop.Infrastructure\obj\Debug\net5.0\MISA.eShop.Infrastructure.AssemblyInfo.cs
+C:\Users\Tuani\OneDrive\Desktop\Github\MisaWebFresher\MISA.eShop.WebApp\MISA.eShop.Infrastructure\bin\Debug\net5.0\MISA.eShop.Infrastructure.deps.json
+C:\Users\Tuani\OneDrive\Desktop\Github\MisaWebFresher\MISA.eShop.WebApp\MISA.eShop.Infrastructure\bin\Debug\net5.0\MISA.eShop.Infrastructure.dll
+C:\Users\Tuani\OneDrive\Desktop\Github\MisaWebFresher\MISA.eShop.WebApp\MISA.eShop.Infrastructure\bin\Debug\net5.0\ref\MISA.eShop.Infrastructure.dll
+C:\Users\Tuani\OneDrive\Desktop\Github\MisaWebFresher\MISA.eShop.WebApp\MISA.eShop.Infrastructure\bin\Debug\net5.0\MISA.eShop.Infrastructure.pdb
+C:\Users\Tuani\OneDrive\Desktop\Github\MisaWebFresher\MISA.eShop.WebApp\MISA.eShop.Infrastructure\bin\Debug\net5.0\MISA.eShop.Core.pdb
+C:\Users\Tuani\OneDrive\Desktop\Github\MisaWebFresher\MISA.eShop.WebApp\MISA.eShop.Infrastructure\obj\Debug\net5.0\MISA.eShop.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\Tuani\OneDrive\Desktop\Github\MisaWebFresher\MISA.eShop.WebApp\MISA.eShop.Infrastructure\obj\Debug\net5.0\MISA.eShop.Infrastructure.csproj.CopyComplete
+C:\Users\Tuani\OneDrive\Desktop\Github\MisaWebFresher\MISA.eShop.WebApp\MISA.eShop.Infrastructure\obj\Debug\net5.0\MISA.eShop.Infrastructure.dll
+C:\Users\Tuani\OneDrive\Desktop\Github\MisaWebFresher\MISA.eShop.WebApp\MISA.eShop.Infrastructure\obj\Debug\net5.0\ref\MISA.eShop.Infrastructure.dll
+C:\Users\Tuani\OneDrive\Desktop\Github\MisaWebFresher\MISA.eShop.WebApp\MISA.eShop.Infrastructure\obj\Debug\net5.0\MISA.eShop.Infrastructure.pdb

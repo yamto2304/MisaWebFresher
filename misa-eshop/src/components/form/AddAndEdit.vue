@@ -138,8 +138,7 @@
   </div>
 </template>
 <script>
-import axios from "axios";
-// import axios from "axios";
+import * as axios from "axios";
 export default {
   props: {
     isHide: Boolean,

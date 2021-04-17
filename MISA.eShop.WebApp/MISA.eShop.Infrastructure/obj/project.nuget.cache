@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "h78ftO498Kpu/rnpsdMN/uPUYZpL8+rjCqjFHDOBbIg5NoBrDpe57IFU0+dHql19lVFdTXYsc/ywIyBSLwQ03A==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Tuani\\OneDrive\\Desktop\\Github\\MisaWebFresher\\MISA.eShop.WebApp\\MISA.eShop.Infrastructure\\MISA.eShop.Infrastructure.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Tuani\\.nuget\\packages\\dapper\\2.0.78\\dapper.2.0.78.nupkg.sha512",
+    "C:\\Users\\Tuani\\.nuget\\packages\\mysqlconnector\\1.3.3\\mysqlconnector.1.3.3.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -7,12 +7,12 @@
       :store="selectedStore"
       :formHeading="isParentAddMode ? 'Thêm mới cửa hàng' : 'Sửa cửa hàng'"
     />
-    <DeleteAlert
+    <!-- <DeleteAlert
       :isHideAlert="isHideParentAlert"
       :storeName="selectedStore.storeName"
       :storeId="selectedStore.storeId"
       @closeAlert="closeAlert"
-    />
+    /> -->
     <div class="header-content">
       <button
         style="border-right: 1px solid #190472"
@@ -168,7 +168,7 @@
 </template>
 <script>
 import AddAndEdit from "../form/AddAndEdit";
-import DeleteAlert from "../form/DeleteAlert";
+// import DeleteAlert from "../form/DeleteAlert";
 import * as axios from "axios";
 export default {
   name: "Store",
@@ -177,7 +177,7 @@ export default {
   },
   components: {
     AddAndEdit,
-    DeleteAlert,
+    // DeleteAlert,
   },
   methods: {
     /**=======================================
@@ -328,11 +328,11 @@ export default {
    ==============================*/
   async created() {
     //Lấy dữ liệu từ API
-    const response = await axios.get(`https://localhost:44314/api/v1/Stores`);
+    const response = await axios.get(`https://localhost:44314/api/v1/Store`);
 
-    console.log(response.data.length + " Bản ghi được tìm thấy !");
+    console.log(response.data.data.length + " Bản ghi được tìm thấy !");
     //Lưu dữ liệu vào biến stores để chạy v-for show dữ liệu lên bảng
-    this.stores = response.data;
+    this.stores = response.data.data;
   },
 };
 </script>
