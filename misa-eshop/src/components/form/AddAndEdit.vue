@@ -61,8 +61,19 @@
             <div class="row-item-left">
               <div class="row-item-name">Quốc gia</div>
               <!-- <input class="row-input-small" v-model="store.countryId" /> -->
-              <select class="select-location" v-model="store.countryId">
-                <option value="VN">Việt Nam</option>
+              <select
+                class="select-location"
+                v-model="store.countryId"
+                v-on:change="changedCountry(store.countryId)"
+              >
+                <option value="null" selected>Chọn quốc gia</option>
+                <option
+                  v-for="(country, index) in countries"
+                  :key="index"
+                  :value="country.countryId"
+                >
+                  {{ country.countryName }}
+                </option>
               </select>
             </div>
           </div>
@@ -70,15 +81,39 @@
             <div class="row-item-left">
               <div class="row-item-name">Tỉnh/Thành phố</div>
               <!-- <input class="row-input-small" v-model="store.provinceId" /> -->
-              <select class="select-location" v-model="store.provinceId">
-                <option value="VN"></option>
+              <select
+              :class="store.countryId == null ? 'disable-item' : ''"
+                class="select-location"
+                v-model="store.provinceId"
+                v-on:change="changedProvince(store.provinceId)"
+              >
+                <option value="null" selected disabled>Chọn tỉnh</option>
+                <option
+                  v-for="(province, index) in provinces"
+                  :key="index"
+                  :value="province.provinceId"
+                >
+                  {{ province.provinceName }}
+                </option>
               </select>
             </div>
             <div class="row-item-right">
               <div class="row-item-name">Quận/Huyện</div>
               <!-- <input class="row-input-small" v-model="store.districtId" /> -->
-              <select class="select-district" v-model="store.districtId">
-                <option value="VN"></option>
+              <select
+                class="select-district"
+                v-model="store.districtId"
+                v-on:change="changedDistrict(store.districtId)"
+                :class="store.provinceId == null ? 'disable-item' : ''"
+              >
+                <option value="null" selected disabled>Chọn Quận/Huyện</option>
+                <option
+                  v-for="(district, index) in districts"
+                  :key="index"
+                  :value="district.districtId"
+                >
+                  {{ district.districtName }}
+                </option>
               </select>
             </div>
           </div>
@@ -86,8 +121,16 @@
             <div class="row-item-left">
               <div class="row-item-name">Phường/Xã</div>
               <!-- <input class="row-input-small" v-model="store.wardId" /> -->
-              <select class="select-location" v-model="store.wardId">
-                <option value="VN"></option>
+              <select class="select-location" v-model="store.wardId" 
+              :class="store.districtId == null ? 'disable-item' : ''">
+                <option value="null" selected disabled>Chọn Phường/Xã</option>
+                <option
+                  v-for="(ward, index) in wards"
+                  :key="index"
+                  :value="ward.wardId"
+                >
+                  {{ ward.wardName }}
+                </option>
               </select>
             </div>
             <div class="row-item-right">
@@ -157,7 +200,7 @@ export default {
     btnSaveOnClick() {
       if (this.isAddMode) {
         axios
-          .post("https://localhost:44314/api/v1/Stores", this.store)
+          .post("https://localhost:44314/api/v1/Store", this.store)
           .then((res) => {
             console.log(res);
           })
@@ -170,19 +213,19 @@ export default {
         console.log("edit");
         axios
           .put(
-            "https://localhost:44314/api/v1/Stores/" + this.store.storeId,
+            "https://localhost:44314/api/v1/Store/" + this.store.storeId,
             this.store
           )
           .then((res) => {
-            console.log(res.data.userMsg);
+            // console.log(res);
+            console.log(res.data.data.userMsg);
           })
           .catch((res) => {
             console.log(res);
           });
-        // alert("Chỉnh sửa");
       }
-      // this.$emit("closeForm", true);
-      // this.$emit("isAddMode", true);
+      this.$emit("closeForm", true);
+      this.$emit("isAddMode", true);
     },
     /**=============================================
      * Đóng form
@@ -205,7 +248,6 @@ export default {
      =================================================================================*/
     btnSaveAndAddOnClick() {
       console.log(this.store);
-      console.log(this.isAddMode);
       console.log(this.store.countryId);
       // this.$emit("closeForm", true);
       // alert("Lưu và thêm mới");
@@ -251,13 +293,122 @@ export default {
         this.storeAddressAlert = true;
       } else this.storeAddressAlert = false;
     },
+
+    getCountries() {
+      // console.log("Load Country !");
+      // Lấy dữ liệu từ API
+      axios.get(`https://localhost:44314/api/v1/Country`).then((response) => {
+        //Lưu dữ liệu vào biến countries để chạy v-for show dữ liệu lên bảng
+        this.countries = response.data.data;
+        console.log(response.data.data.length + " Quốc gia được tìm thấy !");
+      });
+    },
+    getProvinces() {
+      // console.log("Load Province !");
+      // Lấy dữ liệu từ API
+      axios.get(`https://localhost:44314/api/v1/Province`).then((response) => {
+        //Lưu dữ liệu vào biến countries để chạy v-for show dữ liệu lên bảng
+        this.provinces = response.data.data;
+        console.log(response.data.data.length + " Tỉnh được tìm thấy !");
+      });
+    },
+    getDistricts() {
+      // console.log("Load District !");
+      // Lấy dữ liệu từ API
+      axios.get(`https://localhost:44314/api/v1/District`).then((response) => {
+        //Lưu dữ liệu vào biến countries để chạy v-for show dữ liệu lên bảng
+        this.districts = response.data.data;
+        console.log(response.data.data.length + " Huyện được tìm thấy !");
+      });
+    },
+    getWards() {
+      // console.log("Load Ward !");
+      // Lấy dữ liệu từ API
+      axios.get(`https://localhost:44314/api/v1/Ward`).then((response) => {
+        //Lưu dữ liệu vào biến countries để chạy v-for show dữ liệu lên bảng
+        this.wards = response.data.data;
+        console.log(response.data.data.length + " Xã được tìm thấy !");
+      });
+    },
+    changedCountry(value) {
+      // console.log("Mã quốc gia : " + value);
+      // Lấy dữ liệu từ API
+      axios
+        .get(`https://localhost:44314/api/v1/Province/WithParent/` + value)
+        .then((response) => {
+          //Lưu dữ liệu vào biến provinces để chạy v-for show dữ liệu lên bảng
+          this.provinces = response.data.data;
+          console.log(response.data.data.length + " Tỉnh được tìm thấy !");
+        });
+    },
+    changedProvince(value) {
+      // console.log("Mã tỉnh/thành phố : " + value);
+      // Lấy dữ liệu từ API
+      axios
+        .get(`https://localhost:44314/api/v1/District/WithParent/` + value)
+        .then((response) => {
+          //Lưu dữ liệu vào biến districts để chạy v-for show dữ liệu lên bảng
+          this.districts = response.data.data;
+          console.log(
+            response.data.data.length + " Quận/Huyện được tìm thấy !"
+          );
+        });
+    },
+    changedDistrict(value) {
+      // console.log("Mã quận/huyện : " + value);
+      // Lấy dữ liệu từ API
+      axios
+        .get(`https://localhost:44314/api/v1/Ward/WithParent/` + value)
+        .then((response) => {
+          //Lưu dữ liệu vào biến wards để chạy v-for show dữ liệu lên bảng
+          this.wards = response.data.data;
+          console.log(response.data.data.length + " Xã/Phường được tìm thấy !");
+        });
+    },
+
+    loadCountryName(id) {
+      // console.log("Mã quốc gia : " + id);
+      // Lấy dữ liệu từ API
+      axios
+        .get(`https://localhost:44314/api/v1/Country/` + id)
+        .then((response) => {
+          return response;
+          //Lưu dữ liệu vào biến provinces để chạy v-for show dữ liệu lên bảng
+          // this.provinces = response.data.data;
+          // console.log(response.data.data.length + " Tỉnh được tìm thấy !");
+        });
+    },
+
+    loadProvinceName(id) {
+      // console.log("Mã tỉnh : " + id);
+      // Lấy dữ liệu từ API
+      axios
+        .get(`https://localhost:44314/api/v1/Province/` + id)
+        .then((response) => {
+          return response;
+          //Lưu dữ liệu vào biến provinces để chạy v-for show dữ liệu lên bảng
+          // this.provinces = response.data.data;
+          // console.log(response.data.data.length + " Tỉnh được tìm thấy !");
+        });
+    },
   },
   mounted() {},
+  created() {
+    this.getCountries();
+    this.getProvinces();
+    this.getDistricts();
+    this.getWards();
+  },
   data() {
     return {
       storeCodeAlert: false,
       storeNameAlert: false,
       storeAddressAlert: false,
+      countries: [],
+      provinces: [],
+      districts: [],
+      wards: [],
+      selectedLocation: [],
       // store: {
       // storeId: null,
       // storeCode: null,

@@ -5,6 +5,7 @@
       @closeForm="closeForm"
       :isAddMode="isParentAddMode"
       :store="selectedStore"
+      
       :formHeading="isParentAddMode ? 'Thêm mới cửa hàng' : 'Sửa cửa hàng'"
     />
     <DeleteAlert
@@ -276,9 +277,9 @@ export default {
       this.isAddMode = value;
     },
 
-    reload() {
-      this.loadData();
-    },
+    // reload() {
+    //   this.loadData();
+    // },
 
     async loadData() {
       this.showLoading = true;
@@ -332,6 +333,8 @@ export default {
       selectedRow: null,
       //Object store được chọn
       selectedStore: {},
+      //
+     
       //Ẩn form
       isHideParent: true,
       //Hiện form cảnh báo delete
