@@ -227,6 +227,7 @@ export default {
       this.$emit("closeForm", true);
       this.$emit("isAddMode", true);
     },
+
     /**=============================================
      * Đóng form
      * Active : Click button X, button Cancel
@@ -240,6 +241,7 @@ export default {
       this.$emit("closeForm", true);
       this.$emit("isAddMode", true);
     },
+
     /**===============================================================================
      * Lưu và thêm mới
      * Active : Click button "Lưu và thêm mới"
@@ -253,6 +255,7 @@ export default {
       // alert("Lưu và thêm mới");
       // this.$emit("isAddMode", true);
     },
+
     /**================================================
      * Check Mã cửa hàng
      * Active : Mouse click outside the StoreCode input
@@ -268,6 +271,7 @@ export default {
         this.storeCodeAlert = true;
       } else this.storeCodeAlert = false;
     },
+    
     /**================================================
      * Check Tên cửa hàng
      * Active : Mouse click outside the StoreName input
@@ -281,6 +285,7 @@ export default {
         this.storeNameAlert = true;
       } else this.storeNameAlert = false;
     },
+
     /**===================================================
      * Check Địa chỉ cửa hàng
      * Active : Mouse click outside the StoreAddress input
@@ -294,42 +299,66 @@ export default {
       } else this.storeAddressAlert = false;
     },
 
+    /**=============================
+     * Lấy dữ liệu quốc gia
+     * CreatedBy : Tuanhd(17/4/2021)
+     ===============================*/
     getCountries() {
       // console.log("Load Country !");
       // Lấy dữ liệu từ API
       axios.get(`https://localhost:44314/api/v1/Country`).then((response) => {
-        //Lưu dữ liệu vào biến countries để chạy v-for show dữ liệu lên bảng
+        //Lưu dữ liệu vào biến countries để show dữ liệu 
         this.countries = response.data.data;
         console.log(response.data.data.length + " Quốc gia được tìm thấy !");
       });
     },
+
+    /**=============================
+     * Lấy dữ liệu tỉnh/thành phố
+     * CreatedBy : Tuanhd(17/4/2021)
+     ===============================*/
     getProvinces() {
       // console.log("Load Province !");
       // Lấy dữ liệu từ API
       axios.get(`https://localhost:44314/api/v1/Province`).then((response) => {
-        //Lưu dữ liệu vào biến countries để chạy v-for show dữ liệu lên bảng
+        //Lưu dữ liệu vào biến provinces để show dữ liệu 
         this.provinces = response.data.data;
         console.log(response.data.data.length + " Tỉnh được tìm thấy !");
       });
     },
+
+    /**=============================
+     * Lấy dữ liệu quận/huyện
+     * CreatedBy : Tuanhd(17/4/2021)
+     ===============================*/
     getDistricts() {
       // console.log("Load District !");
       // Lấy dữ liệu từ API
       axios.get(`https://localhost:44314/api/v1/District`).then((response) => {
-        //Lưu dữ liệu vào biến countries để chạy v-for show dữ liệu lên bảng
+        //Lưu dữ liệu vào biến districts để show dữ liệu lên bảng
         this.districts = response.data.data;
         console.log(response.data.data.length + " Huyện được tìm thấy !");
       });
     },
+
+    /**=============================
+     * Lấy dữ liệu phường/xã
+     * CreatedBy : Tuanhd(17/4/2021)
+     ===============================*/
     getWards() {
       // console.log("Load Ward !");
       // Lấy dữ liệu từ API
       axios.get(`https://localhost:44314/api/v1/Ward`).then((response) => {
-        //Lưu dữ liệu vào biến countries để chạy v-for show dữ liệu lên bảng
+        //Lưu dữ liệu vào biến wards để show dữ liệu lên bảng
         this.wards = response.data.data;
         console.log(response.data.data.length + " Xã được tìm thấy !");
       });
     },
+
+    /**============================================
+     * Lấy dữ liệu tỉnh/thành phố khi chọn quốc gia
+     * CreatedBy : Tuanhd(17/4/2021)
+     =============================================*/
     changedCountry(value) {
       // console.log("Mã quốc gia : " + value);
       // Lấy dữ liệu từ API
@@ -340,6 +369,9 @@ export default {
           this.provinces = response.data.data;
           console.log(response.data.data.length + " Tỉnh được tìm thấy !");
         });
+      this.store.provinceId = null;
+      this.store.districtId = null;
+      this.store.wardId = null;
     },
     changedProvince(value) {
       // console.log("Mã tỉnh/thành phố : " + value);
@@ -353,9 +385,9 @@ export default {
             response.data.data.length + " Quận/Huyện được tìm thấy !"
           );
         });
+        this.store.districtId = null;
     },
     changedDistrict(value) {
-      // console.log("Mã quận/huyện : " + value);
       // Lấy dữ liệu từ API
       axios
         .get(`https://localhost:44314/api/v1/Ward/WithParent/` + value)
@@ -373,9 +405,6 @@ export default {
         .get(`https://localhost:44314/api/v1/Country/` + id)
         .then((response) => {
           return response;
-          //Lưu dữ liệu vào biến provinces để chạy v-for show dữ liệu lên bảng
-          // this.provinces = response.data.data;
-          // console.log(response.data.data.length + " Tỉnh được tìm thấy !");
         });
     },
 
@@ -386,9 +415,6 @@ export default {
         .get(`https://localhost:44314/api/v1/Province/` + id)
         .then((response) => {
           return response;
-          //Lưu dữ liệu vào biến provinces để chạy v-for show dữ liệu lên bảng
-          // this.provinces = response.data.data;
-          // console.log(response.data.data.length + " Tỉnh được tìm thấy !");
         });
     },
   },
@@ -409,24 +435,6 @@ export default {
       districts: [],
       wards: [],
       selectedLocation: [],
-      // store: {
-      // storeId: null,
-      // storeCode: null,
-      // StoreName: null,
-      // Address: null,
-      // PhoneNumber: null,
-      // StoreTaxCode: null,
-      // CountryId: null,
-      // ProvinceId: null,
-      // DistrictId: null,
-      // WardId: null,
-      // Street: null,
-      // Status: null,
-      // CreatedDate: null,
-      // CreatedBy: null,
-      // ModifiedDate: null,
-      // ModifiedBy: null,
-      // },
     };
   },
 };
