@@ -254,11 +254,49 @@ export default {
      * CreatedBy : Tuanhd(14/4/2021)
      =================================================================================*/
     btnSaveAndAddOnClick() {
-      console.log(this.store);
-      console.log(this.store.countryId);
-      // this.$emit("closeForm", true);
-      // alert("Lưu và thêm mới");
+      if (this.isAddMode) {
+        console.log("add");
+        axios
+          .post("https://localhost:44314/api/v1/Store", this.store)
+          .then((res) => {
+            console.log(res);
+          })
+          .catch((res) => {
+            console.log(res);
+          });
+        console.log(this.store);
+        // console.log(response);
+      } else {
+        // console.log("edit");
+        axios
+          .put(
+            "https://localhost:44314/api/v1/Store/" + this.store.storeId,
+            this.store
+          )
+          .then((res) => {
+            // console.log(res);
+            console.log(res.data.devMsg);
+          })
+          .catch((res) => {
+            console.log(res);
+          });
+      }
+      // console.log(this.store);
+      this.store.storeCode = null
+      this.store.storeName = null
+      this.store.address = null
+      this.store.phoneNumber = null
+      this.store.status = null
+      this.store.provinceId = null
+      this.store.districtId = null
+      this.store.wardId = null
+      this.store.street = null
+      this.store.storeTaxCode = null
+      this.store.countryId = null;
+      this.isAddMode = true;
       // this.$emit("isAddMode", true);
+      console.log(this.isAddMode);
+      // console.log(this.store);
     },
 
     /**================================================
