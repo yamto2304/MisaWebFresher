@@ -77,14 +77,16 @@ export default {
           //Đóng alert
           this.$emit("closeAlert", true);
           //Load dữ liệu
+          this.$emit('loadData');
         })
         .catch((res) => {
           // Có thể mở form mới hoặc thông báo khác
-          console.log(res);
+          console.log(res.data);
         });
     },
   },
   data() {},
+  $emit: ['loadData'],
 };
 </script>
 <style scoped>

@@ -153,7 +153,7 @@
             class="btn-paging icon-end"
             :class="valueInputPaging < this.maxPage ? '' : 'disable-item'"
           ></div>
-          <div class="btn-paging icon-refresh"></div>
+          <div class="btn-paging icon-refresh" @click="loadData"></div>
           <select class="select-number-records select-number-page">
             <option>15</option>
             <option>25</option>
@@ -290,7 +290,7 @@ export default {
         .then((response) => {
           //Lưu dữ liệu vào biến stores để chạy v-for show dữ liệu lên bảng
           this.stores = response.data.data;
-          console.log(response.data.data.length + " Bản ghi được tìm thấy !");
+          console.log(response.data.data[0]);
         });
       this.showLoading = false;
     },

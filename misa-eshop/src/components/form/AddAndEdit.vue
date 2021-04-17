@@ -19,6 +19,7 @@
               Mã cửa hàng <span class="red-text">*</span>
             </div>
             <input
+            autofocus:autofocus
               v-model="store.storeCode"
               class="row-input-big"
               :class="{ isBlurAlert: storeCodeAlert }"
@@ -40,7 +41,7 @@
             <div class="row-item-name">
               Địa chỉ <span class="red-text">*</span>
             </div>
-            <input
+            <textarea
               v-model="store.address"
               class="row-input-big"
               v-on:blur="blurStoreAddress()"
@@ -82,7 +83,7 @@
               <div class="row-item-name">Tỉnh/Thành phố</div>
               <!-- <input class="row-input-small" v-model="store.provinceId" /> -->
               <select
-              :class="store.countryId == null ? 'disable-item' : ''"
+                :class="store.countryId == null ? 'disable-item' : ''"
                 class="select-location"
                 v-model="store.provinceId"
                 v-on:change="changedProvince(store.provinceId)"
@@ -121,8 +122,11 @@
             <div class="row-item-left">
               <div class="row-item-name">Phường/Xã</div>
               <!-- <input class="row-input-small" v-model="store.wardId" /> -->
-              <select class="select-location" v-model="store.wardId" 
-              :class="store.districtId == null ? 'disable-item' : ''">
+              <select
+                class="select-location"
+                v-model="store.wardId"
+                :class="store.districtId == null ? 'disable-item' : ''"
+              >
                 <option value="null" selected disabled>Chọn Phường/Xã</option>
                 <option
                   v-for="(ward, index) in wards"
@@ -199,6 +203,7 @@ export default {
      =================================================================================*/
     btnSaveOnClick() {
       if (this.isAddMode) {
+        console.log("add");
         axios
           .post("https://localhost:44314/api/v1/Store", this.store)
           .then((res) => {
@@ -207,10 +212,10 @@ export default {
           .catch((res) => {
             console.log(res);
           });
-        // console.log(this.store);
+        console.log(this.store);
         // console.log(response);
       } else {
-        console.log("edit");
+        // console.log("edit");
         axios
           .put(
             "https://localhost:44314/api/v1/Store/" + this.store.storeId,
@@ -218,7 +223,7 @@ export default {
           )
           .then((res) => {
             // console.log(res);
-            console.log(res.data.data.userMsg);
+            console.log(res.data.devMsg);
           })
           .catch((res) => {
             console.log(res);
@@ -271,7 +276,7 @@ export default {
         this.storeCodeAlert = true;
       } else this.storeCodeAlert = false;
     },
-    
+
     /**================================================
      * Check Tên cửa hàng
      * Active : Mouse click outside the StoreName input
@@ -307,7 +312,7 @@ export default {
       // console.log("Load Country !");
       // Lấy dữ liệu từ API
       axios.get(`https://localhost:44314/api/v1/Country`).then((response) => {
-        //Lưu dữ liệu vào biến countries để show dữ liệu 
+        //Lưu dữ liệu vào biến countries để show dữ liệu
         this.countries = response.data.data;
         console.log(response.data.data.length + " Quốc gia được tìm thấy !");
       });
@@ -321,7 +326,7 @@ export default {
       // console.log("Load Province !");
       // Lấy dữ liệu từ API
       axios.get(`https://localhost:44314/api/v1/Province`).then((response) => {
-        //Lưu dữ liệu vào biến provinces để show dữ liệu 
+        //Lưu dữ liệu vào biến provinces để show dữ liệu
         this.provinces = response.data.data;
         console.log(response.data.data.length + " Tỉnh được tìm thấy !");
       });
@@ -385,7 +390,8 @@ export default {
             response.data.data.length + " Quận/Huyện được tìm thấy !"
           );
         });
-        this.store.districtId = null;
+      this.store.districtId = null;
+      // this.store.wardId = null;
     },
     changedDistrict(value) {
       // Lấy dữ liệu từ API

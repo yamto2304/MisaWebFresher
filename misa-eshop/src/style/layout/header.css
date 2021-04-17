@@ -93,13 +93,52 @@
     position: absolute;
     right: 152px;
     /* display: flex; */
+    cursor: pointer;
 }
 
 .user-info {
     align-items: center;
     display: flex;
 }
-
+.menu{
+    z-index: 6;
+  width: 190px;
+  background-color: #ffffff;
+  position: absolute;
+  top: 52px;
+  right: 0;
+  font-size: 13px;
+  border: 1px solid #c3c3c3;
+  border-radius: 4px;
+  box-shadow: 1px 1px 4px #000000;
+}
+.menu div {
+    height: 35px;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 8px;
+    border-bottom: 1px solid #c3c3c3;
+  }
+  .menu div:hover {
+    color: #636dde;
+  }
+  .icon {
+    padding-right: 8px;
+    vertical-align: middle;
+  }
+  .option-menu{
+      display: flex;
+  }
+  .title-option{
+    display: flex;
+    align-items: center;
+  }
+  .setting {
+    z-index: 5;
+    position: absolute;
+    width: calc(100% - 150px);
+    height: 100vh;
+  }
 .user-name {
     margin-left: 6px;
     font-weight: 400;
