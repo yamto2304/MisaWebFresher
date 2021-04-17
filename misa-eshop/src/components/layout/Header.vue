@@ -1,6 +1,6 @@
 <template>
   <div class="header">
-     <div v-show="isShowAcount" class="setting" @click="ShowAcount"></div>
+    <div v-show="isShowAcount" class="setting" @click="ShowAcount"></div>
     <div class="header-box-name">
       <div class="header-name"><b>Cửa hàng</b></div>
     </div>
@@ -12,7 +12,7 @@
           <option>misard</option>
         </select>
       </div>
-      
+
       <div class="btn-user-setting" @click="ShowAcount">
         <div class="user-info">
           <div class="icon-avatar"></div>
