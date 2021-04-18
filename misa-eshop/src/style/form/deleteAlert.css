@@ -1,0 +1,120 @@
+.isHideAlert {
+    display: none;
+  }
+  .delete-dialog {
+    z-index: 998;
+  }
+  .dialog-modal {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: black;
+    opacity: 0.4;
+    z-index: 999;
+  }
+  .dialog-content {
+    position: fixed;
+    left: calc(50% - 200px);
+    top: calc(50% - 78px);
+    width: 400px;
+    height: 156px;
+    border-radius: 4px;
+    background-color: #fff;
+    border: 2px solid #dfdfdf;
+    z-index: 1000;
+  }
+  .btn-x {
+    border: none;
+    cursor: pointer;
+    outline: none;
+  }
+  /* ========================================= */
+  .form-header {
+    background-color: #f0f0f0;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    display: flex;
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 40px !important;
+    width: 100%;
+    font-size: 16px;
+    align-items: center;
+  }
+  .heading {
+    margin: 10px 14px;
+  }
+  .btn-close-form {
+    position: absolute;
+    right: 0px;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    align-items: center;
+    border: none;
+    margin: 10px 14px;
+  }
+  .btn-x {
+    border: none;
+    cursor: pointer;
+    outline: none;
+  }
+  /* ======================================== */
+  .form-content {
+    /* background-color: #dfdfdf; */
+    background-color: #ffffff;
+    position: relative;
+    top: 0;
+    width: 378px;
+    height: 44px;
+    padding: 10px;
+    border: 1px solid #e4e4e4;
+    display: flex;
+  }
+  /* ======================================== */
+  .form-footer {
+    background-color: #ffffff;
+    display: flex;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    height: 49px;
+    /* padding: 10px; */
+    outline: none;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+    align-items: center;
+    border-top: 1px solid #e4e4e4;
+  }
+  .btn-delete-footer {
+    position: absolute;
+    left: 232px;
+    background-color: red;
+    border-radius: 3px;
+    height: 32px;
+    width: 75px;
+    padding: 7px;
+    outline: none;
+  }
+  .btn-cancel-footer {
+    position: absolute;
+    right: 8px;
+    background-color: #ffffff;
+    border-radius: 3px;
+    height: 32px;
+    width: 75px;
+    padding: 7px;
+    outline: none;
+  }
+  .icon-footer {
+    position: relative;
+    left: -24px;
+    top: -2px;
+  }
+  .text-footer {
+    position: absolute;
+    left: 20px;
+  }

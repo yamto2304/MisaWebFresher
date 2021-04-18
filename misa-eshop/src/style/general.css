@@ -1,8 +1,12 @@
 @import "./basic/button.css";
 @import "./basic/icon.css";
 @import "./basic/input.css";
-@import "./basic/toolbar.css";
-@import "./view/store.css";
+@import "./basic/pagingBar.css";
+
+@import "./view/storeList.css";
+
+@import "./form/deleteAlert.css";
+@import "./form/addAndEdit.css";
 
 @import "./layout/navbar.css";
 @import "./layout/header.css";
