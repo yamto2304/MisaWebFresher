@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using MISA.eShop.Core.Entities;
 using MISA.eShop.Core.Exceptions;
 using MISA.eShop.Core.Interfaces.Repository;
@@ -11,6 +8,10 @@ using MISA.eShop.Core.Interfaces.Service;
 
 namespace MISA.eShop.Core.Services
 {
+    /// <summary>
+    /// Chi nhánh của tổng cty BaseService, thực thi công việc của interface IStoreService
+    /// </summary>
+    /// CreatedBy: Tuanhd(18/4/2021)
     public class StoreService : BaseService<Store>, IStoreService
     {
         IStoreRepository _storeRepository;
@@ -19,6 +20,12 @@ namespace MISA.eShop.Core.Services
             _storeRepository = storeRepository;
         }
 
+        /// <summary>
+        /// Xóa cửa hàng theo ID
+        /// </summary>
+        /// <param name="storeId">Id cửa hàng</param>
+        /// <returns>Số bản ghi bị xóa</returns>
+        /// CreatedBy: Tuanhd(18/4/2021)
         public int Delete(Guid storeId)
         {
             var store = _storeRepository.GetById(storeId);
@@ -34,12 +41,23 @@ namespace MISA.eShop.Core.Services
 
         }
 
+        /// <summary>
+        /// Lấy dữ liệu dựa theo code
+        /// </summary>
+        /// <param name="storeCode">mã code của cửa hàng cần lấy</param>
+        /// <returns>cửa hàng</returns>
+        /// CreatedBy:Tuanhd (05/04/2021)
         public Store GetByStoreCode(string storeCode)
         {
             var res = _storeRepository.GetByStoreCode(storeCode);
             return res;
         }
 
+        /// <summary>
+        /// Đếm có tất cả bao nhiêu cửa hàng
+        /// </summary>
+        /// <returns>Tổng số cửa hàng trong bảng Store</returns>
+        /// CreatedBy: Tuanhd(18/4/2021)
         public int GetCountStore()
         {
             var res = _storeRepository.GetCountStore();
@@ -58,6 +76,12 @@ namespace MISA.eShop.Core.Services
             return res;
         }
 
+        /// <summary>
+        /// Thêm cửa hàng
+        /// </summary>
+        /// <param name="entity">Đối tượng cửa hàng </param>
+        /// <returns>Số bản ghi được thêm vào</returns>
+        /// CreatedBy: Tuanhd(18/4/2021)
         public int Insert(Store entity)
         {
             ValidateStore(entity);
@@ -75,9 +99,16 @@ namespace MISA.eShop.Core.Services
 
         }
 
+        /// <summary>
+        /// Sửa thông tin cửa hàng
+        /// </summary>
+        /// <param name="entity">Đối tượng cửa hàng</param>
+        /// <param name="storeId">Id cửa hàng cần sửa</param>
+        /// <returns>Số bản ghi được cập nhật</returns>
+        /// CreatedBy: Tuanhd(18/4/2021)
         public int Update(Store entity, Guid storeId)
         {
-            if (storeId == null || storeId == Guid.Empty)
+            if (storeId == Guid.Empty)
             {
                 throw new ValidateExceptions("ID cửa hàng không được phép trống!");
             }

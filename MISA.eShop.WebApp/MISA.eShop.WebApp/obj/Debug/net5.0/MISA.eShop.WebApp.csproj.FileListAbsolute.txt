@@ -44,6 +44,10 @@ C:\Users\Tuani\OneDrive\Desktop\Github\MisaWebFresher\MISA.eShop.WebApp\MISA.eSh
 C:\Users\Tuani\OneDrive\Desktop\Github\MisaWebFresher\MISA.eShop.WebApp\MISA.eShop.WebApp\bin\Debug\net5.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\Tuani\OneDrive\Desktop\Github\MisaWebFresher\MISA.eShop.WebApp\MISA.eShop.WebApp\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\Tuani\OneDrive\Desktop\Github\MisaWebFresher\MISA.eShop.WebApp\MISA.eShop.WebApp\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\Tuani\OneDrive\Desktop\Github\MisaWebFresher\MISA.eShop.WebApp\MISA.eShop.WebApp\bin\Debug\net5.0\MISA.eShop.Core.dll
+C:\Users\Tuani\OneDrive\Desktop\Github\MisaWebFresher\MISA.eShop.WebApp\MISA.eShop.WebApp\bin\Debug\net5.0\MISA.eShop.Infrastructure.dll
+C:\Users\Tuani\OneDrive\Desktop\Github\MisaWebFresher\MISA.eShop.WebApp\MISA.eShop.WebApp\bin\Debug\net5.0\MISA.eShop.Core.pdb
+C:\Users\Tuani\OneDrive\Desktop\Github\MisaWebFresher\MISA.eShop.WebApp\MISA.eShop.WebApp\bin\Debug\net5.0\MISA.eShop.Infrastructure.pdb
 C:\Users\Tuani\OneDrive\Desktop\Github\MisaWebFresher\MISA.eShop.WebApp\MISA.eShop.WebApp\obj\Debug\net5.0\MISA.eShop.WebApp.csprojAssemblyReference.cache
 C:\Users\Tuani\OneDrive\Desktop\Github\MisaWebFresher\MISA.eShop.WebApp\MISA.eShop.WebApp\obj\Debug\net5.0\MISA.eShop.WebApp.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Tuani\OneDrive\Desktop\Github\MisaWebFresher\MISA.eShop.WebApp\MISA.eShop.WebApp\obj\Debug\net5.0\MISA.eShop.WebApp.AssemblyInfoInputs.cache
@@ -60,7 +64,3 @@ C:\Users\Tuani\OneDrive\Desktop\Github\MisaWebFresher\MISA.eShop.WebApp\MISA.eSh
 C:\Users\Tuani\OneDrive\Desktop\Github\MisaWebFresher\MISA.eShop.WebApp\MISA.eShop.WebApp\obj\Debug\net5.0\ref\MISA.eShop.WebApp.dll
 C:\Users\Tuani\OneDrive\Desktop\Github\MisaWebFresher\MISA.eShop.WebApp\MISA.eShop.WebApp\obj\Debug\net5.0\MISA.eShop.WebApp.pdb
 C:\Users\Tuani\OneDrive\Desktop\Github\MisaWebFresher\MISA.eShop.WebApp\MISA.eShop.WebApp\obj\Debug\net5.0\MISA.eShop.WebApp.genruntimeconfig.cache
-C:\Users\Tuani\OneDrive\Desktop\Github\MisaWebFresher\MISA.eShop.WebApp\MISA.eShop.WebApp\bin\Debug\net5.0\MISA.eShop.Core.dll
-C:\Users\Tuani\OneDrive\Desktop\Github\MisaWebFresher\MISA.eShop.WebApp\MISA.eShop.WebApp\bin\Debug\net5.0\MISA.eShop.Infrastructure.dll
-C:\Users\Tuani\OneDrive\Desktop\Github\MisaWebFresher\MISA.eShop.WebApp\MISA.eShop.WebApp\bin\Debug\net5.0\MISA.eShop.Core.pdb
-C:\Users\Tuani\OneDrive\Desktop\Github\MisaWebFresher\MISA.eShop.WebApp\MISA.eShop.WebApp\bin\Debug\net5.0\MISA.eShop.Infrastructure.pdb

@@ -8,8 +8,14 @@ using MISA.eShop.Core.Interfaces.Repository;
 
 namespace MISA.eShop.Infrastructure.Repository
 {
+    /// <summary>
+    /// Class thực thi công việc, tiếp xúc trực tiêp với database : clas chung
+    /// </summary>
+    /// <typeparam name="MISAEntity">Đối tượng truyền vào</typeparam>
+    /// CreatedBy : Tuanhd(18/4/2021)
     public class BaseRepository<MISAEntity> : IBaseRepository<MISAEntity>
     {
+        //Connection string : chìa khóa mở kho database
         protected string _tableName = string.Empty;
         protected string _connectionString = "" +
                "Host=47.241.69.179; " +
@@ -18,6 +24,12 @@ namespace MISA.eShop.Infrastructure.Repository
                "Password=12345678;" +
                "Database= MF772_HUONGHTT_ESHOP;" +
                 "convert zero datetime=True";
+        //string _connectionString = "" +
+        //        "Host=47.241.69.179; " +
+        //        "Port=3306;" +
+        //        "User Id= dev; " +
+        //        "Password=12345678;" +
+        //        "Database= TEST.MISA.eShop";
         protected IDbConnection _dbConnection;
         public BaseRepository()
         {
@@ -25,6 +37,12 @@ namespace MISA.eShop.Infrastructure.Repository
             _dbConnection = new MySqlConnection(_connectionString);
         }
 
+        /// <summary>
+        /// Lấy dữ liệu theo ID
+        /// </summary>
+        /// <param name="entityId">ID của đối tượng cần lấy</param>
+        /// <returns>Đối tượng lấy được</returns>
+        /// CreatedBy: Tuanhd(18/4/2021)
         public MISAEntity GetById(Guid entityId)
         {
             string storeName = $"Proc_Get{_tableName}ById";
@@ -35,6 +53,11 @@ namespace MISA.eShop.Infrastructure.Repository
             return entity;
         }
 
+        /// <summary>
+        /// Lấy tất cả đối tượng trong bảng database
+        /// </summary>
+        /// <returns>Toàn bộ đối tượng</returns>
+        /// CreatedBy: Tuanhd(18/4/2021)
         public IEnumerable<MISAEntity> GetEntities()
         {
             string storeName = $"Proc_Get{_tableName}s";

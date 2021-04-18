@@ -6,6 +6,10 @@ using MISA.eShop.WebApp.Result;
 
 namespace MISA.eShop.WebApp.Controllers
 {
+    /// <summary>
+    /// Controller yêu cầu nghiệp vụ đến dữ liệu Province
+    /// </summary>
+    /// CreatedBy: Tuanhd (18/04/2021)
     public class ProvinceController : BaseEntityController<Province>
     {
         IProvinceService _provinceService;
@@ -15,6 +19,12 @@ namespace MISA.eShop.WebApp.Controllers
 
         }
 
+        /// <summary>
+        /// Lấy tất cả tỉnh có trong quốc gia
+        /// </summary>
+        /// <param name="entityId">Id quốc gia</param>
+        /// <returns>Toàn bộ tỉnh</returns>
+        /// CreatedBy: Tuanhd (18/04/2021)
         [HttpGet("WithParent/{entityId}")]
         public IActionResult GetWithParent(Guid entityId)
         {

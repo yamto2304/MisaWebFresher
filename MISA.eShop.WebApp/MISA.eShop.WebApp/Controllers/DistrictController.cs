@@ -6,6 +6,10 @@ using MISA.eShop.WebApp.Result;
 
 namespace MISA.eShop.WebApp.Controllers
 {
+    /// <summary>
+    /// Controller yêu cầu nghiệp vụ đến dữ liệu District
+    /// </summary>
+    /// CreatedBy: Tuanhd (18/04/2021)
     public class DistrictController : BaseEntityController<District>
     {
         IDistrictService _districtService;
@@ -14,6 +18,13 @@ namespace MISA.eShop.WebApp.Controllers
             _districtService = districtService;
 
         }
+
+        /// <summary>
+        /// Lấy tất cả quận/huyện có trong tỉnh
+        /// </summary>
+        /// <param name="entityId">Id tỉnh</param>
+        /// <returns>Tất cả quận huyện</returns>
+        /// CreatedBy : Tuanhd(18/4/2021)
         [HttpGet("WithParent/{entityId}")]
         public IActionResult GetWithParent(Guid entityId)
         {

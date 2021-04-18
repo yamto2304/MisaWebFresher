@@ -7,6 +7,10 @@ using System;
 
 namespace MISA.eShop.WebApp.Controllers
 {
+    /// <summary>
+    /// Controller yêu cầu nghiệp vụ đến dữ liệu Store
+    /// </summary>
+    /// CreatedBy: Tuanhd (18/04/2021)
     public class StoreController : BaseEntityController<Store>
     {
         IStoreService _storeService;
@@ -20,6 +24,7 @@ namespace MISA.eShop.WebApp.Controllers
         /// </summary>
         /// <param name="entityId"> id của cửa hàng cần xóa</param>
         /// <returns>số bản ghi bị ảnh hưởng</returns>
+        /// CreatedBy: Tuanhd (18/04/2021)
         [HttpDelete("{entityId}")]
 
         public IActionResult Delete(Guid entityId)
@@ -50,6 +55,7 @@ namespace MISA.eShop.WebApp.Controllers
         /// </summary>
         /// <param name="store">thông tin cửa hàng</param>
         /// <returns>số bản ghi bị ảnh hường</returns>
+        /// CreatedBy: Tuanhd (18/04/2021)
         [HttpPost]
         public IActionResult Post(Store store)
         {
@@ -80,7 +86,8 @@ namespace MISA.eShop.WebApp.Controllers
         /// </summary>
         /// <param name="entityId">id cửa hàng </param>
         /// <param name="store"> thông tin cửa hàng</param>
-        /// <returns></returns>
+        /// <returns>Thông báo</returns>
+        /// CreatedBy: Tuanhd (18/04/2021)
         [HttpPut("{entityId}")]
         public IActionResult Put(Guid entityId, Store store)
         {

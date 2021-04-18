@@ -7,8 +7,17 @@ using MISA.eShop.Core.Interfaces.Repository;
 
 namespace MISA.eShop.Infrastructure.Repository
 {
+    /// <summary>
+    /// Class lấy dừ liệu từ bảng District
+    /// </summary>
     public class DistrictRepository : BaseRepository<District>, IDistrictRepository
     {
+        /// <summary>
+        /// Lấy tất cả huyện có trong tỉnh
+        /// </summary>
+        /// <param name="entityId">Id của tỉnh</param>
+        /// <returns>Toàn bộ huyện trong tỉnh</returns>
+        /// CreatedBy: Tuanhd(18/4/2021)
         public IEnumerable<District> GetDistrictWithProvince(Guid entityId)
         {
             string storeName = "Proc_GetDistrictWithProvince";

@@ -5,11 +5,22 @@ using System.Linq;
 using Dapper;
 using MISA.eShop.Core.Entities;
 using MISA.eShop.Core.Interfaces.Repository;
+using MySqlConnector;
 
 namespace MISA.eShop.Infrastructure.Repository
 {
+    /// <summary>
+    /// Class lấy dữ liệu từ bảng Store
+    /// </summary>
+    /// CreatedBy: Tuanhd(18/4/2021)
     public class StoreRepository : BaseRepository<Store>, IStoreRepository
     {
+        /// <summary>
+        /// Xóa store 
+        /// </summary>
+        /// <param name="storeId">d của store cần xóa</param>
+        /// <returns>store đã xóa</returns>
+        /// CreatedBy: Tuanhd(18/4/2021)
         public int Delete(Guid storeId)
         {
             string storeName = $"Proc_Delete{_tableName}";
@@ -19,6 +30,13 @@ namespace MISA.eShop.Infrastructure.Repository
             var entity = _dbConnection.Execute(storeName, param: dynamicParameters, commandType: CommandType.StoredProcedure);
             return entity;
         }
+
+        /// <summary>
+        /// Lấy ra store với code đã có 
+        /// </summary>
+        /// <param name="storeCode">Mã code của store cần tìm</param>
+        /// <returns>Đưa ra store có code đã nhập</returns>
+        /// CreatedBy: Tuanhd(18/4/2021)
 
         public Store GetByStoreCode(string storeCode)
         {
@@ -31,11 +49,16 @@ namespace MISA.eShop.Infrastructure.Repository
             else return null;
         }
 
+        /// <summary>
+        /// Đếm tất cả store có trong bảng
+        /// </summary>
+        /// <returns>Số lượng store</returns>
+        /// CreatedBy: Tuanhd(18/4/2021)
         public int GetCountStore()
         {
             string storeName = "Proc_GetCountStores";
-            var entity = _dbConnection.Execute(storeName, commandType: CommandType.StoredProcedure);
-            return entity;
+            var count = _dbConnection.Execute(storeName, commandType: CommandType.StoredProcedure);
+            return count;
         }
 
         public IEnumerable<Store> GetIndexOffset(int position, int offset)
@@ -62,6 +85,12 @@ namespace MISA.eShop.Infrastructure.Repository
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Thêm mới store
+        /// </summary>
+        /// <param name="entity">Dữ liệu store nhập vào</param>
+        /// <returns>Số bản ghi được thêm vào</returns>
+        /// CreatedBy: Tuanhd(18/4/2021)
         public int Insert(Store entity)
         {
             var storeName = $"Proc_Insert{_tableName}";
@@ -70,6 +99,13 @@ namespace MISA.eShop.Infrastructure.Repository
             return rowAffects;
         }
 
+        /// <summary>
+        /// Cập nhật dữ liệu store
+        /// </summary>
+        /// <param name="entity">dữ liệu store nhập vào</param>
+        /// <param name="storeId">Id của store cần cập nhật</param>
+        /// <returns>Số bản ghi được thay đổi</returns>
+        /// CreatedBy: Tuanhd(18/4/2021)
         public int Update(Store entity, Guid storeId)
         {
             entity.StoreId = storeId;

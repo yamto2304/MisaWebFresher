@@ -1,12 +1,11 @@
 ﻿using MISA.eShop.Core.Interfaces.Repository;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MISA.eShop.Core.Interfaces
 {
+    /// <summary>
+    /// Interface UnitOfWork - quản lí chung công việc
+    /// </summary>
+    /// CreatedBy: Tuanhd(18/4/2021)
     public interface IUnitOfWork
     {
         public ICountryRepository CountryRepository { get; }

@@ -123,7 +123,7 @@
                 <div class="cell">{{ store.phoneNumber }}</div>
               </td>
               <td>
-                <div class="cell">{{ store.status }}</div>
+                <div class="cell">{{ store.status == 1 ? "Đang hoạt động" : "Ngừng hoạt động"}}</div>
               </td>
             </tr>
           </tbody>

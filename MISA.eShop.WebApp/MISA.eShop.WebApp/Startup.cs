@@ -32,6 +32,7 @@ namespace MISA.eShop.WebApp
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "MISA.CukCuk", Version = "v1" });
             });
             //add scoped
+            //Khai bao Class nao thuc thi nhiem vu cho Interface nao
             services.AddScoped(typeof(IBaseService<>), typeof(BaseService<>));
             services.AddScoped(typeof(IBaseRepository<>), typeof(BaseRepository<>));
             services.AddScoped<IUnitOfWork, UnitOfWork>();
@@ -54,7 +55,7 @@ namespace MISA.eShop.WebApp
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "MISA.CukCuk v1"));
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "MISA.eShop v1"));
             }
 
             app.UseCors(x => x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader().SetPreflightMaxAge(TimeSpan.FromMinutes(10)));

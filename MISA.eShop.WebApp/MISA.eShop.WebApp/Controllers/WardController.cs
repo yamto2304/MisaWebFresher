@@ -6,6 +6,10 @@ using MISA.eShop.WebApp.Result;
 
 namespace MISA.eShop.WebApp.Controllers
 {
+    /// <summary>
+    /// Controller yêu cầu nghiệp vụ đến dữ liệu Ward
+    /// </summary>
+    /// CreatedBy: Tuanhd (18/04/2021)
     public class WardController : BaseEntityController<Ward>
     {
         IWardService _wardService;
@@ -15,6 +19,12 @@ namespace MISA.eShop.WebApp.Controllers
 
         }
 
+        /// <summary>
+        /// Lấy tất cả xã có trong huyện
+        /// </summary>
+        /// <param name="entityId">Id của huyện</param>
+        /// <returns>Toàn bộ xã </returns>
+        /// CreatedBy: Tuanhd (18/04/2021)
         [HttpGet("WithParent/{entityId}")]
         public IActionResult GetWithParent(Guid entityId)
         {

@@ -21,7 +21,7 @@ namespace MISA.eShop.WebApp.Controllers
         /// Lấy toàn bộ dữ liệu
         /// </summary>
         /// <returns>Nếu có dữ liệu: trả vễ HttpCode 200; 204 nếu không có dữ liệu</returns>
-        /// CreatedBy: huongdoll (01/04/2021)
+        /// CreatedBy: Tuanhd (01/04/2021)
         [HttpGet]
 
         public IActionResult Get()
@@ -48,6 +48,12 @@ namespace MISA.eShop.WebApp.Controllers
             }
         }
 
+        /// <summary>
+        /// Lấy dữ liệu theo Id
+        /// </summary>
+        /// <param name="entityId">Id nhập vào</param>
+        /// <returns>Đối tượng có Id đã nhập</returns>
+        /// CreatedBy: Tuanhd (18/04/2021)
         [HttpGet("{entityId}")]
         public IActionResult Get(Guid entityId)
         {
@@ -59,7 +65,7 @@ namespace MISA.eShop.WebApp.Controllers
             {
                 res.OnBadRequest(res);
                 res.DevMsg = "Không có data !";
-                res.UserMsg = "Không tìm thấy khách hàng !";
+                res.UserMsg = "Không tìm thấy dữ liệu !";
                 res.Data = entitie;
                 return Ok(res);
             }
