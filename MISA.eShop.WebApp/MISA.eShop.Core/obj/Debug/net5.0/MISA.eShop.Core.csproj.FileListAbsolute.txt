@@ -10,3 +10,15 @@ C:\Users\Tuani\OneDrive\Desktop\Github\MisaWebFresher\MISA.eShop.WebApp\MISA.eSh
 C:\Users\Tuani\OneDrive\Desktop\Github\MisaWebFresher\MISA.eShop.WebApp\MISA.eShop.Core\obj\Debug\net5.0\MISA.eShop.Core.dll
 C:\Users\Tuani\OneDrive\Desktop\Github\MisaWebFresher\MISA.eShop.WebApp\MISA.eShop.Core\obj\Debug\net5.0\ref\MISA.eShop.Core.dll
 C:\Users\Tuani\OneDrive\Desktop\Github\MisaWebFresher\MISA.eShop.WebApp\MISA.eShop.Core\obj\Debug\net5.0\MISA.eShop.Core.pdb
+C:\Users\hdtuan\Desktop\Github\MisaWebFresher\MISA.eShop.WebApp\MISA.eShop.Core\bin\Debug\net5.0\MISA.eShop.Core.deps.json
+C:\Users\hdtuan\Desktop\Github\MisaWebFresher\MISA.eShop.WebApp\MISA.eShop.Core\bin\Debug\net5.0\MISA.eShop.Core.dll
+C:\Users\hdtuan\Desktop\Github\MisaWebFresher\MISA.eShop.WebApp\MISA.eShop.Core\bin\Debug\net5.0\ref\MISA.eShop.Core.dll
+C:\Users\hdtuan\Desktop\Github\MisaWebFresher\MISA.eShop.WebApp\MISA.eShop.Core\bin\Debug\net5.0\MISA.eShop.Core.pdb
+C:\Users\hdtuan\Desktop\Github\MisaWebFresher\MISA.eShop.WebApp\MISA.eShop.Core\obj\Debug\net5.0\MISA.eShop.Core.csprojAssemblyReference.cache
+C:\Users\hdtuan\Desktop\Github\MisaWebFresher\MISA.eShop.WebApp\MISA.eShop.Core\obj\Debug\net5.0\MISA.eShop.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\hdtuan\Desktop\Github\MisaWebFresher\MISA.eShop.WebApp\MISA.eShop.Core\obj\Debug\net5.0\MISA.eShop.Core.AssemblyInfoInputs.cache
+C:\Users\hdtuan\Desktop\Github\MisaWebFresher\MISA.eShop.WebApp\MISA.eShop.Core\obj\Debug\net5.0\MISA.eShop.Core.AssemblyInfo.cs
+C:\Users\hdtuan\Desktop\Github\MisaWebFresher\MISA.eShop.WebApp\MISA.eShop.Core\obj\Debug\net5.0\MISA.eShop.Core.csproj.CoreCompileInputs.cache
+C:\Users\hdtuan\Desktop\Github\MisaWebFresher\MISA.eShop.WebApp\MISA.eShop.Core\obj\Debug\net5.0\MISA.eShop.Core.dll
+C:\Users\hdtuan\Desktop\Github\MisaWebFresher\MISA.eShop.WebApp\MISA.eShop.Core\obj\Debug\net5.0\ref\MISA.eShop.Core.dll
+C:\Users\hdtuan\Desktop\Github\MisaWebFresher\MISA.eShop.WebApp\MISA.eShop.Core\obj\Debug\net5.0\MISA.eShop.Core.pdb

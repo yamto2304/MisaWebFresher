@@ -2,6 +2,7 @@
     display: none;
   }
   .isBlurAlert {
+    width: 423px !important;
     border-color: red !important;
   }
   .m-dialog {
@@ -219,9 +220,12 @@
     border: 1px solid #2b3173;
   }
   .btn-cancel-form {
+    /* padding: 0; */
+    /* margin: 0; */
     border-radius: 3px;
     position: absolute;
     right: 8px;
+    border: 1px solid #ffffff;
     background-color: #ffffff !important;
     /* border: 1px solid #2b3173; */
   }

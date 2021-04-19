@@ -127,32 +127,42 @@ namespace MISA.eShop.Core.Services
 
         }
 
-        public bool ValidateStore(Store store)
+        public void ValidateStore(Store store)
         {
             if (string.IsNullOrEmpty(store.StoreCode))
             {
-                return false;
+                //return false;
                 throw new ValidateExceptions("Mã cửa hàng không được để trống!");
 
             }
             if (string.IsNullOrEmpty(store.StoreName))
             {
-                return false;
+                //return false;
                 throw new ValidateExceptions("Tên cửa hàng không được để trống!");
 
             }
             if (string.IsNullOrEmpty(store.Address))
             {
-                return false;
+                //return false;
                 throw new ValidateExceptions("Địa chỉ cửa hàng không được để trống!");
 
             }
-            if (!Regex.Match(store.PhoneNumber, @"^(\+[0-9]{9})$").Success)
+            //!Regex.Match(store.PhoneNumber, @"^(\+[0-9]{9})$").Success
+            if (!string.IsNullOrEmpty(store.PhoneNumber))
             {
-                return false;
-                throw new ValidateExceptions("Số điện thoại của cửa hàng không đúng");
+                Regex _regex = new Regex(@"^[-+]?[0-9]*\.?[0-9]+$");
+                if (_regex.IsMatch(store.PhoneNumber))
+                {
+                    //return false;
+                    throw new ValidateExceptions("Số điện thoại không đúng định dạng");
+                }
             }
-            return true;
+            //return true;
+        }
+
+        bool IStoreService.ValidateStore(Store store)
+        {
+            throw new NotImplementedException();
         }
     }
 }

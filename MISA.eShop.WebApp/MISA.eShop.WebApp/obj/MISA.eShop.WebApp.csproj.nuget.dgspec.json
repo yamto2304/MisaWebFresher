@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Tuani\\OneDrive\\Desktop\\Github\\MisaWebFresher\\MISA.eShop.WebApp\\MISA.eShop.WebApp\\MISA.eShop.WebApp.csproj": {}
+    "C:\\Users\\hdtuan\\Desktop\\Github\\MisaWebFresher\\MISA.eShop.WebApp\\MISA.eShop.WebApp\\MISA.eShop.WebApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Tuani\\OneDrive\\Desktop\\Github\\MisaWebFresher\\MISA.eShop.WebApp\\MISA.eShop.Core\\MISA.eShop.Core.csproj": {
+    "C:\\Users\\hdtuan\\Desktop\\Github\\MisaWebFresher\\MISA.eShop.WebApp\\MISA.eShop.Core\\MISA.eShop.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Tuani\\OneDrive\\Desktop\\Github\\MisaWebFresher\\MISA.eShop.WebApp\\MISA.eShop.Core\\MISA.eShop.Core.csproj",
+        "projectUniqueName": "C:\\Users\\hdtuan\\Desktop\\Github\\MisaWebFresher\\MISA.eShop.WebApp\\MISA.eShop.Core\\MISA.eShop.Core.csproj",
         "projectName": "MISA.eShop.Core",
-        "projectPath": "C:\\Users\\Tuani\\OneDrive\\Desktop\\Github\\MisaWebFresher\\MISA.eShop.WebApp\\MISA.eShop.Core\\MISA.eShop.Core.csproj",
-        "packagesPath": "C:\\Users\\Tuani\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Tuani\\OneDrive\\Desktop\\Github\\MisaWebFresher\\MISA.eShop.WebApp\\MISA.eShop.Core\\obj\\",
+        "projectPath": "C:\\Users\\hdtuan\\Desktop\\Github\\MisaWebFresher\\MISA.eShop.WebApp\\MISA.eShop.Core\\MISA.eShop.Core.csproj",
+        "packagesPath": "C:\\Users\\hdtuan\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\hdtuan\\Desktop\\Github\\MisaWebFresher\\MISA.eShop.WebApp\\MISA.eShop.Core\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Tuani\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\hdtuan\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -68,25 +64,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.200\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Tuani\\OneDrive\\Desktop\\Github\\MisaWebFresher\\MISA.eShop.WebApp\\MISA.eShop.Infrastructure\\MISA.eShop.Infrastructure.csproj": {
+    "C:\\Users\\hdtuan\\Desktop\\Github\\MisaWebFresher\\MISA.eShop.WebApp\\MISA.eShop.Infrastructure\\MISA.eShop.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Tuani\\OneDrive\\Desktop\\Github\\MisaWebFresher\\MISA.eShop.WebApp\\MISA.eShop.Infrastructure\\MISA.eShop.Infrastructure.csproj",
+        "projectUniqueName": "C:\\Users\\hdtuan\\Desktop\\Github\\MisaWebFresher\\MISA.eShop.WebApp\\MISA.eShop.Infrastructure\\MISA.eShop.Infrastructure.csproj",
         "projectName": "MISA.eShop.Infrastructure",
-        "projectPath": "C:\\Users\\Tuani\\OneDrive\\Desktop\\Github\\MisaWebFresher\\MISA.eShop.WebApp\\MISA.eShop.Infrastructure\\MISA.eShop.Infrastructure.csproj",
-        "packagesPath": "C:\\Users\\Tuani\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Tuani\\OneDrive\\Desktop\\Github\\MisaWebFresher\\MISA.eShop.WebApp\\MISA.eShop.Infrastructure\\obj\\",
+        "projectPath": "C:\\Users\\hdtuan\\Desktop\\Github\\MisaWebFresher\\MISA.eShop.WebApp\\MISA.eShop.Infrastructure\\MISA.eShop.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\hdtuan\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\hdtuan\\Desktop\\Github\\MisaWebFresher\\MISA.eShop.WebApp\\MISA.eShop.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Tuani\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\hdtuan\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -100,8 +92,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\Tuani\\OneDrive\\Desktop\\Github\\MisaWebFresher\\MISA.eShop.WebApp\\MISA.eShop.Core\\MISA.eShop.Core.csproj": {
-                "projectPath": "C:\\Users\\Tuani\\OneDrive\\Desktop\\Github\\MisaWebFresher\\MISA.eShop.WebApp\\MISA.eShop.Core\\MISA.eShop.Core.csproj"
+              "C:\\Users\\hdtuan\\Desktop\\Github\\MisaWebFresher\\MISA.eShop.WebApp\\MISA.eShop.Core\\MISA.eShop.Core.csproj": {
+                "projectPath": "C:\\Users\\hdtuan\\Desktop\\Github\\MisaWebFresher\\MISA.eShop.WebApp\\MISA.eShop.Core\\MISA.eShop.Core.csproj"
               }
             }
           }
@@ -140,25 +132,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.200\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Tuani\\OneDrive\\Desktop\\Github\\MisaWebFresher\\MISA.eShop.WebApp\\MISA.eShop.WebApp\\MISA.eShop.WebApp.csproj": {
+    "C:\\Users\\hdtuan\\Desktop\\Github\\MisaWebFresher\\MISA.eShop.WebApp\\MISA.eShop.WebApp\\MISA.eShop.WebApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Tuani\\OneDrive\\Desktop\\Github\\MisaWebFresher\\MISA.eShop.WebApp\\MISA.eShop.WebApp\\MISA.eShop.WebApp.csproj",
+        "projectUniqueName": "C:\\Users\\hdtuan\\Desktop\\Github\\MisaWebFresher\\MISA.eShop.WebApp\\MISA.eShop.WebApp\\MISA.eShop.WebApp.csproj",
         "projectName": "MISA.eShop.WebApp",
-        "projectPath": "C:\\Users\\Tuani\\OneDrive\\Desktop\\Github\\MisaWebFresher\\MISA.eShop.WebApp\\MISA.eShop.WebApp\\MISA.eShop.WebApp.csproj",
-        "packagesPath": "C:\\Users\\Tuani\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Tuani\\OneDrive\\Desktop\\Github\\MisaWebFresher\\MISA.eShop.WebApp\\MISA.eShop.WebApp\\obj\\",
+        "projectPath": "C:\\Users\\hdtuan\\Desktop\\Github\\MisaWebFresher\\MISA.eShop.WebApp\\MISA.eShop.WebApp\\MISA.eShop.WebApp.csproj",
+        "packagesPath": "C:\\Users\\hdtuan\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\hdtuan\\Desktop\\Github\\MisaWebFresher\\MISA.eShop.WebApp\\MISA.eShop.WebApp\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Tuani\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\hdtuan\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -172,11 +160,11 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\Tuani\\OneDrive\\Desktop\\Github\\MisaWebFresher\\MISA.eShop.WebApp\\MISA.eShop.Core\\MISA.eShop.Core.csproj": {
-                "projectPath": "C:\\Users\\Tuani\\OneDrive\\Desktop\\Github\\MisaWebFresher\\MISA.eShop.WebApp\\MISA.eShop.Core\\MISA.eShop.Core.csproj"
+              "C:\\Users\\hdtuan\\Desktop\\Github\\MisaWebFresher\\MISA.eShop.WebApp\\MISA.eShop.Core\\MISA.eShop.Core.csproj": {
+                "projectPath": "C:\\Users\\hdtuan\\Desktop\\Github\\MisaWebFresher\\MISA.eShop.WebApp\\MISA.eShop.Core\\MISA.eShop.Core.csproj"
               },
-              "C:\\Users\\Tuani\\OneDrive\\Desktop\\Github\\MisaWebFresher\\MISA.eShop.WebApp\\MISA.eShop.Infrastructure\\MISA.eShop.Infrastructure.csproj": {
-                "projectPath": "C:\\Users\\Tuani\\OneDrive\\Desktop\\Github\\MisaWebFresher\\MISA.eShop.WebApp\\MISA.eShop.Infrastructure\\MISA.eShop.Infrastructure.csproj"
+              "C:\\Users\\hdtuan\\Desktop\\Github\\MisaWebFresher\\MISA.eShop.WebApp\\MISA.eShop.Infrastructure\\MISA.eShop.Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\hdtuan\\Desktop\\Github\\MisaWebFresher\\MISA.eShop.WebApp\\MISA.eShop.Infrastructure\\MISA.eShop.Infrastructure.csproj"
               }
             }
           }
@@ -222,7 +210,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.200\\RuntimeIdentifierGraph.json"
         }
       }
     }

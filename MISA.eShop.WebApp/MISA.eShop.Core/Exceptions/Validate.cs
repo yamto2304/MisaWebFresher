@@ -9,7 +9,7 @@ namespace MISA.eShop.Core.Exceptions
     /// Validate sever side
     /// </summary>
     /// CreatedBy : Tuanhd(18/4/2021)
-    class Validate
+    public class Validate
     {
         /// <summary>
         /// Validate mã cửa hàng không được trống
@@ -58,15 +58,15 @@ namespace MISA.eShop.Core.Exceptions
                    "User Id= dev; " +
                    "Password=12345678;" +
                    "Database= MF772_HUONGHTT_ESHOP;" +
-                    "convert zero datetime=True";
+                   "convert zero datetime=True";
 
-        //string _connectionString = "" +
-        //        "Host=47.241.69.179; " +
-        //        "Port=3306;" +
-        //        "User Id= dev; " +
-        //        "Password=12345678;" +
-        //        "Database= TEST.MISA.eShop";
-            
+            //string _connectionString = "" +
+            //        "Host=47.241.69.179; " +
+            //        "Port=3306;" +
+            //        "User Id= dev; " +
+            //        "Password=12345678;" +
+            //        "Database= TEST.MISA.eShop";
+
             IDbConnection _dbConnection = new MySqlConnection(_connectionString);
             //Validate dữ liệu:
             //-check trùng mã:

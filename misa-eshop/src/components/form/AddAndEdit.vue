@@ -19,12 +19,16 @@
               Mã cửa hàng <span class="red-text">*</span>
             </div>
             <input
-            autofocus:autofocus
+              ref="storeCode"
               v-model="store.storeCode"
               class="row-input-big"
               :class="{ isBlurAlert: storeCodeAlert }"
               v-on:blur="blurStoreCode"
             />
+            <div v-show="storeCodeAlert" class="div_error">
+              <img src="../../assets/icon/exclamation.png" />
+              <span class="title_error">Trường này không được để trống</span>
+            </div>
           </div>
           <div class="form-row-basic">
             <div class="row-item-name">
@@ -36,6 +40,10 @@
               :class="{ isBlurAlert: storeNameAlert }"
               v-on:blur="blurStoreName()"
             />
+            <div v-show="storeNameAlert" class="div_error">
+              <img src="../../assets/icon/exclamation.png" />
+              <span class="title_error">Trường này không được để trống</span>
+            </div>
           </div>
           <div class="form-row-high">
             <div class="row-item-name">
@@ -47,6 +55,10 @@
               v-on:blur="blurStoreAddress()"
               :class="{ isBlurAlert: storeAddressAlert }"
             />
+            <div v-show="storeAddressAlert" class="div_error">
+              <img src="../../assets/icon/exclamation.png" />
+              <span class="title_error">Trường này không được để trống</span>
+            </div>
           </div>
           <div class="form-row-basic">
             <div class="row-item-left">
@@ -191,10 +203,76 @@ export default {
     isHide: Boolean,
     isAddMode: Boolean,
     formHeading: String,
-    store: { type: Object, default: null },
+    store: {
+      // storeId: null,
+      // storeCode: "",
+      // StoreName: "",
+      // Address: "",
+      // PhoneNumber: null,
+      // StoreTaxCode: null,
+      // CountryId: null,
+      // ProvinceId: null,
+      // DistrictId: null,
+      // WardId: null,
+      // Street: null,
+      // Status: null,
+      // CreatedDate: null,
+      // CreatedBy: null,
+      // ModifiedDate: null,
+      // ModifiedBy: null,
+    },
+    storeId: String,
+    // countries : getCountries(),
+    
   },
   components: {},
   methods: {
+    validateData() {
+      //Check StoreCode trống
+      this.blurStoreCode();
+      //Check StoreName trống
+      this.blurStoreName();
+      //Check StoreAddress trống
+      this.blurStoreAddress();
+    },
+
+    /**==============================
+     * Hiển thị form
+     * CreatedBy : Tuanhd(19/4/2021)
+     ===============================*/
+    showForm() {
+      this.storeCodeAlert = false;
+      this.storeNameAlert = false;
+      this.storeAddressAlert = false;
+      this.$nextTick(() => {
+        this.$refs.storeCode.focus();
+      });
+      if (this.isAddMode) {
+        // this.getCountries();
+        // this.getProvinces();
+        // this.getDistricts();
+        // this.getWards();
+      } else {
+        //lấy dữ liệu store
+      }
+      // if (this.isAddMode) {
+      //   console.log(this.isAddMode);
+      // }
+    },
+    //ClearData
+    clearData() {
+      this.store.countryId = null;
+      this.store.provinceId = null;
+      this.store.districtId = null;
+      this.store.wardId = null;
+      this.store.storeCode = null;
+      this.store.storeName = null;
+      this.store.address = null;
+      this.store.phoneNumber = null;
+      this.store.status = null;
+      this.store.street = null;
+      this.store.storeTaxCode = null;
+    },
     /**===============================================================================
      * Lưu
      * Active : Click button "Lưu"
@@ -202,15 +280,21 @@ export default {
      * CreatedBy : Tuanhd(14/4/2021)
      =================================================================================*/
     btnSaveOnClick() {
+      this.validateData();
+      if (this.errorInValidate) return;
       if (this.isAddMode) {
         console.log("add");
         axios
           .post("https://localhost:44314/api/v1/Store", this.store)
           .then((res) => {
-            console.log(res);
+            // console.log(res.data);
+            console.log(res.data.devMsg);
+
+            this.$emit("isReload", true);
           })
           .catch((res) => {
-            console.log(res);
+            // console.log(res);
+            console.log(res.response.data.devMsg);
           });
         console.log(this.store);
         // console.log(response);
@@ -224,15 +308,15 @@ export default {
           .then((res) => {
             // console.log(res);
             console.log(res.data.devMsg);
+            this.$emit("isReload", true);
           })
           .catch((res) => {
-            console.log(res);
+            console.log(res.response.data.devMsg);
           });
       }
-      this.$emit("closeForm", true);
       this.$emit("isAddMode", true);
+      this.$emit("closeForm", true);
     },
-
     /**=============================================
      * Đóng form
      * Active : Click button X, button Cancel
@@ -240,13 +324,10 @@ export default {
      * CreatedBy : Tuanhd(14/4/2021)
      ==============================================*/
     btnCancelOnClick() {
-      // this.$emit("changeFormMode", "add");
-      // this.formMode = "add";
-      // alert(this.formMode);
+      this.clearData();
       this.$emit("closeForm", true);
       this.$emit("isAddMode", true);
     },
-
     /**===============================================================================
      * Lưu và thêm mới
      * Active : Click button "Lưu và thêm mới"
@@ -254,15 +335,18 @@ export default {
      * CreatedBy : Tuanhd(14/4/2021)
      =================================================================================*/
     btnSaveAndAddOnClick() {
+      this.validateData();
       if (this.isAddMode) {
         console.log("add");
         axios
           .post("https://localhost:44314/api/v1/Store", this.store)
           .then((res) => {
             console.log(res);
+            this.clearData();
+            this.$emit("isReload", true);
           })
           .catch((res) => {
-            console.log(res);
+            console.log(res.response.data.devMsg);
           });
         console.log(this.store);
         // console.log(response);
@@ -274,29 +358,17 @@ export default {
             this.store
           )
           .then((res) => {
+            this.clearData();
+            this.$emit("isReload", true);
             // console.log(res);
             console.log(res.data.devMsg);
           })
           .catch((res) => {
-            console.log(res);
+            console.log(res.response.data.devMsg);
           });
       }
-      // console.log(this.store);
-      this.store.storeCode = null
-      this.store.storeName = null
-      this.store.address = null
-      this.store.phoneNumber = null
-      this.store.status = null
-      this.store.provinceId = null
-      this.store.districtId = null
-      this.store.wardId = null
-      this.store.street = null
-      this.store.storeTaxCode = null
-      this.store.countryId = null;
-      this.isAddMode = true;
-      // this.$emit("isAddMode", true);
+
       console.log(this.isAddMode);
-      // console.log(this.store);
     },
 
     /**================================================
@@ -306,15 +378,11 @@ export default {
      * CreatedBy : Tuanhd(14/4/2021)
      =================================================*/
     blurStoreCode() {
-      // console.log(this.store);
-      // console.log(this.store);
       if (!this.store.storeCode) {
-        // alert(this.store.StoreCode);
-        // console.log(this.store.StoreCode);
         this.storeCodeAlert = true;
+        this.errorInValidate = true;
       } else this.storeCodeAlert = false;
     },
-
     /**================================================
      * Check Tên cửa hàng
      * Active : Mouse click outside the StoreName input
@@ -324,11 +392,10 @@ export default {
     blurStoreName() {
       // this.showSmallMessage();
       if (!this.store.storeName) {
-        // alert(this.errorNameEmpty);
+        this.errorInValidate = true;
         this.storeNameAlert = true;
       } else this.storeNameAlert = false;
     },
-
     /**===================================================
      * Check Địa chỉ cửa hàng
      * Active : Mouse click outside the StoreAddress input
@@ -339,6 +406,7 @@ export default {
       // this.showSmallMessage();
       if (!this.store.address) {
         this.storeAddressAlert = true;
+        this.errorInValidate = true;
       } else this.storeAddressAlert = false;
     },
 
@@ -355,7 +423,6 @@ export default {
         console.log(response.data.data.length + " Quốc gia được tìm thấy !");
       });
     },
-
     /**=============================
      * Lấy dữ liệu tỉnh/thành phố
      * CreatedBy : Tuanhd(17/4/2021)
@@ -369,7 +436,6 @@ export default {
         console.log(response.data.data.length + " Tỉnh được tìm thấy !");
       });
     },
-
     /**=============================
      * Lấy dữ liệu quận/huyện
      * CreatedBy : Tuanhd(17/4/2021)
@@ -383,7 +449,6 @@ export default {
         console.log(response.data.data.length + " Huyện được tìm thấy !");
       });
     },
-
     /**=============================
      * Lấy dữ liệu phường/xã
      * CreatedBy : Tuanhd(17/4/2021)
@@ -416,8 +481,11 @@ export default {
       this.store.districtId = null;
       this.store.wardId = null;
     },
+    /**============================================
+     * Lấy dữ liệu quận/huyện khi chọn quốc gia
+     * CreatedBy : Tuanhd(19/4/2021)
+     =============================================*/
     changedProvince(value) {
-      // console.log("Mã tỉnh/thành phố : " + value);
       // Lấy dữ liệu từ API
       axios
         .get(`https://localhost:44314/api/v1/District/WithParent/` + value)
@@ -431,6 +499,10 @@ export default {
       this.store.districtId = null;
       // this.store.wardId = null;
     },
+    /**============================================
+     * Lấy dữ liệu xã/phường khi chọn quốc gia
+     * CreatedBy : Tuanhd(19/4/2021)
+     =============================================*/
     changedDistrict(value) {
       // Lấy dữ liệu từ API
       axios
@@ -463,12 +535,8 @@ export default {
     },
   },
   mounted() {},
-  created() {
-    this.getCountries();
-    this.getProvinces();
-    this.getDistricts();
-    this.getWards();
-  },
+  created() {},
+  computed: {},
   data() {
     return {
       storeCodeAlert: false,
@@ -479,10 +547,29 @@ export default {
       districts: [],
       wards: [],
       selectedLocation: [],
+      emptyStore: {},
+      errorInValidate: false,
     };
   },
 };
 </script>
 <style scoped>
-
+.div_error {
+  width: 16px;
+  height: 16px;
+  padding: 4px;
+}
+.div_error:hover .title_error {
+  display: block;
+}
+.title_error {
+  font-size: 13px;
+  position: fixed;
+  left: calc(50% + 285px);
+  color: #ffffff;
+  background-color: rgb(233, 61, 61);
+  padding: 8px;
+  border-radius: 2px;
+  display: none;
+}
 </style>

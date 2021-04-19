@@ -1,5 +1,7 @@
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -57,7 +59,38 @@ namespace MISA.eShop.WebApp
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "MISA.eShop v1"));
             }
+            // Xử lý Exception
+            app.UseExceptionHandler(c => c.Run(async context =>
+            {
+                var exception = context.Features
+                    .Get<IExceptionHandlerPathFeature>()
+                    .Error;
 
+                if (exception is Exception)
+                {
+                    var responseBadRequest = new
+                    {
+                        devMsg = exception.Message,
+                        userMsg = "Có lỗi xảy ra, vui lòng liên hệ MISA để được trợ giúp!",
+                        errorCode = "misa-400",
+                        moreInfo = "https://openapi.misa.com.vn/errorcode/misa-001",
+                        traceId = "ba9587fd-1a79-4ac5-a0ca-2c9f74dfd3fb"
+                    };
+                    context.Response.StatusCode = StatusCodes.Status400BadRequest;
+                    await context.Response.WriteAsJsonAsync(responseBadRequest);
+                }
+
+                var response = new
+                {
+                    devMsg = exception.Message,
+                    userMsg = "Có lỗi xảy ra, vui lòng liên hệ MISA để được trợ giúp!",
+                    errorCode = "misa-005",
+                    moreInfo = "https://openapi.misa.com.vn/errorcode/misa-001",
+                    traceId = "ba9587fd-1a79-4ac5-a0ca-2c9f74dfd3fb"
+                };
+
+                await context.Response.WriteAsJsonAsync(response);
+            }));
             app.UseCors(x => x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader().SetPreflightMaxAge(TimeSpan.FromMinutes(10)));
 
             app.UseHttpsRedirection();

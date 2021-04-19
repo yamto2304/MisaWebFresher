@@ -22,7 +22,7 @@ namespace MISA.eShop.Infrastructure.Repository
                "Port=3306;" +
                "User Id= dev; " +
                "Password=12345678;" +
-               "Database= MF772_HUONGHTT_ESHOP;" +
+               "Database= TEST.MISA.eShop;" +
                 "convert zero datetime=True";
         //string _connectionString = "" +
         //        "Host=47.241.69.179; " +
