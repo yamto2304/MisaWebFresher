@@ -2,6 +2,7 @@
   <div class="store-list-content">
     <AddAndEdit
       ref="AddAndEdit"
+      :errorInValidate="false"
       :isHide="isHideParent"
       @closeForm="closeForm"
       @isReload="isReload"
@@ -10,6 +11,7 @@
       :formHeading="isParentAddMode ? 'Thêm mới cửa hàng' : 'Sửa cửa hàng'"
     />
     <DeleteAlert
+      @resetRowClicked="isResetRowClicked"
       :isHideAlert="isHideParentAlert"
       :storeName="selectedStore.storeName"
       :storeId="selectedStore.storeId"
@@ -28,9 +30,10 @@
       </button>
       <button
         style="border-right: 1px solid #190472"
-        :class="isHaveRowClicked ? '' : 'disable-item'"
-        class="btn-with-icon"
+        
+        class="btn-with-icon disable"
         title="Ctrl + 2"
+
       >
         <div class="icon-duplicate"></div>
         <div class="text-btn">Nhân bản</div>
@@ -178,10 +181,6 @@
             >
               {{ number }}
             </option>
-            <!-- <option>15</option>
-            <option>25</option>
-            <option>50</option>
-            <option>100</option> -->
           </select>
         </div>
         <div class="paging-record-infor paging-text">
@@ -208,22 +207,37 @@ export default {
     BaseLoading,
   },
   methods: {
+    
+    isResetRowClicked() {
+      this.isHaveRowClicked = false;
+    },
     /**=============================
      * Chạy LoadData từ con gọi lên
      * CreatedBy : Tuanhd(19/4/2021)
      ==============================*/
     isReload() {
       // this.loadData();
-      this.getStoreByFilter(this.filter);
+      this.isHaveRowClicked = false;
+      this.selectedStore = this.emptyStore;
+      this.isHaveRowClicked = false;
+      this.loadAllData();
+      this.isResetRowClicked();
+      // this.getStoreByFilter(this.filter);
     },
+    
     /**===============================
      * LoadData đồng thời reset paging
      * CreatedBy : Tuanhd(19/4/2021)
      ================================*/
     loadAllData() {
       this.valueInputPaging = 1;
-      // this.loadData();
-      this.getStoreByFilter(this.filter);
+      (this.filter.storeCode = ""),
+        (this.filter.storeName = ""),
+        (this.filter.address = ""),
+        (this.filter.phoneNumber = ""),
+        (this.filter.status = "2"),
+        // this.loadData();
+        this.getStoreByFilter(this.filter);
     },
 
     /**=======================================
@@ -243,7 +257,7 @@ export default {
       //Gọi hàm load dữ liệu ban đầu cho form
       this.$refs.AddAndEdit.showForm();
       //Load all contries
-      this.$refs.AddAndEdit.getCountries();
+      // this.$refs.AddAndEdit.getCountries();
     },
     /**=======================================================
      * Chỉnh sửa store
@@ -293,6 +307,7 @@ export default {
      =====================================================================*/
     closeAlert(value) {
       this.isHideParentAlert = value;
+      this.isHaveRowClicked = false;
     },
     /**==================================================
      * Chuyển form mode về Add
@@ -315,7 +330,6 @@ export default {
      =========================================================================*/
     activeRow(key) {
       this.selectedRow = key;
-      // console.log(this.selectedRow);
       this.isHaveRowClicked = true;
       //Gọi Api lấy dữ liệu từ Id đã lấy
       axios
@@ -323,14 +337,13 @@ export default {
         .then((res) => {
           //Đẩy data thu được vào biến selectedStore và truyền xuống con
           this.selectedStore = res.data.data;
-          // console.log(res);
-          // console.log(res);
         })
         .catch((res) => {
           console.log(res.response);
         });
     },
 
+    
     async getStoreByFilter(filter) {
       this.showLoading = true;
       console.log("LoadData by filter !");
@@ -340,15 +353,16 @@ export default {
         )
         .then((res) => {
           //Đẩy data thu được vào biến selectedStore và truyền xuống con
+          console.log( " Store được tìm thấy !");
           this.filterStores = res.data.data;
           this.countData = res.data.data.length;
-          console.log(res.data.data);
-          // console.log(res);
         })
         .catch((res) => {
+          console.log(res.data.data.length + " Store được tìm thấy !");
+
           console.log(res.response);
         });
-        this.showLoading = false;
+      this.showLoading = false;
     },
     /**===============================
      * Chỉ LoadData
@@ -391,6 +405,9 @@ export default {
     "filter.phoneNumber"() {
       this.getStoreByFilter(this.filter);
     },
+    isHaveRowClicked(){
+
+    }
   },
   computed: {
     stores() {

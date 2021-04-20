@@ -55,8 +55,9 @@ export default {
       // this.$emit("changeFormMode", "add");
       // this.formMode = "add";
       // alert(this.formMode);
+      
       this.$emit("closeAlert", true);
-      this.$emit("isReload", true);
+      // this.$emit("isReload", true);
     },
 
     /**=============================
@@ -78,6 +79,8 @@ export default {
           this.$emit("closeAlert", true);
           //Load dữ liệu
           this.$emit("isReload", true);
+          
+          
         })
         .catch((res) => {
           // Có thể mở form mới hoặc thông báo khác

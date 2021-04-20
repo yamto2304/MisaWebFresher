@@ -26,6 +26,10 @@
      opacity: 0.5;
      pointer-events: none;
  }
+ .disable{
+     opacity: 0.5;
+     pointer-events: none;
+ }
 
 @font-face {
     font-family: 'GoogleSans-Regular';

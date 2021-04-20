@@ -148,15 +148,15 @@ namespace MISA.eShop.Core.Services
 
             }
             //!Regex.Match(store.PhoneNumber, @"^(\+[0-9]{9})$").Success
-            if (!string.IsNullOrEmpty(store.PhoneNumber))
-            {
-                Regex _regex = new Regex(@"^[-+]?[0-9]*\.?[0-9]+$");
-                if (_regex.IsMatch(store.PhoneNumber))
-                {
-                    //return false;
-                    throw new ValidateExceptions("Số điện thoại không đúng định dạng");
-                }
-            }
+            //if (!string.IsNullOrEmpty(store.PhoneNumber))
+            //{
+            //    Regex _regex = new Regex(@"^[-+]?[0-9]*\.?[0-9]+$");
+            //    if (_regex.IsMatch(store.PhoneNumber))
+            //    {
+            //        //return false;
+            //        throw new ValidateExceptions("Số điện thoại không đúng định dạng");
+            //    }
+            //}
             //return true;
         }
 

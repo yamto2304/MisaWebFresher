@@ -223,7 +223,6 @@ export default {
     },
     storeId: String,
     // countries : getCountries(),
-    
   },
   components: {},
   methods: {
@@ -235,7 +234,11 @@ export default {
       //Check StoreAddress trống
       this.blurStoreAddress();
     },
-
+    focusFirstInput() {
+      this.$nextTick(() => {
+        this.$refs.storeCode.focus();
+      });
+    },
     /**==============================
      * Hiển thị form
      * CreatedBy : Tuanhd(19/4/2021)
@@ -244,20 +247,13 @@ export default {
       this.storeCodeAlert = false;
       this.storeNameAlert = false;
       this.storeAddressAlert = false;
-      this.$nextTick(() => {
-        this.$refs.storeCode.focus();
-      });
-      if (this.isAddMode) {
-        // this.getCountries();
-        // this.getProvinces();
-        // this.getDistricts();
-        // this.getWards();
-      } else {
-        //lấy dữ liệu store
+      this.focusFirstInput();
+      this.getCountries();
+      if (!this.isAddMode) {
+        this.getProvinces();
+        this.getDistricts();
+        this.getWards();
       }
-      // if (this.isAddMode) {
-      //   console.log(this.isAddMode);
-      // }
     },
     //ClearData
     clearData() {
@@ -535,7 +531,9 @@ export default {
     },
   },
   mounted() {},
-  created() {},
+  created() {
+    this.getCountries();
+  },
   computed: {},
   data() {
     return {

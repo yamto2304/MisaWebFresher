@@ -60,14 +60,15 @@ namespace MISA.eShop.Core.Exceptions
                    "Database= MF772_HUONGHTT_ESHOP;" +
                    "convert zero datetime=True";
 
-            //string _connectionString = "" +
-            //        "Host=47.241.69.179; " +
-            //        "Port=3306;" +
-            //        "User Id= dev; " +
-            //        "Password=12345678;" +
-            //        "Database= TEST.MISA.eShop";
+            //"Database= MF772_HUONGHTT_ESHOP;" +
+           //string _connectionString = "" +
+           //        "Host=47.241.69.179; " +
+           //        "Port=3306;" +
+           //        "User Id= dev; " +
+           //        "Password=12345678;" +
+           //        "Database= TEST.MISA.eShop";
 
-            IDbConnection _dbConnection = new MySqlConnection(_connectionString);
+           IDbConnection _dbConnection = new MySqlConnection(_connectionString);
             //Validate dữ liệu:
             //-check trùng mã:
             // Kiểm tra xem có khách hàng nào có mã tương tự hay không ?:
