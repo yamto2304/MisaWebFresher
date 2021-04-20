@@ -30,10 +30,8 @@
       </button>
       <button
         style="border-right: 1px solid #190472"
-        
         class="btn-with-icon disable"
         title="Ctrl + 2"
-
       >
         <div class="icon-duplicate"></div>
         <div class="text-btn">Nhân bản</div>
@@ -207,7 +205,6 @@ export default {
     BaseLoading,
   },
   methods: {
-    
     isResetRowClicked() {
       this.isHaveRowClicked = false;
     },
@@ -224,7 +221,7 @@ export default {
       this.isResetRowClicked();
       // this.getStoreByFilter(this.filter);
     },
-    
+
     /**===============================
      * LoadData đồng thời reset paging
      * CreatedBy : Tuanhd(19/4/2021)
@@ -343,7 +340,7 @@ export default {
         });
     },
 
-    
+    //Lấy data qua filter
     async getStoreByFilter(filter) {
       this.showLoading = true;
       console.log("LoadData by filter !");
@@ -353,7 +350,7 @@ export default {
         )
         .then((res) => {
           //Đẩy data thu được vào biến selectedStore và truyền xuống con
-          console.log( " Store được tìm thấy !");
+          console.log(" Store được tìm thấy !");
           this.filterStores = res.data.data;
           this.countData = res.data.data.length;
         })
@@ -385,34 +382,39 @@ export default {
     },
   },
   watch: {
+    //Giá trị trang hiện tại (input)
     valueInputPaging() {
       if (this.valueInputPaging < 1) this.valueInputPaging = 1;
       if (this.valueInputPaging > this.numberPage)
         this.valueInputPaging = this.numberPage;
     },
+    //Filter storeCode
     "filter.storeCode"() {
       this.getStoreByFilter(this.filter);
     },
+    //Filter Name
     "filter.storeName"() {
       this.getStoreByFilter(this.filter);
     },
+    //Filter address
     "filter.address"() {
       this.getStoreByFilter(this.filter);
     },
+    //Filter status
     "filter.status"() {
       this.getStoreByFilter(this.filter);
     },
+    //Filter phoneNumber
     "filter.phoneNumber"() {
       this.getStoreByFilter(this.filter);
     },
-    isHaveRowClicked(){
-
-    }
+    isHaveRowClicked() {},
   },
   computed: {
     stores() {
       return this.filterStores;
       // .slice(this.indexStart - 1, this.indexEnd);
+      // return this.allStores.slice(this.indexStart - 1, this.indexEnd);
     },
     countStore() {
       return this.stores.length;
@@ -424,6 +426,7 @@ export default {
       if (this.countStore % this.page.numberStoreSelect > 0) number++;
       return number;
     },
+    //Bản ghi đầu tiên của trang
     indexStart() {
       var numberEnd = this.valueInputPaging * this.page.numberStoreSelect;
       if (numberEnd > this.countStore) numberEnd = this.countStore;
@@ -435,6 +438,8 @@ export default {
       if (number > numberEnd) return numberEnd;
       return number;
     },
+
+    //Bản ghi cuối trong trang
     indexEnd() {
       var number = this.valueInputPaging * this.page.numberStoreSelect;
       if (number > this.countStore) number = this.countStore;
@@ -453,7 +458,7 @@ export default {
       },
       page: {
         pageNumber: 1,
-        numberStoreSelect: 15,
+        numberStoreSelect: 25,
       },
       //Các giá trị phân trang
       selectNumberStore: [15, 25, 50, 100],

@@ -552,6 +552,9 @@ export default {
 };
 </script>
 <style scoped>
+textarea{
+  resize: none;
+}
 .div_error {
   width: 16px;
   height: 16px;

@@ -113,6 +113,12 @@ namespace MISA.eShop.WebApp.Controllers
             }
         }
 
+        /// <summary>
+        /// Unuse
+        /// </summary>
+        /// <param name="position"></param>
+        /// <param name="offset"></param>
+        /// <returns></returns>
         [HttpGet("{position}/{offset}")]
         public IActionResult GetIndexOffset(int position, int offset)
         {
@@ -129,6 +135,11 @@ namespace MISA.eShop.WebApp.Controllers
 
         }
         // "{storeCode}/{storeName}/{address}/{phoneNumber}/{status}"
+        /// <summary>
+        /// Unuse
+        /// </summary>
+        /// <param name="parameter"></param>
+        /// <returns></returns>
         [HttpGet("filter")]
         public IActionResult GetStoreFilter([FromQuery] PagingParameter parameter)
         {
@@ -147,6 +158,10 @@ namespace MISA.eShop.WebApp.Controllers
 
         }
 
+        /// <summary>
+        /// Unuse
+        /// </summary>
+        /// <returns></returns>
         [HttpGet("count")]
         public IActionResult GetCount()
         {
